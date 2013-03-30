@@ -1,0 +1,44 @@
+= provide(:title, 'Admins')
+= provide(:page_title, 'Admins')
+= provide(:page_icon, 'active-page-icon large-gray-icon admin_user_blk')
+
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      %a{:href => "/admins/dashboard"}
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li
+      %a{:href => "/admins/admins"}
+        %i.icon-official
+        =t(:admins)
+      %span.divider /
+    %li.active
+      %i.icon-eye-open
+      =admin.full_name.titleize
+  %h1#main-heading
+    Admin: 
+    = admin.full_name.titleize
+.row-fluid
+  .span12
+    = link_to 'Edit Admin', edit_admins_admin_path(admin), :class => 'btn btn-info pull-right'
+  .span1
+    Name:
+  .span10
+    =admin.full_name.titleize
+  .span1
+    Email:
+  .span10
+    =admin.email
+  .span1
+    Photo:
+  .span1
+  .span10
+    -if admin.active
+      %span{:class=> 'label label-success'}
+        =t(:active)
+    - else
+      %span{:class=> 'label label-important'}
+        =t(:inactive)
+

@@ -2,7 +2,10 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title Pontus - a clever responsive admin template
+    %title
+      = yield(:title)
+      |
+      Sobriety For Women
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "Admin Panel Template", :name => "description"}/
     %meta{:content => "Westilian: Kamrujaman Shohel", :name => "author"}/
@@ -134,43 +137,34 @@
           .nav-collapse
             %ul.nav
               %li
-                %a{:href => "index.html"}
+                %a{:href => "/admins"}
                   %i.white-icons.home
                   Home
     .left-bar
       .side-nav
         %ul
-          %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              %span.leftnav-icon.computer_imac_blk
+          %li
+            = link_to admins_dashboard_path do
+              %span.large-gray-icon.home_blk
               %span.leftnav-label Home
           %li
-            %a{:href => "#"}
-              %span.leftnav-icon.folder_blk
+            = link_to admins_admins_path do
+              %span.large-gray-icon.admin_user_blk
+              %span.leftnav-label Admins
+          %li
+            = link_to admins_girls_path do
+              %span.large-gray-icon.dress_blk
               %span.leftnav-label Girls
-          %li
-            %a{:href => "#"}
-              %span.leftnav-icon.chart_8_blk
-              %span.leftnav-label XXXXX
-          %li
-            %a{:href => "#"}
-              %span.leftnav-icon.money_blk
-              %span.leftnav-label 123123
-          %li
-            %a{:href => "#"}
-              %span.leftnav-icon.help_blk
-              %span.leftnav-label 4564564
-          %li
-            %a{:href => "#"}
-              %span.leftnav-icon.cog_3_blk
-              %span.leftnav-label ddddd
     .main-wrapper
       .active-page
         %ul
           %li
-            %span.active-page-icon.computer_imac_blk
-            %span Dashboard
+            -#%span.active-page-icon.computer_imac_blk
+            %span{:class => "#{yield(:page_icon)}"}
+            %span= yield(:page_title)
       .container-fluid
+        = yield :pageheader
         =yield
+  = yield :pagefooter
   %script{:src => "/assets/admin/respond.min.js"}
   %script{:src => "/assets/admin/ios-orientationchange-fix.js"}

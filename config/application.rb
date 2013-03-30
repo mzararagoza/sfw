@@ -1,6 +1,8 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+#require 'resque_scheduler'
+#require 'resque_scheduler/server'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -17,7 +19,16 @@ module SobrietyforwomenAdmin
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/extras #{Rails.root}/lib)
+    config.autoload_paths += %W(#{config.root}/lib/middleware)
+    config.autoload_paths += %W(#{config.root}/lib)
 
+    config.before_initialize do
+      dev = File.join(Rails.root, 'config', 'development.yml')
+      YAML.load(File.open(dev)).each do |key,value|
+      ENV[key.to_s] = value
+      end if File.exists?(dev)
+    end
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

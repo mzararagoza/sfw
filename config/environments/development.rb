@@ -34,4 +34,23 @@ SobrietyforwomenAdmin::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Action Mailer Config
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :letter_opener
+  #config.action_mailer.delivery_method = :smtp
+  #ActionMailer::Base.smtp_settings = {
+  #  :address  => "mail.sobrietyforwomen.com",
+  #  :port  => 587,
+  #  :user_name  => "automated@sobrietyforwomen.com",
+  #  :password  => "xxxxxx",
+  #  :authentication  => :login,
+  #  :openssl_verify_mode => 'none',
+  #:enable_starttls_auto => true
+  #}
+  config.action_mailer.perform_deliveries = true
+
 end

@@ -1,0 +1,501 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title sobriety for women
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "Admin Panel Template", :name => "description"}/
+    %meta{:content => "Westilian: Kamrujaman Shohel", :name => "author"}/
+    / styles
+    %link{:href => "/assets/admin/bootstrap.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/admin/styles.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/admin/bootstrap-responsive.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/admin/themes.css", :rel => "stylesheet"}/
+    /[if IE 7]
+      <link rel="stylesheet" type="text/css" href="/assets/admin/ie/ie7.css" />
+    /[if IE 8]
+      <link rel="stylesheet" type="text/css" href="/assets/admin/ie/ie8.css" />
+    /[if IE 9]
+      <link rel="stylesheet" type="text/css" href="/assets/admin/ie/ie9.css" />
+    / fav and touch icons
+    %link{:href => "/assets/admin/ico/favicon.ico", :rel => "shortcut icon"}/
+    /
+      javascript
+      \==================================================
+    %script{:src => "/assets/admin/jquery.js"}
+    %script{:src => "/assets/admin/bootstrap.min.js"}
+    :javascript
+      /*================================
+        Menu Hover
+      =================================*/
+        $(function() {
+            
+            $('li.dropdown').mouseenter(function() {
+              if($('body').hasClass('menu_hover')) {
+                $(this).addClass('open')
+              }
+            }).mouseleave(function() {
+              if($('body').hasClass('menu_hover')) {
+                $(this).removeClass('open')
+              }
+            });
+            
+            
+            
+              
+        });
+        
+  %body.menu_hover
+    .top-bar
+      .scroll-top
+        %a.tip-top{:href => "#", :title => "Go Top"} Top
+      .bar-container
+        .container-fluid
+          .row-fluid
+            .span3
+              .logo
+                %img{:alt => "Anchor", :height => "68", :src => "/assets/admin/logo.png", :width => "180"}/
+            .span6
+              .navbar-search
+                %form.form-search
+                  .input-append
+                    %input.search-query{:type => "text", :value => "Topic..."}/
+                    %button.btn{:type => "submit"} Search
+            .span3.clearfix
+              .btn-toolbar.top-toolbar.pull-right
+                .btn-group.dropdown-append
+                  %a.dropdown-toggle.btn{"data-toggle" => "dropdown", :href => "#", :title => "Notifications"}
+                    %span.notify-tiptop 10
+                    %i.gray-icons.globe
+                  .dropdown-menu.msg-dropdown.pull-right
+                    %ul.msg-list
+                      %li.clearfix
+                        %h6.dropdown-h.pull-left Notifications
+                        %span.pull-right.msg-count
+                          %a{:href => "#"} 12 New
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/post-40x40.png", :width => "40"}/
+                          %span
+                            %i Vestibulum
+                            is posted an article. lacus est congue...
+                          %span.notification-meta
+                            12 hours ago
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/vdo-40x40.png", :width => "40"}/
+                          %span
+                            %i jaman
+                            is posted a video. lacus est congue...
+                          %span.notification-meta
+                            12 hours ago
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/audio-40x40.png", :width => "40"}/
+                          %span
+                            %i zara
+                            is posted an audio files. lacus est congue...
+                          %span.notification-meta
+                            12 hours ago
+                      %li.clearfix
+                        %a.btn.btn-block.view-all{:href => "#"} View All
+                .btn-group.dropdown-append
+                  %a.dropdown-toggle.btn{"data-toggle" => "dropdown", :href => "#", :title => "Messages"}
+                    %span.notify-tiptop.tips-blue 10
+                    %i.gray-icons.mail
+                  .dropdown-menu.msg-dropdown.pull-right
+                    %ul.msg-list
+                      %li.clearfix
+                        %h6.dropdown-h.pull-left Messages
+                        %span.pull-right.msg-count
+                          %a{:href => "#"} 12 New
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/avatar-40x40.png", :width => "40"}/
+                          %span
+                            %i feroz
+                            is send a message to you. lacus est congue...
+                          %span.notification-meta
+                            3 hours ago
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/avatar-40x40.png", :width => "40"}/
+                          %span
+                            %i chisty
+                            is send a message to you. lacus est congue...
+                          %span.notification-meta
+                            10 hours ago
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/avatar-40x40.png", :width => "40"}/
+                          %span
+                            %i golam
+                            is send a message to you. lacus est congue...
+                          %span.notification-meta
+                            on Tuesday
+                      %li.clearfix
+                        %a.btn.btn-block.view-all{:href => "#"} View All
+                .btn-group.dropdown-append
+                  %a.dropdown-toggle.btn{"data-toggle" => "dropdown", :href => "#", :title => "Recent Updates"}
+                    %span.notify-tiptop.tips-green 100
+                    %i.gray-icons.list_image
+                  .dropdown-menu.msg-dropdown.pull-right
+                    %ul.msg-list
+                      %li.clearfix
+                        %h6.dropdown-h.pull-left Recent Updates
+                        %span.pull-right.msg-count
+                          %a{:href => "#"} 12 New
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/order-40x40.png", :width => "40"}/
+                          %span
+                            %i Order
+                            $3,645.8 Dollars order is pending. waiting for approval...
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/events-40x40.png", :width => "40"}/
+                          %span
+                            %i Events
+                            Total 30 new events is created...
+                          %span.notification-meta
+                            Last Week
+                      %li.clearfix
+                        %a{:href => "#"}
+                          %span.dropdown-thumb
+                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/files-40x40.png", :width => "40"}/
+                          %span
+                            %i Files
+                            Total 2,564 files are posted in last week...
+                          %span.notification-meta
+                            Last Week
+                      %li.clearfix
+                        %a.btn.btn-block.view-all{:href => "#"} View All
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          .nav-collapse
+            %ul.nav
+              %li
+                %a{:href => "index.html"}
+                  %i.white-icons.home
+                  Home
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.white-icons.list_images
+                  Forms
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "form-elements.html"}
+                      %i.ledgray-icons.application_form_co
+                      All Form Elements
+                  %li
+                    %a{:href => "form-validation.html"}
+                      %i.ledgray-icons.asterisk_orange_co
+                      Form Validation
+                  %li
+                    %a{:href => "form-styles.html"}
+                      %i.ledgray-icons.application_double_co
+                      Form Styles
+                  %li
+                    %a{:href => "form-wizard.html"}
+                      %i.ledgray-icons.application_view_tile_co
+                      Form Wizard
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.white-icons.cup
+                  Features
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "basic-tables.html"}
+                      %i.ledgray-icons.table_co
+                      Basic Tables
+                  %li
+                    %a{:href => "data-table.html"}
+                      %i.ledgray-icons.application_columns_co
+                      Data Tables
+                  %li
+                    %a{:href => "widgets.html"}
+                      %i.ledgray-icons.plugin_co
+                      Widgets
+                  %li
+                    %a{:href => "grid.html"}
+                      %i.ledgray-icons.grid_dot_co
+                      Grid
+                  %li
+                    %a{:href => "typography.html"}
+                      %i.ledgray-icons.font_co
+                      Typography
+                  %li
+                    %a{:href => "calendar.html"}
+                      %i.ledgray-icons.calendar_2_co
+                      Calendar
+                  %li
+                    %a{:href => "charts.html"}
+                      %i.ledgray-icons.chart_bar_co
+                      Charts
+                  %li
+                    %a{:href => "file-manager.html"}
+                      %i.ledgray-icons.folder_co
+                      File Manager
+                  %li.divider
+                  %li
+                    %a{:href => "ui-elements.html"}
+                      %i.ledgray-icons.wand_co
+                      UI Elements
+                  %li
+                    %a{:href => "buttons-icons.html"}
+                      %i.ledgray-icons.pill_co
+                      Buttons & Icons
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.white-icons.documents
+                  Pages
+                  %b.caret
+                %ul.dropdown-menu
+                  %li.dropdown-submenu
+                    %a{:href => "#"}
+                      %i.ledgray-icons.cross_octagon_fram_co
+                      Error Pages
+                    %ul.dropdown-menu
+                      %li
+                        %a{:href => "page-403.html"}
+                          %i.ledgray-icons.page_white_error_co
+                          403 Error Page
+                      %li
+                        %a{:href => "page-404.html"}
+                          %i.ledgray-icons.page_white_error_co
+                          404 Error Page
+                      %li
+                        %a{:href => "page-405.html"}
+                          %i.ledgray-icons.page_white_error_co
+                          405 Error Page
+                      %li
+                        %a{:href => "page-500.html"}
+                          %i.ledgray-icons.page_white_error_co
+                          500 Error Page
+                      %li
+                        %a{:href => "page-503.html"}
+                          %i.ledgray-icons.page_white_error_co
+                          503 Error Page
+                  %li
+                    %a{:href => "login.html"}
+                      %i.ledgray-icons.ui_text_field_password_co
+                      Login Page
+                  %li
+                    %a{:href => "flip-login.html"}
+                      %i.ledgray-icons.ui_text_field_password_co
+                      Flip Login Page
+                  %li
+                    %a{:href => "forgot-pass.html"}
+                      %i.ledgray-icons.textfield_rename_co
+                      Forgot Password
+                  %li
+                    %a{:href => "inbox.html"}
+                      %i.ledgray-icons.inbox_co
+                      Inbox
+                  %li
+                    %a{:href => "user-profile.html"}
+                      %i.ledgray-icons.user_silhouette_co
+                      User Profile
+                  %li
+                    %a{:href => "invoice.html"}
+                      %i.ledgray-icons.money_dollar_co
+                      Invoice
+                  %li
+                    %a{:href => "gallery.html"}
+                      %i.ledgray-icons.slides_co
+                      Gallery
+                  %li
+                    %a{:href => "search.html"}
+                      %i.ledgray-icons.magnifier_co
+                      Search Page
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.white-icons.frames
+                  Extras
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "blank-layout.html"}
+                      %i.ledgray-icons.layout_mix_co
+                      Blank Layout
+                  %li
+                    %a{:href => "layout-01.html"}
+                      %i.ledgray-icons.layout_co
+                      Layout 01
+                  %li
+                    %a{:href => "layout-02.html"}
+                      %i.ledgray-icons.layout_select_co
+                      Layout 02
+                  %li
+                    %a{:href => "layout-03.html"}
+                      %i.ledgray-icons.layout_select_content_co
+                      Layout 03
+                  %li
+                    %a{:href => "layout-with-sidebar.html"}
+                      %i.ledgray-icons.layout_select_sidebar_co
+                      Layout With Sidebar
+                  %li
+                    %a{:href => "fixed-layout.html"}
+                      %i.ledgray-icons.layout_join_co
+                      Fixed Layout
+                  %li
+                    %a{:href => "google-chart.html"}
+                      %i.ledgray-icons.chart_curve_co
+                      Google Chart
+            %ul.nav.pull-right
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.flag-icons
+                    %img{:alt => "Bangla", :height => "11", :src => "/assets/admin/flag-icons/bd.png", :width => "16"}/
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"}
+                      %i.flag-icons
+                        %img{:alt => "United States", :height => "11", :src => "/assets/admin/flag-icons/us.png", :width => "16"}/
+                      United States
+                  %li
+                    %a{:href => "#"}
+                      %i.flag-icons
+                        %img{:alt => "United Kingdom", :height => "11", :src => "/assets/admin/flag-icons/gb.png", :width => "16"}/
+                      United Kingdom
+                  %li
+                    %a{:href => "#"}
+                      %i.flag-icons
+                        %img{:alt => "United States", :height => "11", :src => "/assets/admin/flag-icons/au.png", :width => "16"}/
+                      Australia
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.white-icons.admin_user_2
+                  Uncle Jhone
+                  %b.caret
+                .dropdown-menu.admin-dropdown
+                  .clearfix
+                    .admin-user-thumb
+                      %img{:alt => "img", :height => "80", :src => "/assets/admin/avatar-80x80.png", :width => "80"}/
+                    .admin-menu-link
+                      %ul
+                        %li
+                          %a{:href => "#"}
+                            %i.gray-icons.user
+                            Jhone Lee
+                        %li
+                          %a{:href => "#"}
+                            %i.gray-icons.mail
+                            jhon@mymail.com
+                        %li
+                          %a{:href => "#"}
+                            %i.gray-icons.create_write
+                            Edit Profile
+                        %li
+                          %a{:href => "#"}
+                            %i.gray-icons.cog_2
+                            Settings
+                  .admin-action
+                    %button.btn.btn-extend.btn-block{:type => "button"} Logout
+          / /.nav-collapse
+      / /navbar-inner
+    .left-bar
+      .side-nav
+        %ul
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              %span.leftnav-icon.computer_imac_blk
+              %span.leftnav-label Dashobard
+            .dropdown-menu
+              %ul
+                %li
+                  %a{:href => "basic-tables.html"}
+                    %i.ledgray-icons.table_co
+                    Basic Tables
+                %li
+                  %a{:href => "data-table.html"}
+                    %i.ledgray-icons.application_columns_co
+                    Data Tables
+                %li
+                  %a{:href => "widgets.html"}
+                    %i.ledgray-icons.plugin_co
+                    Widgets
+                %li
+                  %a{:href => "grid.html"}
+                    %i.ledgray-icons.grid_dot_co
+                    Grid
+                %li
+                  %a{:href => "typography.html"}
+                    %i.ledgray-icons.font_co
+                    Typography
+                %li
+                  %a{:href => "calendar.html"}
+                    %i.ledgray-icons.calendar_2_co
+                    Calendar
+                %li
+                  %a{:href => "charts.html"}
+                    %i.ledgray-icons.chart_bar_co
+                    Charts
+                %li
+                  %a{:href => "file-manager.html"}
+                    %i.ledgray-icons.folder_co
+                    File Manager
+                %li.divider
+                %li
+                  %a{:href => "ui-elements.html"}
+                    %i.ledgray-icons.wand_co
+                    UI Elements
+                %li
+                  %a{:href => "buttons-icons.html"}
+                    %i.ledgray-icons.pill_co
+                    Buttons & Icons
+          %li
+            %a{:href => "#"}
+              %span.leftnav-icon.folder_blk
+              %span.leftnav-label Medias
+          %li
+            %a{:href => "#"}
+              %span.leftnav-icon.chart_8_blk
+              %span.leftnav-label Statistics
+          %li
+            %a{:href => "#"}
+              %span.leftnav-icon.money_blk
+              %span.leftnav-label Orders
+          %li
+            %a{:href => "#"}
+              %span.leftnav-icon.help_blk
+              %span.leftnav-label Support
+          %li
+            %a{:href => "#"}
+              %span.leftnav-icon.cog_3_blk
+              %span.leftnav-label Settings
+    .main-wrapper
+      .active-page
+        %ul
+          %li
+            %span.active-page-icon.frames_blk
+            %span Blank Layout
+      .container-fluid
+        .row-fluid
+          .page-header
+            %h2 Blank Html Layout
+        .row-fluid
+          .span12
+            .box-widget
+              .widget-head.clearfix
+                %span.h-icon
+                  %i.gray-icons.flag_2
+                %h4 Boxy Widget
+              .widget-container
+                .widget-block
+                  %p
+                    This is blank layout format. This layout page have no extra jQuery plugins and extra css files. Only two JS files is included here.
+    %script{:src => "/assets/admin/respond.min.js"}
+    %script{:src => "/assets/admin/ios-orientationchange-fix.js"}

@@ -1,0 +1,3 @@
+.tab-widget .tab-bottom .nav-tabs > li.active > a, .navbar-inner {
+	filter:none;
+}

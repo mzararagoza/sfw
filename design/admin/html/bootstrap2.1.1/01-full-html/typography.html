@@ -1,0 +1,593 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pontus - a clever responsive admin template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Admin Panel Template">
+<meta name="author" content="Westilian: Kamrujaman Shohel">
+<!-- styles -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/prettify.css" rel="stylesheet">
+<link href="css/aristo-ui.css" rel="stylesheet">
+<link href="css/fullcalendar.css" rel="stylesheet">
+<link href="css/elfinder.css" rel="stylesheet">
+<link href="css/jquery.jqplot.css" rel="stylesheet">
+<link href="css/responsive-tables.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/themes.css" rel="stylesheet">
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie7.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie8.css" />
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie9.css" />
+<![endif]-->
+<!--fav and touch icons -->
+<link rel="shortcut icon" href="ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+<!--============ javascript ===========-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script src="js/jquery.data-table.js"></script>
+<script src="js/prettify.js"></script>
+<script src="js/jquery.metadata.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/stepy.jquery.js"></script>
+<script src="js/inputmask.jquery.js"></script>
+<script src="js/jquery.tagsinput.js"></script>
+<script src="js/uniform.jquery.js"></script>
+<script src="js/fullcalendar.min.js"></script>
+<script src="js/gcal.js"></script>
+<script src="js/elfinder.min.js"></script>
+<script src="js/jquery.notify.js"></script>
+<script src="js/responsive-tables.js"></script>
+<script src="js/jquery.cleditor.js"></script>
+<!--RANGE DATE PICKER-->
+<script src="js/jquery.slider.min.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-colorpicker.js"></script>
+<script src="js/chosen.jquery.js"></script>
+<script src="js/input-limiter.jquery.js"></script>
+<script src="js/jquery.autosize.js"></script>
+<script src="js/raty.jquery.js"></script>
+<script src="js/easing.jquery.js"></script>
+<script src="js/iphone-style-checkboxes.js"></script>
+<script src="js/duallist.jquery.js"></script>
+<script src="js/ui.spinner.min.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<script src="js/jquery.sparkline.min.js"></script>
+<!--JqPlot CHART-->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.jqplot.min.js"></script>
+<script src="js/chart/jqplot.highlighter.min.js"></script>
+<script src="js/chart/jqplot.cursor.min.js"></script>
+<script src="js/chart/jqplot.barRenderer.min.js"></script>
+<script src="js/chart/jqplot.pointLabels.min.js"></script>
+<script src="js/chart/jqplot.dateAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.pieRenderer.min.js"></script>
+<script src="js/chart/jqplot.donutRenderer.min.js"></script>
+<script src="js/chart/jqplot.categoryAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.logAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.canvasTextRenderer.min.js"></script>
+<script src="js/chart/jqplot.canvasAxisTickRenderer.min.js"></script>
+<!-- html5.js for IE less than 9 -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="js/pontus.script.js"></script>
+</head>
+<body class="menu_hover">
+<div class="top-bar">
+	<div class="scroll-top">
+		<a href="#" class="tip-top" title="Go Top">Top</a>
+	</div>
+	<div class="bar-container">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<div class="logo">
+						<img src="images/logo.png" width="180" height="68" alt="Anchor">
+					</div>
+				</div>
+				<div class="span6">
+					<div class="navbar-search">
+						<form class="form-search">
+							<div class="input-append">
+								<input type="text" class="search-query" value="Topic...">
+								<button type="submit" class="btn">Search</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="span3 clearfix">
+					<div class="btn-toolbar top-toolbar pull-right">
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Notifications"><span class="notify-tiptop">10</span><i class="gray-icons globe"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Notifications</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/post-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Vestibulum</i> is posted an article. lacus est congue... </span>
+									<span class="notification-meta">
+									12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/vdo-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>jaman</i> is posted a video. lacus est congue... </span>
+									<span class="notification-meta">
+									12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/audio-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>zara</i> is posted an audio files. lacus est congue... </span>
+									<span class="notification-meta">
+									12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Messages"><span class="notify-tiptop tips-blue">10</span><i class="gray-icons mail"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Messages</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>feroz</i> is send a message to you. lacus est congue... </span>
+									<span class="notification-meta">
+									3 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>chisty</i> is send a message to you. lacus est congue... </span>
+									<span class="notification-meta">
+									10 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>golam</i> is send a message to you. lacus est congue... </span>
+									<span class="notification-meta">
+									on Tuesday </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Recent Updates"><span class="notify-tiptop tips-green">100</span><i class="gray-icons list_image"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Recent Updates</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/order-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Order</i> $3,645.8 Dollars order is pending. waiting for approval... </span>
+									</a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/events-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Events</i> Total 30 new events is created... </span>
+									<span class="notification-meta">
+									Last Week </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/files-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Files</i> Total 2,564 files are posted in last week... </span>
+									<span class="notification-meta">
+									Last Week </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li><a href="index.html"><i class="white-icons home"></i> Home</a></li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons list_images"></i> Forms <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="form-elements.html"><i class="ledgray-icons application_form_co"></i> All Form Elements</a></li>
+						<li><a href="form-validation.html"><i class="ledgray-icons asterisk_orange_co"></i> Form Validation</a></li>
+						<li><a href="form-styles.html"><i class="ledgray-icons application_double_co"></i> Form Styles</a></li>
+						<li><a href="form-wizard.html"><i class="ledgray-icons application_view_tile_co"></i> Form Wizard</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons cup"></i> Features <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="basic-tables.html"><i class=" ledgray-icons table_co"></i> Basic Tables</a></li>
+						<li><a href="data-table.html"><i class=" ledgray-icons application_columns_co"></i> Data Tables</a></li>
+						<li><a href="widgets.html"><i class=" ledgray-icons plugin_co"></i> Widgets</a></li>
+						<li><a href="grid.html"><i class=" ledgray-icons grid_dot_co"></i> Grid</a></li>
+						<li><a href="typography.html"><i class=" ledgray-icons font_co"></i> Typography</a></li>
+						<li><a href="calendar.html"><i class=" ledgray-icons calendar_2_co"></i> Calendar</a></li>
+						<li><a href="charts.html"><i class=" ledgray-icons chart_bar_co"></i> Charts</a></li>
+						<li><a href="file-manager.html"><i class=" ledgray-icons folder_co"></i> File Manager</a></li>
+						<li class="divider"></li>
+						<li><a href="ui-elements.html"><i class=" ledgray-icons wand_co"></i> UI Elements</a></li>
+						<li><a href="buttons-icons.html"><i class=" ledgray-icons pill_co"></i> Buttons &amp; Icons</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons documents"></i> Pages <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu"><a href="#"><i class=" ledgray-icons cross_octagon_fram_co"></i> Error Pages</a>
+						<ul class="dropdown-menu">
+							<li><a href="page-403.html"><i class=" ledgray-icons page_white_error_co"></i> 403 Error Page</a></li>
+							<li><a href="page-404.html"><i class=" ledgray-icons page_white_error_co"></i> 404 Error Page</a></li>
+							<li><a href="page-405.html"><i class=" ledgray-icons page_white_error_co"></i> 405 Error Page</a></li>
+							<li><a href="page-500.html"><i class=" ledgray-icons page_white_error_co"></i> 500 Error Page</a></li>
+							<li><a href="page-503.html"><i class=" ledgray-icons page_white_error_co"></i> 503 Error Page</a></li>
+						</ul>
+						</li>
+						<li><a href="login.html"><i class=" ledgray-icons ui_text_field_password_co"></i> Login Page</a></li>
+						<li><a href="flip-login.html"><i class=" ledgray-icons ui_text_field_password_co"></i> Flip Login Page</a></li>
+						<li><a href="forgot-pass.html"><i class=" ledgray-icons textfield_rename_co"></i> Forgot Password</a></li>
+						<li><a href="inbox.html"><i class=" ledgray-icons inbox_co"></i> Inbox</a></li>
+						<li><a href="user-profile.html"><i class=" ledgray-icons user_silhouette_co"></i> User Profile</a></li>
+						<li><a href="invoice.html"><i class=" ledgray-icons money_dollar_co"></i> Invoice</a></li>
+						<li><a href="gallery.html"><i class=" ledgray-icons slides_co"></i> Gallery</a></li>
+						<li><a href="search.html"><i class=" ledgray-icons magnifier_co"></i> Search Page</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons frames"></i> Extras <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="blank-layout.html"><i class=" ledgray-icons layout_mix_co"></i> Blank Layout</a></li>
+						<li><a href="layout-01.html"><i class=" ledgray-icons layout_co"></i> Layout 01</a></li>
+						<li><a href="layout-02.html"><i class=" ledgray-icons layout_select_co"></i> Layout 02</a></li>
+						<li><a href="layout-03.html"><i class=" ledgray-icons layout_select_content_co"></i> Layout 03</a></li>
+						<li><a href="layout-with-sidebar.html"><i class=" ledgray-icons layout_select_sidebar_co"></i> Layout With Sidebar</a></li>
+						<li><a href="fixed-layout.html"><i class=" ledgray-icons layout_join_co"></i> Fixed Layout</a></li>
+						<li><a href="google-chart.html"><i class=" ledgray-icons chart_curve_co"></i> Google Chart</a></li>
+					</ul>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="flag-icons"><img src="images/flag-icons/bd.png" width="16" height="11" alt="Bangla"></i><b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/us.png" width="16" height="11" alt="United States"></i> United States</a></li>
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/gb.png" width="16" height="11" alt="United Kingdom"></i> United Kingdom</a></li>
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/au.png" width="16" height="11" alt="United States"></i> Australia</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons admin_user_2"></i> Uncle Jhone <b class="caret"></b></a>
+					<div class="dropdown-menu admin-dropdown">
+						<div class="clearfix">
+							<div class="admin-user-thumb">
+								<img src="images/avatar-80x80.png" width="80" height="80" alt="img">
+							</div>
+							<div class="admin-menu-link">
+								<ul>
+									<li><a href="#"><i class=" gray-icons user"></i> Jhone Lee</a></li>
+									<li><a href="#"><i class=" gray-icons mail"></i> jhon@mymail.com</a></li>
+									<li><a href="#"><i class=" gray-icons create_write"></i> Edit Profile </a></li>
+									<li><a href="#"><i class=" gray-icons cog_2"></i> Settings</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="admin-action">
+							<button class="btn btn-extend btn-block" type="button">Logout</button>
+						</div>
+					</div>
+					</li>
+				</ul>
+			</div>
+			<!-- /.nav-collapse -->
+		</div>
+	</div>
+	<!-- /navbar-inner -->
+</div>
+<div class="left-bar">
+	<div class="side-nav">
+		<ul>
+			<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="leftnav-icon computer_imac_blk"></span><span class="leftnav-label">Dashobard</span></a>
+			<div class="dropdown-menu">
+				<ul>
+					<li><a href="basic-tables.html"><i class=" ledgray-icons table_co"></i> Basic Tables</a></li>
+					<li><a href="data-table.html"><i class=" ledgray-icons application_columns_co"></i> Data Tables</a></li>
+					<li><a href="widgets.html"><i class=" ledgray-icons plugin_co"></i> Widgets</a></li>
+					<li><a href="grid.html"><i class=" ledgray-icons grid_dot_co"></i> Grid</a></li>
+					<li><a href="typography.html"><i class=" ledgray-icons font_co"></i> Typography</a></li>
+					<li><a href="calendar.html"><i class=" ledgray-icons calendar_2_co"></i> Calendar</a></li>
+					<li><a href="charts.html"><i class=" ledgray-icons chart_bar_co"></i> Charts</a></li>
+					<li><a href="file-manager.html"><i class=" ledgray-icons folder_co"></i> File Manager</a></li>
+					<li class="divider"></li>
+					<li><a href="ui-elements.html"><i class=" ledgray-icons wand_co"></i> UI Elements</a></li>
+					<li><a href="buttons-icons.html"><i class=" ledgray-icons pill_co"></i> Buttons &amp; Icons</a></li>
+				</ul>
+			</div>
+			</li>
+			<li><a href="#"><span class="leftnav-icon folder_blk"></span><span class="leftnav-label">Medias</span></a></li>
+			<li><a href="#"><span class="leftnav-icon chart_8_blk"></span><span class="leftnav-label">Statistics</span></a></li>
+			<li><a href="#"><span class="leftnav-icon money_blk"></span><span class="leftnav-label">Orders</span></a></li>
+			<li><a href="#"><span class="leftnav-icon help_blk"></span><span class="leftnav-label">Support</span></a></li>
+			<li><a href="#"><span class="leftnav-icon cog_3_blk"></span><span class="leftnav-label">Settings</span></a></li>
+		</ul>
+	</div>
+</div>
+<div class="main-wrapper">
+	<div class="active-page">
+		<ul>
+			<li><span class="active-page-icon list_blk"></span><span>Typography</span></li>
+		</ul>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<ul class="breadcrumb top-breadcrumb">
+				<li><a href="#"><i class="blue-icons home"></i></a></li>
+				<li><a href="#">Data</a></li>
+				<li class="divider">&raquo;</li>
+				<li><a href="#" class="active">Library</a></li>
+			</ul>
+		</div>
+		<div class="row-fluid">
+			<div class="page-header">
+				<h2>Typography <small>Headings, paragraphs, lists, and other inline type elements</small></h2>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="ledgray-icons text_heading_1_co"></i></span>
+						<h4>Headings</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<h1>h1. Heading 1</h1>
+							<h2>h2. Heading 2</h2>
+							<h3>h3. Heading 3</h3>
+							<h4>h4. Heading 4</h4>
+							<h5>h5. Heading 5</h5>
+							<h6>h6. Heading 6</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="ledgray-icons text_align_justify_co"></i></span>
+						<h4>Parapgraph</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<p>
+								Aenean nibh odio, feugiat eget ullamcorper sit amet, rhoncus vitae sem. In tellus mi, ultrices sed iaculis at, ultricies ac purus. Morbi varius porttitor aliquet. Morbi dui lectus, fermentum sed volutpat sed, iaculis quis odio. Quisque ac bibendum purus. Nulla venenatis libero nec orci porttitor condimentum. Praesent facilisis fringilla dui sed ornare iaculis quis odio. Quisque ac bibendum purus.
+							</p>
+							<p class="lead">
+								 Sed pulvinar, tortor a vehicula lacinia, massa tortor mattis ante, ac tincidunt lorem arcu non turpis. Fusce pharetra tincidunt sem, ac fermentum ipsum porta eget. Duis tincidunt nunc a lectus tincidunt posuere. Ut lacus justo...
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="ledgray-icons kerning_co"></i></span>
+						<h4>Emphasis</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<p class="muted">
+								Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+							</p>
+							<p class="text-warning">
+								Etiam porta sem malesuada magna mollis euismod.
+							</p>
+							<p class="text-error">
+								Donec ullamcorper nulla non metus auctor fringilla.
+							</p>
+							<p class="text-info">
+								Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
+							</p>
+							<p class="text-success">
+								Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="ledgray-icons vcard_co"></i></span>
+						<h4>Addresses</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<address>
+							<strong>Twitter, Inc.</strong><br>
+							 795 Folsom Ave, Suite 600<br>
+							 San Francisco, CA 94107<br>
+							<abbr title="Phone">P:</abbr> (123) 456-7890 </address>
+							<address>
+							<strong>Full Name</strong><br>
+							<a href="mailto:#">first.last@gmail.com</a>
+							</address>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="ledgray-icons text_bold_co"></i></span>
+						<h4>Blockquotes</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block clearfix">
+							<p>
+								 Default blockquotes are styled as such:
+							</p>
+							<blockquote>
+								<p>
+									 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.
+								</p>
+								<small>Someone famous in <cite title="">Body of work</cite></small>
+							</blockquote>
+							<p>
+								 To float your blockquote to the right, add <code>class="pull-right"</code>:
+							</p>
+							<blockquote class="pull-right">
+								<p>
+									 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.
+								</p>
+								<small>Someone famous in <cite title="">Body of work</cite></small>
+							</blockquote>
+						</div>
+						<div class="widget-block clearfix">
+							<div class="clearfix">
+								<blockquote>
+									<p>
+										 Cras erat diam, consequat quis tincidunt nec, eleifend a turpis. Aliquam ultrices feugiat metus, ut imperdiet erat mollis at. Curabitur mattis risus sagittis nibh lobortis vel.
+									</p>
+								</blockquote>
+								<blockquote class="quote_blue">
+									<p>
+										 Cras erat diam, consequat quis tincidunt nec, eleifend a turpis. Aliquam ultrices feugiat metus, ut imperdiet erat mollis at. Curabitur mattis risus sagittis nibh lobortis vel.
+									</p>
+								</blockquote>
+								<blockquote class="quote_orange">
+									<p>
+										 Cras erat diam, consequat quis tincidunt nec, eleifend a turpis. Aliquam ultrices feugiat metus, ut imperdiet erat mollis at. Curabitur mattis risus sagittis nibh lobortis vel.
+									</p>
+								</blockquote>
+								<blockquote class="quote_pink">
+									<p class=" quote">
+										 Cras erat diam, consequat quis tincidunt nec, eleifend a turpis. Aliquam ultrices feugiat metus, ut imperdiet erat mollis at. Curabitur mattis risus sagittis nibh lobortis vel.
+									</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="ledgray-icons list_bullets_co"></i></span>
+						<h4>List</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<h4>Unorder List</h4>
+							<ul class="tick_icn">
+								<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+							</ul>
+							<ul class="alarm_icn">
+								<li>Quisque laoreet risus eget lorem vehicula in egestas purus fermentum.</li>
+							</ul>
+							<ul class="award_icn">
+								<li>Aliquam a ligula eget velit semper porta at in risus.</li>
+							</ul>
+							<ul class="help_icn">
+								<li>Cras non enim sed mauris malesuada tincidunt eget nec enim.</li>
+							</ul>
+							<ul class="clip_icn">
+								<li>Suspendisse blandit imperdiet arcu, et ullamcorper lectus lacinia eu.</li>
+							</ul>
+							<ul class="flag_icn">
+								<li>Nullam non erat tellus, eget dapibus velit.</li>
+							</ul>
+							<ul class="folder_icn">
+								<li>Maecenas id purus lectus, eget fermentum ipsum.</li>
+							</ul>
+							<ul class="globe_icn">
+								<li>Nam tristique arcu vitae massa scelerisque id euismod ligula ullamcorper.</li>
+							</ul>
+							<ul class="heart_icn">
+								<li>Aenean a tortor nisl, ac feugiat quam.</li>
+							</ul>
+							<ul class="info_icn">
+								<li>Sed congue lacus vel risus mollis nec eleifend sapien consequat.</li>
+							</ul>
+							<ul class="medal_icn">
+								<li>Vivamus porttitor sapien eleifend mauris condimentum non semper leo vestibulum.</li>
+							</ul>
+							<ul class="pin_icn">
+								<li>Donec ac tortor quis nibh rhoncus ultricies.</li>
+							</ul>
+							<ul class="plus_icn">
+								<li>Vestibulum sollicitudin velit quis libero adipiscing ut aliquet eros dictum.</li>
+							</ul>
+							<ul class="trophy_icn">
+								<li>Suspendisse blandit imperdiet arcu, et ullamcorper lectus lacinia eu.</li>
+							</ul>
+							<h4>Order List</h4>
+							<ol class="decimal_order">
+								<li>Aenean a tortor nisl, ac feugiat quam.</li>
+								<li>Etiam laoreet lectus sit amet leo ullamcorper sit amet semper sem tempus.</li>
+							</ol>
+							<ol class="upper_roman">
+								<li>Pellentesque tempus varius odio, sit amet bibendum lacus interdum sit amet.</li>
+								<li>Curabitur semper elit sit amet eros consequat volutpat.</li>
+							</ol>
+							<ol class="lower_roman">
+								<li>Sed sit amet lacus mauris, et facilisis augue.</li>
+								<li>Donec volutpat augue non ligula facilisis elementum.</li>
+							</ol>
+							<ol class="lower_alpha">
+								<li>Integer sed erat non libero porttitor venenatis.</li>
+								<li>Nunc nec mi non mauris elementum tincidunt eget quis felis.</li>
+							</ol>
+							<ol class="upper_alpha">
+								<li>Sed blandit elit ac tortor convallis cursus.</li>
+								<li>Duis pretium sem a nunc scelerisque tincidunt ut euismod sapien.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="ledgray-icons list_bullets_co"></i></span>
+						<h4>Horizontal description</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<p>
+								<code>&lt;dl class="dl-horizontal"&gt;</code>
+							</p>
+							<dl class="dl-horizontal">
+								<dt>Description lists</dt>
+								<dd>A description list is perfect for defining terms.</dd>
+								<dt>Euismod</dt>
+								<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+								<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+								<dt>Malesuada porta</dt>
+								<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+								<dt>Felis euismod semper eget lacinia</dt>
+								<dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="ledgray-icons tag_co"></i></span>
+						<h4>Code</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<pre class="prettyprint linenums">
+								 &lt;div class="dropdown"&gt; &lt;!-- Link or button to toggle dropdown --&gt; &lt;ul class="dropdown-menu" role="menu" aria-labelledby="dLabel"&gt; &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/respond.min.js"></script>
+<script src="js/ios-orientationchange-fix.js"></script>
+</body>
+</html>

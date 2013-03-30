@@ -1,0 +1,782 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pontus - a clever responsive admin template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Admin Panel Template">
+<meta name="author" content="Westilian: Kamrujaman Shohel">
+<!-- styles -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/prettify.css" rel="stylesheet">
+<link href="css/aristo-ui.css" rel="stylesheet">
+<link href="css/fullcalendar.css" rel="stylesheet">
+<link href="css/elfinder.css" rel="stylesheet">
+<link href="css/jquery.jqplot.css" rel="stylesheet">
+<link href="css/responsive-tables.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/themes.css" rel="stylesheet">
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie7.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie8.css" />
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie9.css" />
+<![endif]-->
+<!--fav and touch icons -->
+<link rel="shortcut icon" href="ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+<!--============ javascript ===========-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script src="js/jquery.data-table.js"></script>
+<script src="js/prettify.js"></script>
+<script src="js/jquery.metadata.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/stepy.jquery.js"></script>
+<script src="js/inputmask.jquery.js"></script>
+<script src="js/jquery.tagsinput.js"></script>
+<script src="js/uniform.jquery.js"></script>
+<script src="js/fullcalendar.min.js"></script>
+<script src="js/gcal.js"></script>
+<script src="js/elfinder.min.js"></script>
+<script src="js/jquery.notify.js"></script>
+<script src="js/responsive-tables.js"></script>
+<script src="js/jquery.cleditor.js"></script>
+<!--RANGE DATE PICKER-->
+<script src="js/jquery.slider.min.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-colorpicker.js"></script>
+<script src="js/chosen.jquery.js"></script>
+<script src="js/input-limiter.jquery.js"></script>
+<script src="js/jquery.autosize.js"></script>
+<script src="js/raty.jquery.js"></script>
+<script src="js/easing.jquery.js"></script>
+<script src="js/iphone-style-checkboxes.js"></script>
+<script src="js/duallist.jquery.js"></script>
+<script src="js/ui.spinner.min.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<script src="js/jquery.sparkline.min.js"></script>
+<!--JqPlot CHART-->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.jqplot.min.js"></script>
+<script src="js/chart/jqplot.highlighter.min.js"></script>
+<script src="js/chart/jqplot.cursor.min.js"></script>
+<script src="js/chart/jqplot.barRenderer.min.js"></script>
+<script src="js/chart/jqplot.pointLabels.min.js"></script>
+<script src="js/chart/jqplot.dateAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.pieRenderer.min.js"></script>
+<script src="js/chart/jqplot.donutRenderer.min.js"></script>
+<script src="js/chart/jqplot.categoryAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.logAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.canvasTextRenderer.min.js"></script>
+<script src="js/chart/jqplot.canvasAxisTickRenderer.min.js"></script>
+<!-- html5.js for IE less than 9 -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="js/pontus.script.js"></script>
+<script>
+/*=================
+CHART 3
+===================*/	
+$(function(){
+    var s1 = [200, 600, 700, 1000];
+    var s2 = [460, -210, 690, 820];
+    var s3 = [-260, -440, 320, 200];
+    // Can specify a custom tick Array.
+    // Ticks should match up one for each y value (category) in the series.
+    var ticks = ['May', 'June', 'July', 'August'];
+    var plot1 = $.jqplot('chart3', [s1, s2, s3], {
+        // The "seriesDefaults" option is an options object that will
+        // be applied to all series in the chart.
+        seriesDefaults:{
+			shadow: false,   // show shadow or not.
+            renderer:$.jqplot.BarRenderer,
+            rendererOptions: {fillToZero: true}
+        },
+        // Custom labels for the series are specified with the "label"
+        // option on the series option.  Here a series option object
+        // is specified for each series.
+        series:[
+            {label:'Hotel',
+			color:'#eb8439'},
+            {label:'Event Regristration',
+			color:'#2d8800'},
+            {label:'Airfare',
+			color:'#2e7197'}
+        ],
+        // Show the legend and put it outside the grid, but inside the
+        // plot container, shrinking the grid to accomodate the legend.
+        // A value of "outside" would not shrink the grid and allow
+        // the legend to overflow the container.
+        legend: {
+            show: true,
+            location: 'ne',
+			xoffset: 12,        // pixel offset of the legend box from the x (or x2) axis.
+        yoffset: 12,        // pixel offset of the legend box from the y (or y2) axis.
+        },
+        axes: {
+            // Use a category axis on the x axis and use our custom ticks.
+            xaxis: {
+                renderer: $.jqplot.CategoryAxisRenderer,
+                ticks: ticks
+            },
+            // Pad the y axis just a little so bars can get close to, but
+            // not touch, the grid boundaries.  1.2 is the default padding.
+            yaxis: {
+                pad: 1.05,
+                tickOptions: {formatString: '$%d'}
+            }
+        },
+		grid: {
+            background: '#fff',
+            drawBorder: false,
+			drawGridLines: true,
+            shadow: false,
+            gridLineColor: '#eee',
+            gridLineWidth: 1,
+			borderWidth:.5,
+			borderColor: '#999999',   
+                    // draw a shadow for grid.
+    }
+    });
+});
+/*=================
+CHART 4
+===================*/
+$(function(){
+  var s1 = [2, 6, 7, 10];
+  var s2 = [7, 5, 3, 4];
+  var s3 = [14, 9, 3, 8];
+  plot3 = $.jqplot('chart4', [s1, s2, s3], {
+    // Tell the plot to stack the bars.
+    stackSeries: true,
+    captureRightClick: true,
+    seriesDefaults:{
+		shadow: false,   // show shadow or not.
+      renderer:$.jqplot.BarRenderer,
+      rendererOptions: {
+          // Put a 30 pixel margin between bars.
+          barMargin: 30,
+          // Highlight bars when mouse button pressed.
+          // Disables default highlighting on mouse over.
+          highlightMouseDown: true   
+      },
+      pointLabels: {show: true}
+    },
+    axes: {
+      xaxis: {
+          renderer: $.jqplot.CategoryAxisRenderer
+      },
+      yaxis: {
+        // Don't pad out the bottom of the data range.  By default,
+        // axes scaled as if data extended 10% above and below the
+        // actual range to prevent data points right on grid boundaries.
+        // Don't want to do that here.
+        padMin: 0
+      }
+    },
+    legend: {
+      show: true,
+      location: 'ne',
+      placement: 'outsideGrid'
+    } ,
+	grid: {
+            background: '#fff',
+            drawBorder: false,
+			drawGridLines: true,
+            shadow: false,
+            gridLineColor: '#eee',
+            gridLineWidth: 1,
+			borderWidth:.5,
+			borderColor: '#999999',   
+                    // draw a shadow for grid.
+    },
+	 // Custom labels for the series are specified with the "label"
+        // option on the series option.  Here a series option object
+        // is specified for each series.
+        series:[
+            {label:'Hotel',
+			color:'#edc240'},
+            {label:'Event Regristration',
+			color:'#b03939'},
+            {label:'Airfare',
+			color:'#a1b490'}
+        ],
+  });
+});
+/*=================
+CHART 5
+===================*/
+$(function(){
+  plot2 = jQuery.jqplot('chart5',
+    [[['Verwerkende industrie', 9],['Retail', 23], ['Primaire producent', 15],
+    ['Out of home', 65],['Groothandel', 20], ['Grondstof', 20], ['Consument', 20], ['Bewerkende industrie', 30]]],
+    {
+      title: 'Pie Chart',
+	  seriesColors: [ "#eb8439", "#2d8800", "#2e7197", "#579575", "#839557", "#958c12",
+        "#953579", "#4b5de4" ],  // colors that will
+         // be assigned to the series.  If there are more series than colors, colors
+         // will wrap around and start at the beginning again.
+      seriesDefaults: {
+        shadow: false,
+        renderer: jQuery.jqplot.PieRenderer,
+        rendererOptions: {
+          startAngle: 180,
+          sliceMargin: 4,
+          showDataLabels: true }
+      },
+		grid: {
+			 background: '#fff',
+         borderColor: '#ccc',     // CSS color spec for border around grid.
+        borderWidth: 1.0,           // pixel width of border around grid.
+        shadow: false               // draw a shadow for grid.
+    },
+      legend: { show:true, location: 'w' }
+    }
+  );
+});
+/*=================
+CHART 6
+===================*/
+$(function () {
+    var s1 = [[2002, 12000], [2003, 18000], [2004, 80000], [2005, 99000], [2006, 12100],
+    [2007, 48000], [2008, 114000], [2009, 133000], [2010, 161000], [2011, 173000]];
+    var s2 = [[2002, 5000], [2003, 8000], [2004, 6000], [2005, 11800], [2006, 12400],
+    [2007, 12800], [2008, 13200], [2009, 12600], [2010, 13100]];
+    plot1 = $.jqplot("chart6", [s2, s1], {
+        // Turns on animatino for all series in this plot.
+        animate: true,
+        // Will animate plot on calls to plot1.replot({resetAxes:true})
+        animateReplot: true,
+        cursor: {
+            show: true,
+            zoom: false,
+            looseZoom: true,
+            showTooltip: false
+        },
+        series:[
+            {
+                pointLabels: {
+                    show: true
+                },
+                renderer: $.jqplot.BarRenderer,
+                showHighlight: false,
+                yaxis: 'y2axis',
+                rendererOptions: {
+                    // Speed up the animation a little bit.
+                    // This is a number of milliseconds. 
+                    // Default for bar series is 3000. 
+                    animation: {
+                        speed: 2500
+                    },
+                    barWidth: 15,
+                    barPadding: -15,
+                    barMargin: 0,
+                    highlightMouseOver: false
+                }
+            },
+            {
+                rendererOptions: {
+                    // speed up the animation a little bit.
+                    // This is a number of milliseconds.
+                    // Default for a line series is 2500.
+                    animation: {
+                        speed: 2000
+                    }
+                }
+            }
+        ],
+        axesDefaults: {
+            pad: 0
+        },
+        axes: {
+            // These options will set up the x axis like a category axis.
+            xaxis: {
+                tickInterval: 1,
+                drawMajorGridlines: false,
+                drawMinorGridlines: true,
+                drawMajorTickMarks: false,
+                rendererOptions: {
+                tickInset: 0.5,
+                minorTicks: 1
+            }
+            },
+            yaxis: {
+                tickOptions: {
+                    formatString: "$%'d"
+                },
+                rendererOptions: {
+                    forceTickAt0: true
+                }
+            },
+            y2axis: {
+                tickOptions: {
+                    formatString: "$%'d"
+                },
+                rendererOptions: {
+                    // align the ticks on the y2 axis with the y axis.
+                    alignTicks: true,
+                    forceTickAt0: true
+                }
+            }
+        },
+        highlighter: {
+            show: true,
+            showLabel: true,
+            tooltipAxes: 'y',
+            sizeAdjust: 7.5 , tooltipLocation : 'ne'
+        },
+		grid: {
+            background: '#fff',
+            drawBorder: false,
+			drawGridLines: true,
+            shadow: false,
+            gridLineColor: '#eee',
+            gridLineWidth: 1,
+			borderWidth:.5,
+			borderColor: '#999999',   
+    },
+	seriesDefaults: {
+        lineWidth: 2, // Width of the line in pixels.
+        shadow: false,   // show shadow or not.
+		color: '#edc240',
+		 markerOptions: {
+            show: true,             // wether to show data point markers.
+            style: 'filledCircle',  // circle, diamond, square, filledCircle.
+                                    // filledDiamond or filledSquare.
+            lineWidth: 2,       // width of the stroke drawing the marker.
+            size: 14,            // size (diameter, edge length, etc.) of the marker.
+            color: '#eb8439',    // color of marker, set to color of line by default.
+            shadow: true,       // wether to draw shadow on marker or not.
+            shadowAngle: 45,    // angle of the shadow.  Clockwise from x axis.
+            shadowOffset: 1,    // offset from the line of the shadow,
+            shadowDepth: 3,     // Number of strokes to make when drawing shadow.  Each stroke
+                                // offset by shadowOffset from the last.
+            shadowAlpha: 0.07   // Opacity of the shadow
+        }
+	}
+    });
+});
+/*=================
+CHART 8
+===================*/
+$(function(){
+  var plot2 = $.jqplot ('chart8', [[3,7,9,1,5,3,8,2,5,50,10,18,30]], {
+      // Give the plot a title.
+      title: 'Plot With Options',
+      // You can specify options for all axes on the plot at once with
+      // the axesDefaults object.  Here, we're using a canvas renderer
+      // to draw the axis label which allows rotated text.
+      axesDefaults: {
+        labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+      },
+      // Likewise, seriesDefaults specifies default options for all
+      // series in a plot.  Options specified in seriesDefaults or
+      // axesDefaults can be overridden by individual series or
+      // axes options.
+      // Here we turn on smoothing for the line.
+      seriesDefaults: {
+		  shadow: false,   // show shadow or not.
+		  lineWidth: 2, // Width of the line in pixels.
+        shadow: false,   // show shadow or not.
+		fill: true,        // fill under the line,
+        fillAndStroke: true,       // *stroke a line at top of fill area.
+        fillColor: '#eec548',   // *custom fill color for filled lines (default is line color).
+        fillAlpha: .3,       // *custom alpha to apply to fillColor.
+		color: '#edc240',
+          rendererOptions: {
+              smooth: true
+          }
+      },
+      // An axes object holds options for all axes.
+      // Allowable axes are xaxis, x2axis, yaxis, y2axis, y3axis, ...
+      // Up to 9 y axes are supported.
+      axes: {
+        // options for each axis are specified in seperate option objects.
+        xaxis: {
+          label: "X Axis",
+          // Turn off "padding".  This will allow data point to lie on the
+          // edges of the grid.  Default padding is 1.2 and will keep all
+          // points inside the bounds of the grid.
+          pad: 0
+        },
+        yaxis: {
+          label: "Y Axis"
+        }
+      },
+		grid: {
+			background: '#fff',
+         borderColor: '#ccc',     // CSS color spec for border around grid.
+        borderWidth: 1.0,           // pixel width of border around grid.
+        shadow: false               // draw a shadow for grid.
+    }
+    });
+});
+/*=================
+CHART 9
+===================*/
+$(function(){
+  var line1 = [14, 32, 41, 44, 40, 37, 29];
+  var line2 = [7, 12, 15, 17, 20, 27, 39];
+  var plot4 = $.jqplot('chart9', [line1, line2], {
+      title: 'Stacked Bar Chart with Cumulative Point Labels',
+      stackSeries: true,
+      seriesDefaults: {
+		  shadow: false,   // show shadow or not.
+          renderer: $.jqplot.BarRenderer,
+          rendererOptions:{barMargin: 25},
+          pointLabels:{show:true, stackedValue: true}
+      },
+      axes: {
+          xaxis:{renderer:$.jqplot.CategoryAxisRenderer}
+      },
+		grid: {
+				background: '#fff',
+         borderColor: '#ccc',     // CSS color spec for border around grid.
+        borderWidth: 1.0,           // pixel width of border around grid.
+        shadow: false               // draw a shadow for grid.
+    },
+	 series:[
+            {label:'Hotel',
+			color:'#edc240'},
+            {label:'Event Regristration',
+			color:'#b03939'},
+        ],
+  });
+});
+</script>
+</head>
+<body class="menu_hover">
+<div class="top-bar">
+	<div class="scroll-top">
+		<a href="#" class="tip-top" title="Go Top">Top</a>
+	</div>
+	<div class="bar-container">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<div class="logo">
+						<img src="images/logo.png" width="180" height="68" alt="Anchor">
+					</div>
+				</div>
+				<div class="span6">
+					<div class="navbar-search">
+						<form class="form-search">
+							<div class="input-append">
+								<input type="text" class="search-query" value="Topic...">
+								<button type="submit" class="btn">Search</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="span3 clearfix">
+					<div class="btn-toolbar top-toolbar pull-right">
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Notifications"><span class="notify-tiptop">10</span><i class="gray-icons globe"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Notifications</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/post-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Vestibulum</i> is posted an article. lacus est congue... </span>
+									<span class="notification-meta">
+									12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/vdo-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>jaman</i> is posted a video. lacus est congue... </span>
+									<span class="notification-meta">
+									12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/audio-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>zara</i> is posted an audio files. lacus est congue... </span>
+									<span class="notification-meta">
+									12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Messages"><span class="notify-tiptop tips-blue">10</span><i class="gray-icons mail"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Messages</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>feroz</i> is send a message to you. lacus est congue... </span>
+									<span class="notification-meta">
+									3 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>chisty</i> is send a message to you. lacus est congue... </span>
+									<span class="notification-meta">
+									10 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>golam</i> is send a message to you. lacus est congue... </span>
+									<span class="notification-meta">
+									on Tuesday </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Recent Updates"><span class="notify-tiptop tips-green">100</span><i class="gray-icons list_image"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Recent Updates</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/order-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Order</i> $3,645.8 Dollars order is pending. waiting for approval... </span>
+									</a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/events-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Events</i> Total 30 new events is created... </span>
+									<span class="notification-meta">
+									Last Week </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/files-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Files</i> Total 2,564 files are posted in last week... </span>
+									<span class="notification-meta">
+									Last Week </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li><a href="index.html"><i class="white-icons home"></i> Home</a></li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons list_images"></i> Forms <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="form-elements.html"><i class="ledgray-icons application_form_co"></i> All Form Elements</a></li>
+						<li><a href="form-validation.html"><i class="ledgray-icons asterisk_orange_co"></i> Form Validation</a></li>
+						<li><a href="form-styles.html"><i class="ledgray-icons application_double_co"></i> Form Styles</a></li>
+						<li><a href="form-wizard.html"><i class="ledgray-icons application_view_tile_co"></i> Form Wizard</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons cup"></i> Features <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="basic-tables.html"><i class=" ledgray-icons table_co"></i> Basic Tables</a></li>
+						<li><a href="data-table.html"><i class=" ledgray-icons application_columns_co"></i> Data Tables</a></li>
+						<li><a href="widgets.html"><i class=" ledgray-icons plugin_co"></i> Widgets</a></li>
+						<li><a href="grid.html"><i class=" ledgray-icons grid_dot_co"></i> Grid</a></li>
+						<li><a href="typography.html"><i class=" ledgray-icons font_co"></i> Typography</a></li>
+						<li><a href="calendar.html"><i class=" ledgray-icons calendar_2_co"></i> Calendar</a></li>
+						<li><a href="charts.html"><i class=" ledgray-icons chart_bar_co"></i> Charts</a></li>
+						<li><a href="file-manager.html"><i class=" ledgray-icons folder_co"></i> File Manager</a></li>
+						<li class="divider"></li>
+						<li><a href="ui-elements.html"><i class=" ledgray-icons wand_co"></i> UI Elements</a></li>
+						<li><a href="buttons-icons.html"><i class=" ledgray-icons pill_co"></i> Buttons &amp; Icons</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons documents"></i> Pages <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu"><a href="#"><i class=" ledgray-icons cross_octagon_fram_co"></i> Error Pages</a>
+						<ul class="dropdown-menu">
+							<li><a href="page-403.html"><i class=" ledgray-icons page_white_error_co"></i> 403 Error Page</a></li>
+							<li><a href="page-404.html"><i class=" ledgray-icons page_white_error_co"></i> 404 Error Page</a></li>
+							<li><a href="page-405.html"><i class=" ledgray-icons page_white_error_co"></i> 405 Error Page</a></li>
+							<li><a href="page-500.html"><i class=" ledgray-icons page_white_error_co"></i> 500 Error Page</a></li>
+							<li><a href="page-503.html"><i class=" ledgray-icons page_white_error_co"></i> 503 Error Page</a></li>
+						</ul>
+						</li>
+						<li><a href="login.html"><i class=" ledgray-icons ui_text_field_password_co"></i> Login Page</a></li>
+						<li><a href="flip-login.html"><i class=" ledgray-icons ui_text_field_password_co"></i> Flip Login Page</a></li>
+						<li><a href="forgot-pass.html"><i class=" ledgray-icons textfield_rename_co"></i> Forgot Password</a></li>
+						<li><a href="inbox.html"><i class=" ledgray-icons inbox_co"></i> Inbox</a></li>
+						<li><a href="user-profile.html"><i class=" ledgray-icons user_silhouette_co"></i> User Profile</a></li>
+						<li><a href="invoice.html"><i class=" ledgray-icons money_dollar_co"></i> Invoice</a></li>
+						<li><a href="gallery.html"><i class=" ledgray-icons slides_co"></i> Gallery</a></li>
+						<li><a href="search.html"><i class=" ledgray-icons magnifier_co"></i> Search Page</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons frames"></i> Extras <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="blank-layout.html"><i class=" ledgray-icons layout_mix_co"></i> Blank Layout</a></li>
+						<li><a href="layout-01.html"><i class=" ledgray-icons layout_co"></i> Layout 01</a></li>
+						<li><a href="layout-02.html"><i class=" ledgray-icons layout_select_co"></i> Layout 02</a></li>
+						<li><a href="layout-03.html"><i class=" ledgray-icons layout_select_content_co"></i> Layout 03</a></li>
+						<li><a href="layout-with-sidebar.html"><i class=" ledgray-icons layout_select_sidebar_co"></i> Layout With Sidebar</a></li>
+						<li><a href="fixed-layout.html"><i class=" ledgray-icons layout_join_co"></i> Fixed Layout</a></li>
+						<li><a href="google-chart.html"><i class=" ledgray-icons chart_curve_co"></i> Google Chart</a></li>
+					</ul>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="flag-icons"><img src="images/flag-icons/bd.png" width="16" height="11" alt="Bangla"></i><b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/us.png" width="16" height="11" alt="United States"></i> United States</a></li>
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/gb.png" width="16" height="11" alt="United Kingdom"></i> United Kingdom</a></li>
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/au.png" width="16" height="11" alt="United States"></i> Australia</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons admin_user_2"></i> Uncle Jhone <b class="caret"></b></a>
+					<div class="dropdown-menu admin-dropdown">
+						<div class="clearfix">
+							<div class="admin-user-thumb">
+								<img src="images/avatar-80x80.png" width="80" height="80" alt="img">
+							</div>
+							<div class="admin-menu-link">
+								<ul>
+									<li><a href="#"><i class=" gray-icons user"></i> Jhone Lee</a></li>
+									<li><a href="#"><i class=" gray-icons mail"></i> jhon@mymail.com</a></li>
+									<li><a href="#"><i class=" gray-icons create_write"></i> Edit Profile </a></li>
+									<li><a href="#"><i class=" gray-icons cog_2"></i> Settings</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="admin-action">
+							<button class="btn btn-extend btn-block" type="button">Logout</button>
+						</div>
+					</div>
+					</li>
+				</ul>
+			</div>
+			<!-- /.nav-collapse -->
+		</div>
+	</div>
+	<!-- /navbar-inner -->
+</div>
+<div class="left-bar">
+	<div class="side-nav">
+		<ul>
+			<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="leftnav-icon computer_imac_blk"></span><span class="leftnav-label">Dashobard</span></a>
+			<div class="dropdown-menu">
+				<ul>
+					<li><a href="basic-tables.html"><i class=" ledgray-icons table_co"></i> Basic Tables</a></li>
+					<li><a href="data-table.html"><i class=" ledgray-icons application_columns_co"></i> Data Tables</a></li>
+					<li><a href="widgets.html"><i class=" ledgray-icons plugin_co"></i> Widgets</a></li>
+					<li><a href="grid.html"><i class=" ledgray-icons grid_dot_co"></i> Grid</a></li>
+					<li><a href="typography.html"><i class=" ledgray-icons font_co"></i> Typography</a></li>
+					<li><a href="calendar.html"><i class=" ledgray-icons calendar_2_co"></i> Calendar</a></li>
+					<li><a href="charts.html"><i class=" ledgray-icons chart_bar_co"></i> Charts</a></li>
+					<li><a href="file-manager.html"><i class=" ledgray-icons folder_co"></i> File Manager</a></li>
+					<li class="divider"></li>
+					<li><a href="ui-elements.html"><i class=" ledgray-icons wand_co"></i> UI Elements</a></li>
+					<li><a href="buttons-icons.html"><i class=" ledgray-icons pill_co"></i> Buttons &amp; Icons</a></li>
+				</ul>
+			</div>
+			</li>
+			<li><a href="#"><span class="leftnav-icon folder_blk"></span><span class="leftnav-label">Medias</span></a></li>
+			<li><a href="#"><span class="leftnav-icon chart_8_blk"></span><span class="leftnav-label">Statistics</span></a></li>
+			<li><a href="#"><span class="leftnav-icon money_blk"></span><span class="leftnav-label">Orders</span></a></li>
+			<li><a href="#"><span class="leftnav-icon help_blk"></span><span class="leftnav-label">Support</span></a></li>
+			<li><a href="#"><span class="leftnav-icon cog_3_blk"></span><span class="leftnav-label">Settings</span></a></li>
+		</ul>
+	</div>
+</div>
+<div class="main-wrapper">
+	<div class="active-page">
+		<ul>
+			<li><span class="active-page-icon graph_blk"></span><span>Charts &amp; Graph</span></li>
+		</ul>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="gray-icons graph"></i></span>
+						<h4>Bar Chart</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<div id="chart6" class="chart_block">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="gray-icons graph"></i></span>
+						<h4>Bar Chart</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<div id="chart3" class="chart_block">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="gray-icons graph"></i></span>
+						<h4>Bar plot chart</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<div id="chart4" class="chart_block">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="gray-icons chart_2"></i></span>
+						<h4>Pie Chart</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<div id="chart5" class="chart_block">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="gray-icons graph"></i></span>
+						<h4>Line Chart</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<div id="chart8" class="chart_block">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="gray-icons graph"></i></span>
+						<h4>Bar plot chart</h4>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<div id="chart9" class="chart_block">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/respond.min.js"></script>
+<script src="js/ios-orientationchange-fix.js"></script>
+</body>
+</html>

@@ -1,0 +1,2562 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pontus - Form Elements</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Admin Panel Template">
+<meta name="author" content="Westilian: Kamrujaman Shohel">
+<!-- styles -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/prettify.css" rel="stylesheet">
+<link href="css/aristo-ui.css" rel="stylesheet">
+<link href="css/fullcalendar.css" rel="stylesheet">
+<link href="css/elfinder.css" rel="stylesheet">
+<link href="css/themes.css" rel="stylesheet">
+<link href="css/jquery.jqplot.css" rel="stylesheet" />
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie7.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie8.css" />
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="css/ie/ie9.css" />
+<![endif]-->
+<!--fav and touch icons -->
+<link rel="shortcut icon" href="ico/favicon.ico">
+<!-- javascript
+================================================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script src="js/jquery.data-table.js"></script>
+<script src="js/prettify.js"></script>
+<script src="js/jquery.metadata.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/stepy.jquery.js"></script>
+<script src="js/inputmask.jquery.js"></script>
+<script src="js/jquery.tagsinput.js"></script>
+<script src="js/uniform.jquery.js"></script>
+<script src="js/fullcalendar.min.js"></script>
+<script src="js/gcal.js"></script>
+<script src="js/elfinder.min.js"></script>
+<script src="js/jquery.notify.js"></script>
+<!--RANGE DATE PICKER-->
+<script src="js/jquery.slider.min.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-colorpicker.js"></script>
+<script src="js/chosen.jquery.js"></script>
+<script src="js/input-limiter.jquery.js"></script>
+<script src="js/jquery.autosize.js"></script>
+<script src="js/raty.jquery.js"></script>
+<script src="js/easing.jquery.js"></script>
+<script src="js/iphone-style-checkboxes.js"></script>
+<script src="js/duallist.jquery.js"></script>
+<script src="js/ui.spinner.min.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<!--<script src="js/jquery.tools.min.js">___conflicting tooltip</script>-->
+<script src="js/prettify.js"></script>
+<script src="js/jquery.sparkline.min.js"></script>
+<!-- html5.js for IE less than 9 -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--JqPlot CHART-->
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.jqplot.min.js"></script>
+<script src="js/chart/jqplot.highlighter.min.js"></script>
+<script src="js/chart/jqplot.cursor.min.js"></script>
+<script src="js/chart/jqplot.barRenderer.min.js"></script>
+<script src="js/chart/jqplot.pointLabels.min.js"></script>
+<script src="js/chart/jqplot.dateAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.pieRenderer.min.js"></script>
+<script src="js/chart/jqplot.donutRenderer.min.js"></script>
+<script src="js/chart/jqplot.categoryAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.logAxisRenderer.min.js"></script>
+<script src="js/chart/jqplot.canvasTextRenderer.min.js"></script>
+<script src="js/chart/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script src="js/anchor.script.js"></script>
+</head>
+<body class="no-leftbar">
+<div class="top-bar">
+<div class="scroll-top">
+			<a href="#" class="tip-top" title="Go Top">Top</a>
+		</div>
+  <div class="bar-container">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="logo"> <img src="images/logo.png" width="180" height="68" alt="Pontus"> </div>
+        </div>
+        <div class="span9">
+        <div class="help-button pull-left">
+         <a href="#myModal" class=" btn  btn-info btn-large btn-icon" data-toggle="modal"><i class="white-icons help"></i> Support</a>
+            <a href="#source-credit" class=" btn  btn-info btn-large btn-icon"><i class="white-icons user"></i>Sources and Credits</a>
+            
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 id="myModalLabel">Support</h3>
+</div>
+<div class="modal-body">
+<p>Thank you for purchasing my theme. I am making a support forum that will publish very soon. Until publish support forum all support will be provide by email or theme comments box or facebook fan page . If you have any questions that are beyond the scope of this help file, please feel free to email by my <a href="http://themeforest.net/user/westilian">profile email form</a>. 
+<br>
+You can also visit my facbook fan page.
+<br> 
+<a href="http://www.facebook.com/pages/Westilian/255587961124883" title="Westilian Fan Page"><img src="http://farm7.static.flickr.com/6210/6061749564_92bc539e8f_m.jpg" alt="fblike" height="52" width="205"></a>
+<br>
+Thanks so much!</p>
+</div>
+<div class="modal-footer">
+<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+</div>
+</div>
+         
+               </div>
+               
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="main-wrapper">
+  
+  <div class="container-fluid">
+  <div class="row-fluid">
+<div class="span3">
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+<span class="h-icon"><i class="gray-icons list"></i></span> Start
+</a>
+</div>
+<div id="collapseOne" class="accordion-body collapse in">
+<div class="accordion-inner">
+<ul>
+<li><a href="#about">About Pontus</a></li>
+            <li><a href="#feature-list">Feature List</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+<span class="h-icon"><i class="gray-icons list"></i></span> Initialization
+</a>
+</div>
+<div id="collapseTwo" class="accordion-body collapse">
+<div class="accordion-inner">
+<ul>
+            <li><a href="#html-structure">Html Structure</a>
+              <ul>
+                <li><a href="#common-html-structure">Common Html Structure</a></li>
+                <li><a href="#boxy-widget">Boxy Widget</a></li>
+                <li><a href="#non-boxy-widget">Non Boxy Widget</a></li>
+              </ul>
+            </li>
+            <li><a href="#css-structure">Css Structure</a>
+              <ul>
+                <li><a href="#included-css">Included CSS</a></li>
+                <li><a href="#css-ie-hack">CSS IE different version hack</a></li>
+                <li><a href="#ie9-css3-media-query">Less than IE9 CSS3 Media Query support</a></li>
+              </ul>
+            </li>
+            <li><a href="#files-folder">Files and Folders Structure</a></li>
+          </ul>
+</div>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+<span class="h-icon"><i class="gray-icons list"></i></span> Components &amp; Plugins
+</a>
+</div>
+<div id="collapseThree" class="accordion-body collapse">
+<div class="accordion-inner">
+<ul>
+            <li><a href="#plugins">Plugins</a></li>
+            <li><a href="#forms">Forms</a>
+              <ul>
+                <li><a href="#stepy-wizard">Stepy Wizard</a></li>
+                <li><a href="#form-validation">Form Validation</a></li>
+              </ul>
+            </li>
+           <!-- <li><a href="#all-widgets">Widgets</a></li>
+           
+            <li><a href="#buttons-icons">Buttons &amp; Icons</a></li>
+            <li><a href="#ui-elements">All UI Elements</a></li>-->
+        
+            <li><a href="#pages">Pages</a> 
+              <!--<ul>
+               <li><a href="#inbox">Message Box</a></li>
+              
+              <li><a href="#post-content">Content Post</a></li>
+               <li><a href="#login">Login Page</a></li>
+               <li><a href="#login2">Another Login Page</a></li>
+               <li><a href="#forgot-pass">Forgot Password Page</a></li>
+              
+              <li><a href="#error">Error Page</a></li>
+              </ul>--> 
+            </li>
+          </ul>
+</div>
+</div>
+ <div class="accordion-group">
+      <div class="accordion-heading"> <a class="accordion-toggle" href="#themes-layout"><span class="h-icon"><i class="gray-icons list"></i></span> Themes &amp; Layout</a> </div>
+    </div>
+    <div class="accordion-group">
+      <div class="accordion-heading"> <a class="accordion-toggle" href="#psd-files"><span class="h-icon"><i class="gray-icons list"></i></span> PSD Files </a> </div>
+    </div>
+    <div class="accordion-group">
+      <div class="accordion-heading"><a class="accordion-toggle" href="#source-credit"><span class="h-icon"><i class="gray-icons list"></i></span> Sources and Credits</a> </div>
+    </div>
+</div>
+</div>
+        
+        
+        
+        
+</div>
+<div class="span9">
+      
+  <section id="about">
+    
+    		<div class="row-fluid">
+			<div class="span12">
+        <div class="box-widget">
+          <div class="widget-container">
+                 <div class="widget-block">
+               
+      <div class="row-fluid">
+        <div class="page-header">
+          <h1>Pontus <small> a clever responsive admin template</small></h1>
+        </div>
+      </div>
+      <div class="row-fluid introduction">
+        <div class="span4">
+          <ul class="author-info">
+            <li> <strong>Created:</strong> 01/04/2013</li>
+            <li><strong>Latest Update:</strong> 01/14/2013 </li>
+            <li><strong> By:</strong> Kamrujaman Shohel </li>
+            <li><strong> Email:</strong> mail@kjaman.com </li>
+          </ul>
+        </div>
+        <div class="span4">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email by my <a href="http://themeforest.net/user/westilian">profile email form</a>.<br>
+        Thanks so much!</div>
+      </div>
+      <div class="row-fluid whitespace">
+        <h2> About Pontus</h2>
+        <p>Pontus is very powerfull responsive admin template. Here have used all latest technology. It is bootstarp compatible so it is very easy to use. This template support fluid and fixed both layout. Here is used CSS3, HTML5, Media query, IOS orientation fix, toch frienly and very much adaptive with any size viewport especially iPhone, iPad, androind phone, tablet. </p>
+        <p>Being powered by jQuery and Bootstarp with lots of plugins implemented in 35 separated HTML files and having Icons Sprites with different styles, widgets, Charts, Notifications, tooltips this has become a complete admin panel for any kind of web presence.</p>
+        <p>I always appreciate your good suggestions. If you have any suggestion or if you got any bug, errors then please send me private message by my <a href="http://themeforest.net/user/westilian">profile email form</a>.</p>
+        
+         
+        <h3>Quick Scan</h3>
+<img src="http://qrfree.kaywa.com/?s=8&d=http%3A%2F%2Fwww.lab.westilian.com%2Fpontus%2F" alt="QRCode"/>
+<h3>For Responsive View on Desktop</h3>
+<p>If you want to see all viewport responsive view then just click following link</p>
+<a href="http://bit.ly/WBEPPI" target="_blank">http://bit.ly/WBEPPI</a>
+      </div>
+      
+      
+      <div class="row-fluid follow-label"> <a href="http://twitter.com/home?status=To+nice+collections+of+templates+and+themes+visit+http%3A%2F%2Fthemeforest.net%2Fuser%2Fwestilian" target="_blank" title="Tweet This"><img src="http://farm7.static.flickr.com/6190/6061198413_4f8b51e6c7_m.jpg" alt="tweet-this" height="52" width="205"></a><a href="http://themeforest.net/user/westilian/follow" title="Follow me on Envato"><img src="http://farm7.static.flickr.com/6081/6061198391_826bbfc7e6_m.jpg" alt="follow-envato" height="52" width="205"></a><a href="http://www.facebook.com/pages/Westilian/255587961124883" title="Westilian Fan Page"><img src="http://farm7.static.flickr.com/6210/6061749564_92bc539e8f_m.jpg" alt="fblike" height="52" width="205"></a> </div>
+    
+                 </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+		</div>
+		</section>
+        
+        
+        <section id="feature-list">
+      <div class="row-fluid">
+      <div class="box-widget">
+          
+          <div class="widget-container">
+                <div class="widget-block">
+                  <div class="page-header">
+          <h1>Features List</h1>
+        </div>
+       
+<h3>Site Map</h3>
+<pre>
+[+] FORMS
+    + All Form Elements - all form elements here
+    + Form Validation - form validation here
+    + Form Styles - some examples how you can use form?
+    + Form Wizard - stepy wizrad
+    
+[+] FEATURES
+    + Basic Tables - simple tables here
+    + Data Tables - dynamic tables here
+    + Widgets - lots of cool widgets is here
+    + Grid - all grid is here
+    + Typography - all common typo is here
+    + Calendar - full calendar is here
+    + Charts - jQplot charts are here
+    + File Manager - a nice file manager
+    + UI Elements - lots of nice UI elements here 
+    + Buttons & Icons - 1000+ buttons and icons here
+    
+[+] PAGES
+    + Error Pages - 5 types nice error pages here 
+       = 403 Error Page
+       = 404 Error Page
+       = 405 Error Page
+       = 500 Error Page
+       = 503 Error Page
+     + Login Page - a simple cool login page here
+     + Flip Login Page - login page with flip efffect
+     + Forgot Password - forgot password page here
+     + Inbox - a good looking mail box here
+     + User Profile - a nice user profile with timeline 
+     + Invoice - a invoice template
+     + Gallery - image gallery
+     + Search Page - search page with list switcher 
+
+[+] EXTRAS
+     + Blank Layout - this a blank layout
+     + Layout 01 - layout without leftbar
+     + Layout 02 - layout with scroll leftbar
+     + Layout 03 - layout with sidebar but no leftbar
+     + Layout With Sidebar - layout with sidebar
+     + Fixed Layout - fixed width layout
+     + Google Chart - chart using google js api
+</pre>
+
+<h3>Features Highlight</h3>
+<ol>
+  <li>100% Rsponsive Template</li>
+  <li>Desktop, iPhone, iPad, Tablet and any smartphone friendly</li>
+  <li>Bootstrap Compatible</li>
+  <li>35 Html files</li>
+  <li>1000+ Icons Sprite</li>
+  <li>Nice and clean Dashboard</li>
+  <li>2 Diffrent login pages</li>
+  <li>5 Different eror pages style</li>
+  <li>Lots of cool Widget</li>
+  <li> CSS3</li>
+  <li>IOS  orientation fix</li>
+  <li>Cool Typography</li>
+  <li>jQuery powered</li>
+  <li>jQuery UI</li>
+  <li>Cool JQuery Chosen Selectbox</li>
+  <li>JQuery Uniform</li>
+  <li>Nice Dropdown</li>
+  <li>Sticky Notification</li>
+  <li>jQuery noty</li>
+  <li>Sexy UI slider</li>
+  <li>Tags Input</li>
+  <li>jQuery tooltip</li>
+  <li>jQuery Minichart</li>
+  <li>Modal and Dialoge</li>
+  <li>Elfinder File manager</li>
+  <li>jQuery Accordion</li>
+  <li>Check All and sliding action Menu</li>
+  <li>Data Table</li>
+  <li>Auto Complete</li>
+  <li>Full Calendar</li>
+  <li>jQuery Raty</li>
+  <li>Smart Wizard</li>
+  <li>jQuery Validation</li>
+  <li>Collapsible Widget</li>
+  <li>JQplo chart</li>
+  <li>Google chart</li>
+  <li>Syntax Highlighter</li>
+  <li><strong> AND  many more <ins>+</ins></strong></li>
+</ol>
+
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+       
+      </div>
+    </section>
+    
+    <section id="html-structure">
+      <div class="box-widget">
+          
+          <div class="widget-container">
+                <div class="widget-block">
+                 
+      <div class="row-fluid">
+        <div class="page-header">
+          <h1>Html Structure</h1>
+          <p>This is a 3 columns layout responsive admin template. This template have a common html structure. </p>
+        </div>
+        <div class="row-fluid">
+          <div class="span7">
+            <h2>Initialize</h2>
+            <pre  class=" prettyprint linenums">
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Pontus - a clever responsive admin template&lt;/title&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Admin Panel Template&quot;&gt;
+&lt;meta name=&quot;author&quot; content=&quot;Westilian: Kamrujaman Shohel&quot;&gt;
+&lt;!-- styles --&gt;
+&lt;link href=&quot;css/bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;css/styles.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;css/bootstrap-responsive.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;css/themes.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!--[if IE 7]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/ie/ie7.css&quot; /&gt;
+&lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/ie/ie8.css&quot; /&gt;
+&lt;![endif]--&gt;
+&lt;!--[if IE 9]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/ie/ie9.css&quot; /&gt;
+&lt;![endif]--&gt;
+&lt;!--============ javascript ===========--&gt;
+&lt;script src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery-ui-1.8.16.custom.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- html5.js for IE less than 9 --&gt;
+&lt;!--[if lt IE 9]&gt;
+&nbsp;&nbsp; &nbsp;&lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;script src=&quot;js/anchor.script.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/respond.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/ios-orientationchange-fix.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            
+          </div>
+          <div class="span5">
+            <h2>Requires HTML5 doctype</h2>
+            <p>This is basic startup of this tmeplate </p>
+            <pre class=" prettyprint linenums">
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;!--BODY--&gt;
+&lt;/html&gt;   </pre>
+            <h2>Requires Meta Tag</h2>
+            <p>Following meta tag must require to ensure devices display responsive pages properly</p>
+            <pre class=" prettyprint linenums">
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+</pre>
+          </div>
+        </div>
+        <h3 id="common-html-structure">Common Html Structure</h3>
+        <pre class=" prettyprint linenums">
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Pontus - a clever responsive admin template&lt;/title&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!--TOP SEARCH BAR AND BRANDING WITH LOGO --&gt;
+&lt;div class=&quot;top-bar&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;!--SCROLL TOP HERE--&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;scroll-top&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot; class=&quot;tip-top&quot; title=&quot;Go Top&quot;&gt;Top&lt;/a&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;bar-container&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;container-fluid&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div class=&quot;row-fluid&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div class=&quot;span3&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div class=&quot;logo&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div class=&quot;span6&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div class=&quot;navbar-search&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div class=&quot;span3 clearfix&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div class=&quot;btn-toolbar top-toolbar pull-right&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--TOP NAVIGATION BAR --&gt;
+&lt;div class=&quot;navbar navbar-fixed-top&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;navbar-inner&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;container-fluid&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div class=&quot;nav-collapse&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;!-- /.nav-collapse --&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;!-- /navbar-inner --&gt;
+&lt;/div&gt;
+&lt;!--TOP LEFT LARGE ICONS BAR --&gt;
+&lt;div class=&quot;left-bar&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;side-nav&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--MAIN WRAPPER--&gt;
+&lt;div class=&quot;main-wrapper&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;active-page&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- /Active page icon --&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;!--MAIN CONTAINER--&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;container-fluid&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+      </div>
+      <div class="page-header" id="boxy-widget">
+        <h1>Boxy Widget</h1>
+      </div>
+      <div class="row-fluid">
+        <div class="span12">
+          <h3>Example</h3>
+          <p>Here is boxy widget block preview. You can use it anywhere in the template</p>
+          <div class="box-widget">
+					<div class="widget-head clearfix">
+						<span class="h-icon"><i class="gray-icons home"></i></span>
+						<h4>Widget Head</h4>
+						<div class="widget-action dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="gray-icons cog_2"></i><b class="caret"></b></a>
+							<ul class="dropdown-menu pull-right">
+								<li><a href="#"><i class=" ledgray-icons add_co"></i> Add Row</a></li>
+								<li><a href="#"><i class="ledgray-icons disconnect_co"></i> Suspend</a></li>
+								<li><a href="#"><i class="ledgray-icons accept_co"></i> Approved</a></li>
+								
+								<li><a href="#"><i class="ledgray-icons cross_co"></i> Delete</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							Widget content Here
+						</div>
+					</div>
+				</div>
+          <h3>Widget Markup <small>Boxy Widget</small></h3>
+          <p> This template have a common widget block. Widget block html structure is bellow: </p>
+          <pre class=" prettyprint linenums">
+&lt;div class=&quot;box-widget&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;widget-head clearfix&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;span class=&quot;h-icon&quot;&gt;&lt;i class=&quot;gray-icons home&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Widget Head&lt;/h4&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;widget-action dropdown&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;a data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;gray-icons cog_2&quot;&gt;&lt;/i&gt;&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;ul class=&quot;dropdown-menu pull-right&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;!--WIDGET DROPDOWN--&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/ul&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;widget-container&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;widget-block&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Widget content Here
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        
+      </div>
+      <div class="row-fluid">
+        <div class="span12">
+       
+          <h3>Widget Head</h3>
+          <p>Widget Head contain header of widget and action drop down of the widget</p>
+          <pre class=" prettyprint linenums">
+&lt;div class=&quot;widget-head clearfix&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;span class=&quot;h-icon&quot;&gt;&lt;i class=&quot;gray-icons home&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+&nbsp;&nbsp; &nbsp;&lt;h4&gt;Widget Head&lt;/h4&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;widget-action dropdown&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;a data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;gray-icons cog_2&quot;&gt;&lt;/i&gt;&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;ul class=&quot;dropdown-menu pull-right&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;!--WIDGET DROPDOWN--&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        
+      </div>
+      <div class="page-header" id="non-boxy-widget">
+        <h1>Non Boxy Widget</h1>
+      </div>
+      <div class="row-fluid">
+        <div class="span12">
+        <h3>Example</h3>
+          <p>Here is non boxy widget block preview. You can use it anywhere in the template</p>
+          <div class="widget-well">
+          <div class="widget-head clearfix"> 
+            <h4 class="pull-left"><i class="gray-icons globe"></i> All Default Form Elements</h4>
+            <div class="dropdown pull-right widget-action-btn">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#"><i class="gray-icons cog_2"></i><b class="caret"></b></a>
+							<ul class="dropdown-menu pull-right">
+								<li><a href="#"><i class=" ledgray-icons add_co"></i> Add Row</a></li>
+								<li><a href="#"><i class="ledgray-icons disconnect_co"></i> Suspend</a></li>
+								<li><a href="#"><i class="ledgray-icons accept_co"></i> Approved</a></li>
+								
+								<li><a href="#"><i class="ledgray-icons cross_co"></i> Delete</a></li>
+							</ul>
+						</div>
+          </div>
+          <div class="widget-container">
+                  <div class="widget-block">
+                 <p>Proin varius congue nisl eu pharetra. Integer elementum lobortis venenatis. Donec accumsan tempor nibh, suscipit dapibus sem viverra dictum. Aliquam imperdiet congue nisl sit amet semper. </p>
+                 </div>
+                
+                
+            
+            
+          </div>
+        </div>
+          <h3>Widget Markup <small>Non Boxy Widget</small></h3>
+          <p> Boxy widget and non boxy html structure is same> Just use <code>nonboxy-widget</code> class instead of <code>widget-block</code> class. Non Boxy widget html structure is bellow: </p>
+          <pre class="prettyprint linenums">
+&lt;div class=&quot;widget-well&quot;&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;widget-head clearfix&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4 class=&quot;pull-left&quot;&gt;&lt;i class=&quot;gray-icons globe&quot;&gt;&lt;/i&gt; All Default Form Elements&lt;/h4&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;dropdown pull-right widget-action-btn&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;a data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle btn&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;gray-icons cog_2&quot;&gt;&lt;/i&gt;&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;ul class=&quot;dropdown-menu pull-right&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!--DROPDOWN--&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/ul&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;div class=&quot;widget-container&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;widget-block&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;!--Widget Content--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        </div>
+       <div class="row-fluid">
+        <div class="span12">
+
+          <h3>Widget Head</h3>
+          <p>Widget Head contain header of widget.</p>
+          <pre class=" prettyprint linenums">
+&lt;div class=&quot;widget-head clearfix&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4 class=&quot;pull-left&quot;&gt;&lt;i class=&quot;gray-icons globe&quot;&gt;&lt;/i&gt; All Default Form Elements&lt;/h4&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;dropdown pull-right widget-action-btn&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;a data-toggle=&quot;dropdown&quot; class=&quot;dropdown-toggle btn&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;gray-icons cog_2&quot;&gt;&lt;/i&gt;&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;ul class=&quot;dropdown-menu pull-right&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!--DROPDOWN--&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/ul&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp; &nbsp;&lt;/div&gt;</pre>
+        </div>
+      </div>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+    </section>
+    
+    <section id="css-structure">
+    <div class="box-widget">
+          
+          <div class="widget-container">
+                <div class="widget-block">
+      <div class="page-header">
+        <h1 id="css-structure">CSS Structure</h1>
+        <p>This template I have used well structured and obejct oriented CSS, that is easy to use and manageable. All common style of this tmeplate is in <code>styles.css</code> files. This template is uesd following css structure:</p>
+      </div>
+      <div class="row-fluid">
+        <pre class=" prettyprint linenums" style="height:300px; overflow:auto;">
+/*=====Bootstrap Reset=====*/
+body {
+	margin: 0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+	color: #333333;
+	background: #f9f9f9 /* url(../images/furley_bg.png) repeat fixed */;
+	padding-top:130px;
+	padding-bottom:40px;
+}
+a{
+	color: #036;
+	}
+.scroll-top {
+	width:30px;
+	height:30px;
+	position:fixed;
+	bottom:-4px;
+	right:0px;
+	background: #45484d; /* Old browsers */
+	background: -moz-linear-gradient(top, #45484d 0%, #111111 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #45484d), color-stop(100%, #111111)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #45484d 0%, #111111 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #45484d 0%, #111111 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #45484d 0%, #111111 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #45484d 0%, #111111 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#111111', GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	border:#000 1px solid;
+	display:none;
+}
+.scroll-top a {
+	text-indent:-999999px;
+	width:24px;
+	height:24px;
+	background:#fff;
+	margin:2px;
+	display:block;
+	border:#111 1px solid;
+	background:url(../images/scroll-top.png) no-repeat top;
+}
+a:focus {
+	outline: none !important;
+}
+.navbar .nav > li > a {
+	float: none;
+	padding: 10px 10px 11px 10px;
+	line-height: 19px;
+	color: #999999;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	font-weight:bold;
+}
+.nav > li > a:hover {
+	text-decoration: none;
+	background-color: #eeeeee;
+}
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+	color: #fff;
+	text-decoration: none;
+	background-color: transparent;
+}
+.navbar .nav li.dropdown .dropdown-toggle .caret, .navbar .nav li.dropdown.open .caret {
+	border-top-color: #ccc;
+	border-bottom-color: #ccc;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover {
+	background:#35414C;
+	}
+.dropdown-menu {
+	z-index:999;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	margin: 1px 0px 0;
+}
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+	color: #09C;
+	text-decoration: none;
+	background: #f6f6f6; /* Old browsers */
+	background: -moz-linear-gradient(top, #f6f6f6 0%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f6f6f6), color-stop(100%, #ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f6f6f6 0%, #ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f6f6f6 0%, #ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f6f6f6 0%, #ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f6f6f6 0%, #ededed 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ededed', GradientType=0 ); /* IE6-9 */
+}
+.navbar-fixed-top .dropdown-menu {
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	border-top:0px;
+}
+.navbar-fixed-top .search-query {
+	margin:5px 5px 5px 5px;
+}
+.navbar-fixed-top .navbar-search {
+	margin-top:0px !important;
+}
+.navbar-fixed-top .dropdown-menu:after {
+	border-bottom: 6px solid #fff !important;
+}
+.navbar-fixed-top .dropdown-menu .dropdown-submenu {
+	margin-top:1px;
+}
+.navbar-fixed-top .dropdown-menu .dropdown-submenu .dropdown-menu {
+	margin-left:0px;
+	padding:6px 0;
+}
+.dropdown-submenu > a:after {
+	position:absolute;
+	top:9px;
+	right:10px;
+	margin:0px;
+	border-width: 4px 0 4px 4px;
+}
+.nav-tabs > li > a {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-right:15px;
+	line-height: 18px;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+	background: rgb(233,233,233); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(233,233,233) 0%, rgb(240,240,240) 15%, rgb(245,245,245) 30%, rgb(251,251,251) 60%, rgb(255,255,255) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(233,233,233)), color-stop(15%, rgb(240,240,240)), color-stop(30%, rgb(245,245,245)), color-stop(60%, rgb(251,251,251)), color-stop(100%, rgb(255,255,255))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgb(233,233,233) 0%, rgb(240,240,240) 15%, rgb(245,245,245) 30%, rgb(251,251,251) 60%, rgb(255,255,255) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgb(233,233,233) 0%, rgb(240,240,240) 15%, rgb(245,245,245) 30%, rgb(251,251,251) 60%, rgb(255,255,255) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgb(233,233,233) 0%, rgb(240,240,240) 15%, rgb(245,245,245) 30%, rgb(251,251,251) 60%, rgb(255,255,255) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgb(233,233,233) 0%, rgb(240,240,240) 15%, rgb(245,245,245) 30%, rgb(251,251,251) 60%, rgb(255,255,255) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9e9e9', endColorstr='#ffffff', GradientType=0 ); /* IE6-9 */
+	position:relative;
+}
+.nav-tabs > li > a:hover {
+	border-color: #ccc #ccc #ddd;
+	color:#0891c4;
+}
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+	color: #555555;
+	cursor: default;
+	background: rgb(233,233,233); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(233, 233, 233, 1) 0%, rgba(240, 240, 240, 1) 15%, rgba(245, 245, 245, 1) 30%, rgba(251, 251, 251, 1) 60%, rgba(251, 251, 251, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(233, 233, 233, 1)), color-stop(15%, rgba(240, 240, 240, 1)), color-stop(30%, rgba(245, 245, 245, 1)), color-stop(60%, rgba(251, 251, 251, 1)), color-stop(100%, rgba(251, 251, 251, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(233, 233, 233, 1) 0%, rgba(240, 240, 240, 1) 15%, rgba(245, 245, 245, 1) 30%, rgba(251, 251, 251, 1) 60%, rgba(251, 251, 251, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(233, 233, 233, 1) 0%, rgba(240, 240, 240, 1) 15%, rgba(245, 245, 245, 1) 30%, rgba(251, 251, 251, 1) 60%, rgba(251, 251, 251, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(233, 233, 233, 1) 0%, rgba(240, 240, 240, 1) 15%, rgba(245, 245, 245, 1) 30%, rgba(251, 251, 251, 1) 60%, rgba(251, 251, 251, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(233, 233, 233, 1) 0%, rgba(240, 240, 240, 1) 15%, rgba(245, 245, 245, 1) 30%, rgba(251, 251, 251, 1) 60%, rgba(251, 251, 251, 1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9e9e9', endColorstr='#fbfbfb', GradientType=0 ); /* IE6-9 */
+	border: 1px solid #ddd;
+	border-bottom-color:#fff;
+}
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+	color: #069;
+	text-decoration: none;
+	background: #f3f3f3; /* Old browsers */
+	background: -moz-linear-gradient(top, #f3f3f3 0%, #eeeeee 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f3f3), color-stop(100%, #eeeeee)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f3f3f3 0%, #eeeeee 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f3f3f3 0%, #eeeeee 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f3f3f3 0%, #eeeeee 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f3f3f3 0%, #eeeeee 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#eeeeee', GradientType=0 ); /* IE6-9 */
+}
+.dropdown-menu a, .dropdown .dropdown-menu .nav-header {
+	padding: 3px 7px;
+}
+.navbar-fixed-top .dropdown .dropdown-menu .nav-header {
+	padding: 3px 10px;
+}
+.dropdown-submenu:hover > a:after {
+	border-left-color: #ddd;
+}
+.dropdown-menu .flag-icons {
+	margin-top:-3px !important;
+	padding-right:3px;
+}
+/*====ACCORDION====*/
+.accordion {
+	-moz-box-shadow: 0px 0px 0px 2px rgba(180, 180, 180, .1);
+	-webkit-box-shadow: 0px 0px 0px 2px rgba(180, 180, 180, .1);
+	box-shadow: 0px 0px 0px 2px rgba(180, 180, 180, .1);
+	background:#fff;
+	margin-bottom:20px !important;
+}
+.accordion-group {
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:0px;
+	margin-bottom:-1px;
+}
+.accordion-heading {
+	height:39px;
+	line-height:22px;
+	border-bottom:#e1e1e1 1px solid;
+	background: #fbfbfb; /* Old browsers */
+	background: -moz-linear-gradient(top, #fbfbfb 0%, #fbfbfb 36%, #f6f6f6 80%, #f3f3f3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fbfbfb), color-stop(36%, #fbfbfb), color-stop(80%, #f6f6f6), color-stop(100%, #f3f3f3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fbfbfb 0%, #fbfbfb 36%, #f6f6f6 80%, #f3f3f3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fbfbfb 0%, #fbfbfb 36%, #f6f6f6 80%, #f3f3f3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fbfbfb 0%, #fbfbfb 36%, #f6f6f6 80%, #f3f3f3 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #fbfbfb 0%, #fbfbfb 36%, #f6f6f6 80%, #f3f3f3 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#f3f3f3', GradientType=0 ); /* IE6-9 */
+	-moz-box-shadow: 0px 1px 0px #FFFFFF inset;
+	-webkit-box-shadow: 0px 1px 0px #FFFFFF inset;
+	box-shadow: 0px 1px 0px #FFFFFF inset;
+}
+.accordion-heading a {
+	color:#069;
+	font-weight:bold;
+}
+.accordion-heading .h-icon {
+	margin-top:-8px;
+	margin-left:-15px;
+	margin-right:10px;
+}
+.accordion-heading a:hover {
+	text-decoration:none;
+	color: #09C;
+}
+.accordion-inner {
+	border-top:0px;
+}
+/*===== Label/Badge ===== */
+.label, .badge {
+	background: #7d7e7d; /* Old browsers */
+	background: -moz-linear-gradient(top, #7d7e7d 0%, #6b6b6b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7d7e7d), color-stop(100%, #6b6b6b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #7d7e7d 0%, #6b6b6b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #7d7e7d 0%, #6b6b6b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #7d7e7d 0%, #6b6b6b 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #7d7e7d 0%, #6b6b6b 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#6b6b6b', GradientType=0 ); /* IE6-9 */
+	border:#5E5E5E 1px solid;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.label-success, .badge-success {
+	background: #468847; /* Old browsers */
+	background: -moz-linear-gradient(top, #468847 0%, #326037 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #468847), color-stop(100%, #326037)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #468847 0%, #326037 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #468847 0%, #326037 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #468847 0%, #326037 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #468847 0%, #326037 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#468847', endColorstr='#326037', GradientType=0 ); /* IE6-9 */
+	border:#2D5632 1px solid;
+}
+.label-warning, .badge-warning {
+	background: #f89406; /* Old browsers */
+	background: -moz-linear-gradient(top, #f89406 0%, #d17c06 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f89406), color-stop(100%, #d17c06)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f89406 0%, #d17c06 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f89406 0%, #d17c06 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f89406 0%, #d17c06 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f89406 0%, #d17c06 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f89406', endColorstr='#d17c06', GradientType=0 ); /* IE6-9 */
+	border:#C97806 1px solid;
+}
+.label-important, .badge-important {
+	background: #b94a48; /* Old browsers */
+	background: -moz-linear-gradient(top, #b94a48 0%, #933939 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b94a48), color-stop(100%, #933939)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #b94a48 0%, #933939 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #b94a48 0%, #933939 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #b94a48 0%, #933939 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #b94a48 0%, #933939 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b94a48', endColorstr='#933939', GradientType=0 ); /* IE6-9 */
+	border:#8C3636 1px solid;
+}
+.label-info, .badge-info {
+	background: #3a87ad; /* Old browsers */
+	background: -moz-linear-gradient(top, #3a87ad 0%, #2d6787 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3a87ad), color-stop(100%, #2d6787)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3a87ad 0%, #2d6787 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3a87ad 0%, #2d6787 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3a87ad 0%, #2d6787 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #3a87ad 0%, #2d6787 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a87ad', endColorstr='#2d6787', GradientType=0 ); /* IE6-9 */
+	border:#2A607C 1px solid;
+}
+.label-inverse, .badge-inverse {
+	background: #595959; /* Old browsers */
+	background: -moz-linear-gradient(top, #595959 0%, #333333 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #595959), color-stop(100%, #333333)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #595959 0%, #333333 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #595959 0%, #333333 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #595959 0%, #333333 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #595959 0%, #333333 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#333333', GradientType=0 ); /* IE6-9 */
+	border:#333 1px solid;
+}
+/*===BTN RESET===*/
+.close {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.close:hover {
+	color: #000000;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: 1;
+	filter:none;
+}
+.btn {
+	display: inline-block;
+ *display: inline;
+	padding: 4px 10px;
+	margin-bottom: 0;
+ *margin-left: .3em;
+	font-size: 12px;
+	line-height: 20px;
+ *line-height: 20px;
+	color: #333333;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align: middle;
+	cursor: pointer;
+	background-color: #f5f5f5;
+ *background-color: #e6e6e6;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f3f3f3), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #f3f3f3, #e6e6e6);
+	background-image: -o-linear-gradient(top, #f3f3f3, #e6e6e6);
+	background-image: linear-gradient(to bottom, #f3f3f3, #e6e6e6);
+	background-image: -moz-linear-gradient(top, #f3f3f3, #e6e6e6);
+	background-repeat: repeat-x;
+	border: 1px solid #bbbbbb;
+ *border: 0;
+	border-color: rgba(211, 208, 208, 1) rgba(211, 208, 208, 1) rgba(211, 208, 208, 1);
+	border-color: #d3d0d0 #d3d0d0 #d3d0d0;
+	border-bottom-color: #d3d0d0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+ *zoom: 1;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+/*BUTTONS AND ICONS*/
+.dropdown-extend.open .btn-lbl {
+	-webkit-border-radius: 4px 0px 0px 0px !important;
+	-moz-border-radius: 4px 0px 0px 0px !important;
+	border-radius: 4px 0px 0px 0px !important;
+	background:#fff;
+	z-index: 1000;
+	border-bottom:#fff 1px solid;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow:  none;
+}
+.dropdown-extend.open .btn-split {
+	-webkit-border-radius: 0px 4px 0px 0px !important;
+	-moz-border-radius: 0px 4px 0px 0px !important;
+	border-radius: 0px 4px 0px 0px !important;
+	z-index: 1000;
+}
+.dropdown-extend .dropdown-menu {
+	-webkit-border-radius: 0px 4px 4px 4px !important;
+	-moz-border-radius: 0px 4px 4px 4px !important;
+	border-radius: 0px 4px 4px 4px !important;
+	margin-left:0px;
+	margin-top:-1px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow:  none;
+}
+.dropdown-extend.pull-right.open .dropdown-menu {
+	-webkit-border-radius: 4px 0px 4px 4px !important;
+	-moz-border-radius: 4px 0px 4px 4px !important;
+	border-radius: 4px 0px 4px 4px !important;
+	margin-right:0px;
+	margin-top:-1px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow:  none;
+}
+.btn-group .btn-large {
+	font-size:15px !important;
+}
+.btn-group .btn-large.btn-split {
+	padding: 9px !important;
+}
+.btn-icon i {
+	margin-left:-4px;
+	margin-right:2px;
+}
+.btn-split {
+	padding:4px 6px !important;
+}
+.btn-primary {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #006dcc;
+ *background-color: #0044cc;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0374bc), to(#143b6b));
+	background-image: -webkit-linear-gradient(top, #0374bc, #143b6b);
+	background-image: -o-linear-gradient(top, #0374bc, #143b6b);
+	background-image: linear-gradient(to bottom, #0374bc, #143b6b);
+	background-image: -moz-linear-gradient(top, #0374bc, #143b6b);
+	background-repeat: repeat-x;
+	border-color: #0044cc #0044cc #002a80;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+	color: #ffffff;
+	background-color: #143b6b;
+ *background-color: #003bb3;
+}
+.btn-info {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #49afcd;
+ *background-color: #2f96b4;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#58bddb), to(#0680a3));
+	background-image: -webkit-linear-gradient(top, #58bddb, #0680a3);
+	background-image: -o-linear-gradient(top, #58bddb, #0680a3);
+	background-image: linear-gradient(to bottom, #58bddb, #0680a3);
+	background-image: -moz-linear-gradient(top, #58bddb, #0680a3);
+	background-repeat: repeat-x;
+	border-color: #2f96b4 #2f96b4 #1f6377;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+	color: #ffffff;
+	background-color: #0680a3;
+ *background-color: #2a85a0;
+}
+.btn-success {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #5bb75b;
+ *background-color: #51a351;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4acc4a), to(#158a15));
+	background-image: -webkit-linear-gradient(top, #4acc4a, #158a15);
+	background-image: -o-linear-gradient(top, #4acc4a, #158a15);
+	background-image: linear-gradient(to bottom, #4acc4a, #158a15);
+	background-image: -moz-linear-gradient(top, #4acc4a, #158a15);
+	background-repeat: repeat-x;
+	border-color: #51a351 #51a351 #387038;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
+	color: #ffffff;
+	background-color: #158a15;
+ *background-color: #499249;
+}
+.btn-warning {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #faa732;
+ *background-color: #f89406;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e1490d), to(#ed9921));
+	background-image: -webkit-linear-gradient(top, #ed9921, #e1490d);
+	background-image: -o-linear-gradient(top, #ed9921, #e1490d);
+	background-image: linear-gradient(to bottom, #ed9921, #e1490d);
+	background-image: -moz-linear-gradient(top, #ed9921, #e1490d);
+	background-repeat: repeat-x;
+	border-color: #c66f08 #c66f08 #c66f08;
+	border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.5);
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-warning:hover, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled] {
+	color: #ffffff;
+	background-color: #e1490d;
+ *background-color: #df8505;
+}
+.btn-danger {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #da4f49;
+ *background-color: #bd362f;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fb655f), to(#b6231d));
+	background-image: -webkit-linear-gradient(top, #fb655f, #b6231d);
+	background-image: -o-linear-gradient(top, #fb655f, #b6231d);
+	background-image: linear-gradient(to bottom, #fb655f, #b6231d);
+	background-image: -moz-linear-gradient(top, #fb655f, #b6231d);
+	background-repeat: repeat-x;
+	border-color: #bd362f #bd362f #802420;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-danger:hover, .btn-danger:active, .btn-danger.active, .btn-danger.disabled, .btn-danger[disabled] {
+	color: #ffffff;
+	background-color: #b6231d;
+ *background-color: #a9302a;
+}
+.btn-inverse {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #363636;
+ *background-color: #222222;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4c4c4c), to(#242424));
+	background-image: -webkit-linear-gradient(top, #4c4c4c, #242424);
+	background-image: -o-linear-gradient(top, #4c4c4c, #242424);
+	background-image: linear-gradient(to bottom, #4c4c4c, #242424);
+	background-image: -moz-linear-gradient(top, #4c4c4c, #242424);
+	background-repeat: repeat-x;
+	border-color: #222222 #222222 #000000;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-inverse:hover, .btn-inverse:active, .btn-inverse.active, .btn-inverse.disabled, .btn-inverse[disabled] {
+	color: #ffffff;
+	background-color: #242424;
+ *background-color: #151515;
+}
+.btn-extend .caret {
+	border-top-color: #ffffff;
+	border-bottom-color: #ffffff;
+}
+.btn-extend {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #363636;
+ *background-color: #222222;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5c7994), to(#273542));
+	background-image: -webkit-linear-gradient(top, #5c7994, #273542);
+	background-image: -o-linear-gradient(top, #5c7994, #273542);
+	background-image: linear-gradient(to bottom, #5c7994, #273542);
+	background-image: -moz-linear-gradient(top, #5c7994, #273542);
+	background-repeat: repeat-x;
+	border-color: #fff #2e4252 #2e4252;
+	border-color: rgba(255, 255, 255, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.5);
+ filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.btn-extend:hover, .btn-extend:active, .btn-extend.active, .btn-extend.disabled, .btn-extend[disabled] {
+	color: #ffffff;
+	background-color: #273542;
+ *background-color: #151515;
+}
+/*===Alert Reset===*/
+
+.alert {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 20px;
+	color: #8e583d;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background: rgb(249,230,181); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(249, 230, 181, 1) 0%, rgba(248, 225, 165, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(249, 230, 181, 1)), color-stop(100%, rgba(248, 225, 165, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(249, 230, 181, 1) 0%, rgba(248, 225, 165, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(249, 230, 181, 1) 0%, rgba(248, 225, 165, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(249, 230, 181, 1) 0%, rgba(248, 225, 165, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(249, 230, 181, 1) 0%, rgba(248, 225, 165, 1) 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e6b5', endColorstr='#f8e1a5', GradientType=0 ); /* IE6-9 */
+	border: 1px solid #f0d899;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	margin-bottom:20px;
+}
+.alert .close {
+	position: relative;
+	top: -2px;
+	right: -26px;
+	line-height: 20px;
+	color:#F00;
+}
+</pre>
+      </div>
+      <div class="page-header"  id="included-css">
+        <h1 >Included CSS</h1>
+        <p>I have included following css files. You can easily customized any css:</p>
+      </div>
+      <div class="row-fluid">
+        <pre class=" prettyprint linenums">
+&lt;!-- Bootstrap --&gt;
+&lt;link href=&quot;css/bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- All styles --&gt;
+&lt;link href=&quot;css/styles.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Syntax Highlighter --&gt;
+&lt;link href=&quot;css/prettify.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- jquery ui  --&gt;
+&lt;link href=&quot;css/aristo-ui.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- full calendar --&gt;
+&lt;link href=&quot;css/fullcalendar.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- File Manager --&gt;
+&lt;link href=&quot;css/elfinder.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Chart &amp; Graph --&gt;
+&lt;link href=&quot;css/jquery.jqplot.css&quot; rel=&quot;stylesheet&quot;/&gt;
+&lt;!-- Bootstrap Responsive --&gt;
+&lt;link href=&quot;css/bootstrap-responsive.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Theming --&gt;
+&lt;link href=&quot;css/themes.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+        <div  id="css-ie-hack" class="page-header">
+          <h3>CSS IE different version hack</h3>
+        </div>
+        <p>Sometimes Internet explorer's different version may occur different type of css problem. Here I included 3 different css files in conditional commnets for fix IE7 to IE9 css issue. Always use following css files in head section:</p>
+        <pre class=" prettyprint linenums">
+&lt;!--[if IE 7]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/ie/ie7.css&quot; /&gt;
+&lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/ie/ie8.css&quot; /&gt;
+&lt;![endif]--&gt;
+&lt;!--[if IE 9]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/ie/ie9.css&quot; /&gt;
+&lt;![endif]--&gt;
+</pre>
+        <p>If you need to fix any IE7/IE8/IE9 related css issues then just place code  in relevant css file. For an example in IE8 is getting extra 20px margin in any elemnts(it may be .sidebar or anywhere) then just open ie8.css and write css like <code>.side-nav{margin:0px;}</code>. Another example if you use filter in css by following way:</p>
+        <pre class=" prettyprint linenums">
+.widget-block .widget-bottom {
+/*----MORE CODE---*/
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#dbdbdb', GradientType=0 ); /* IE6-9 */
+}
+</pre>
+        <p>Then you need to change <code>filter:none</code> for IE9. Now open ie9.css and write following code: </p>
+        <pre class=" prettyprint linenums">
+.widget-block .widget-bottom {
+filter:none;
+}
+</pre>
+        <h3 id="ie9-css3-media-query" class="page-header">Less than IE9 CSS3 Media Query support.</h3>
+        <p>Normally IE5 to IE8 do not support CSS3 Media Query. But at least IE8 should support for CSS3 Media Query and that is very important for cross-browser responsive web design. This template I have included css3 media query support for less than IE9. Include following file for Less than IE9 CSS3 Media Query support.</p>
+        <pre class=" prettyprint linenums">
+&lt;script src=&quot;js/respond.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+        <p>You check a blog post for more about Less than IE9 CSS3 Media Query support from here <a href="http://goo.gl/jeqy7">http://goo.gl/jeqy7</a></p>
+      </div>
+      <div id="files-folder">
+      <div class="row-fluid">
+        <div class="page-header">
+          <h1>Files and Folders Structure</h1>
+        </div>
+        <img src="screen/files-folder.jpg" width="616" height="298" alt="Files and Folder">
+        <p style="margin-top:20px;">Above image define this template files and folder structures. All css files is in css folder. Data folder contain all colorbox ajax related files and images. Files folder contain all uploaded file form elfinder file manager. ico contain favico. img contain all images/icons of this template. js contain all javascript file of this template. php contain elfinder related php files. swf contain datatable plugin's table exporter files. </p>
+      </div>
+   </div>
+      </div>
+      </div>
+      </div>
+      
+    </section>
+        <section id="plugins-components">
+    <div class="box-widget">
+          
+          <div class="widget-container">
+                <div class="widget-block">
+    
+    
+    
+        
+      <div class="page-header" id="plugins">
+        <h1>Components and Plugins</h1>
+      </div>
+      <div class="row-fluid">
+        <h3>Plugins</h3>
+        <p>I used jquery, jquery UI and twitter bootstarp for this template. And I included some nice plugins also. I used following templates for Pontus:</p>
+         <pre class=" prettyprint linenums">
+/*--- bootstrap ---*/
+&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+/*--- jQuery UI ---*/
+&lt;script src=&quot;js/jquery-ui-1.8.16.custom.min.js&quot;&gt;&lt;/script&gt;
+/*--- Data Table ---*/
+&lt;script src=&quot;js/jquery.data-table.js&quot;&gt;&lt;/script&gt;
+/*--- syntax highlighter ---*/
+&lt;script src=&quot;js/prettify.js&quot;&gt;&lt;/script&gt;
+/*--- validation ---*/
+&lt;script src=&quot;js/jquery.validate.js&quot;&gt;&lt;/script&gt;
+/*--- Stepy Wizard ---*/
+&lt;script src=&quot;js/stepy.jquery.js&quot;&gt;&lt;/script&gt;
+/*--- Input Mask ---*/
+&lt;script src=&quot;js/inputmask.jquery.js&quot;&gt;&lt;/script&gt;
+/*--- Tags Input ---*/
+&lt;script src=&quot;js/jquery.tagsinput.js&quot;&gt;&lt;/script&gt;
+/*--- Nice Checkbox and Radio ---*/
+&lt;script src=&quot;js/uniform.jquery.js&quot;&gt;&lt;/script&gt;
+/*--- Calendar ---*/
+&lt;script src=&quot;js/fullcalendar.min.js&quot;&gt;&lt;/script&gt;
+/*--- Show Data From Google Calendar ---*/
+&lt;script src=&quot;js/gcal.js&quot;&gt;&lt;/script&gt;
+/*--- File Manager ---*/
+&lt;script src=&quot;js/elfinder.min.js&quot;&gt;&lt;/script&gt;
+/*--- Nice Notification ---*/
+&lt;script src=&quot;js/jquery.notify.js&quot;&gt;&lt;/script&gt;
+&lt;!----- Range Slider----&gt;
+&lt;script src=&quot;js/jquery.slider.min.js&quot;&gt;&lt;/script&gt;
+&lt;!----- Range Date Picker ----&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/date.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/daterangepicker.js&quot;&gt;&lt;/script&gt;
+&lt;!----- bootstrap datepicker ----&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/bootstrap-datepicker.js&quot;&gt;&lt;/script&gt;
+&lt;!----- bootstrap colorpicker ----&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/bootstrap-colorpicker.js&quot;&gt;&lt;/script&gt;
+&lt;!----- Nice Selectbox ----&gt;
+&lt;script src=&quot;js/chosen.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;!----- Input Limiter ----&gt;
+&lt;script src=&quot;js/input-limiter.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;!----- Auto Grow Textarea ----&gt;
+&lt;script src=&quot;js/jquery.autosize.js&quot;&gt;&lt;/script&gt;
+&lt;!----- Star Rating ----&gt;
+&lt;script src=&quot;js/raty.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;!----- jQuery easing ----&gt;
+&lt;script src=&quot;js/easing.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;!----- iPhone style checkbox ----&gt;
+&lt;script src=&quot;js/iphone-style-checkboxes.js&quot;&gt;&lt;/script&gt;
+&lt;!----- jQuery Dual list filter ----&gt;
+&lt;script src=&quot;js/duallist.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;!----- UI Spinner ----&gt;
+&lt;script src=&quot;js/ui.spinner.min.js&quot;&gt;&lt;/script&gt;
+&lt;!----- Google JS API---&gt;
+&lt;script src=&quot;https://www.google.com/jsapi&quot;&gt;&lt;/script&gt;
+&lt;!--jQuery Mini chart--&gt;
+&lt;script src=&quot;js/jquery.sparkline.min.js&quot;&gt;&lt;/script&gt;
+&lt;!--JqPlot CHART Graph--&gt;
+&lt;script src=&quot;js/excanvas.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.jqplot.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.highlighter.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.cursor.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.barRenderer.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.pointLabels.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.dateAxisRenderer.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.pieRenderer.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.donutRenderer.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.categoryAxisRenderer.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.logAxisRenderer.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.canvasTextRenderer.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/chart/jqplot.canvasAxisTickRenderer.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+        
+      </div>
+      <div class="page-header" id="forms">
+        <h1>Forms</h1>
+      </div>
+         <div class="row-fluid">
+      <div class="span12">
+      <h3>Common Form Markup</h3>
+      <pre  class=" prettyprint linenums">
+&lt;form class=&quot;form-vertical form-well&quot;&gt;
+  &lt;div class=&quot;control-group&quot;&gt;
+  &lt;!--Input label define here--&gt;
+    &lt;label class=&quot;control-label&quot;&gt;Text Input&lt;/label&gt;
+    &lt;!--Form input define here--&gt;
+    &lt;div class=&quot;controls&quot;&gt;
+      &lt;input type=&quot;text&quot; placeholder=&quot;Text Input&quot; class=&quot;input-large&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;form-actions&quot;&gt;
+  &lt;!--Form Buttons define here--&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-extend&quot;&gt;Save changes&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Cancel&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+      <h3>Example</h3>
+        <div class="box-widget">
+          <div class="widget-head clearfix"><span class="h-icon"><i class="gray-icons list"></i></span>
+            <h4>Left label right align</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container">
+              <form class="form-horizontal form-well">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      <h3>Usage</h3>
+      <code>&lt;form class=&quot;form-horizontal form-well&quot;&gt;</code>
+      
+      </div>
+      
+      
+    </div>
+    <div class="row-fluid">
+    <div class="span12">
+      <h3>Example</h3>
+        <div class="box-widget">
+          <div class="widget-head clearfix"><span class="h-icon"><i class="gray-icons list"></i></span>
+            <h4>Top label</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container">
+              <form class="form-vertical form-well">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+        <h3>Usage</h3>
+      <code>&lt;form class=&quot;form-vertical form-well&quot;&gt;</code>
+      </div>
+    </div>
+    <div class="page-header">
+        <h2>Form <small>White background color, left input label, left  align label and UPPERCASE input label.</small></h2>
+      </div>
+    <div class="row-fluid">
+      <div class="span6">
+       <code>&lt;form class=&quot;form-horizontal left-align form-well&quot;&gt;</code>
+       
+        <div class="box-widget">
+          <div class="widget-head clearfix"><span class="h-icon"><i class="gray-icons list"></i></span>
+            <h4>Left label left align</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container">
+              <form class="form-horizontal left-align form-well">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                     </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+       <code>&lt;form class=&quot;form-horizontal left-align form-well caps-label&quot;&gt;</code>
+        <div class="box-widget">
+          <div class="widget-head clearfix"><span class="h-icon"><i class="gray-icons list"></i></span>
+            <h4>UPPERCASE input label</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container">
+              <form class="form-horizontal left-align form-well caps-label">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="page-header">
+        <h2>Form<small>White background with borderd form, left label right align and top align. </small></h2>
+    </div>
+    <div class="row-fluid">
+      <div class="span6">
+      <code>&lt;form class=&quot;form-horizontal &quot;&gt;</code>
+        <div class="box-widget">
+          <div class="widget-head clearfix"><span class="h-icon"><i class="gray-icons list"></i></span>
+            <h4>Left label right align</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container grid-form">
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                     </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+      <code>&lt;form class=&quot;form-container grid-form form-well &quot;&gt;</code>
+        <div class="box-widget">
+          <div class="widget-head clearfix"><span class="h-icon"><i class="gray-icons list"></i></span>
+            <h4>Top label</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container grid-form form-well">
+              <form class="form-vertical">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                     </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-header">
+        <h2>Form<small>Light gray background with borderd form, left label left align and top align. </small></h2>
+    </div>
+    <div class="row-fluid">
+      <div class="span6">
+      <code>&lt;form class=&quot;form-container grid-form form-background&quot;&gt;</code>
+        <div class="box-widget">
+          <div class="widget-head clearfix"><span class="h-icon"><i class="gray-icons list"></i></span>
+            <h4>Left label left align</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container grid-form form-background">
+              <form class="form-horizontal left-align">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+      
+        <div class="box-widget">
+          <div class="widget-head clearfix"><span class="h-icon"><i class="gray-icons list"></i></span>
+            <h4>Top Label</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container grid-form form-background">
+              <form class="form-vertical left-align">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="page-header">
+        <h2>Form <small>Non boxy form  </small></h2>
+        
+    </div>
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-well">
+          <div class="widget-head clearfix"> 
+            <h4><i class="gray-icons list"></i>Left label left align</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container">
+              <form class="form-horizontal left-align">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                     </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="widget-well">
+          <div class="widget-head clearfix"> 
+            <h4><i class="gray-icons list"></i> Top Label</h4>
+          </div>
+          <div class="widget-container">
+                 <div class="form-container">
+              <form class="form-vertical left-align">
+                <div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password Input</label>
+                  <div class="controls">
+                    <input type="password" placeholder="Password" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                     </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-extend">Save changes</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+              </form>
+            </div>
+                
+                
+            
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+      <div class="page-header" id="stepy-wizard">
+        <h3>Stepy Wizard</h3>
+      </div>
+      <div class="row-fluid">
+     
+     <div class="span12">
+        <div class="box-widget stepy-widget">
+          <div class="widget-head clearfix">
+            
+            <div id="stepy_tabby" class="pull-right">
+						</div>
+          </div>
+          <div class="widget-container">
+          <div class="form-container grid-form form-background ">
+               <form id="stepy" class=" form-horizontal left-align form-well">
+				
+                
+                
+                
+                			<fieldset title="Step 1">
+								<legend>description one</legend>
+                                
+                                
+                                <div class="control-group">
+                  <label class="control-label">Username</label>
+                  <div class="controls">
+                    <input name="name" type="text" />
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Email Address</label>
+                  <div class="controls">
+                    <input name="email" type="email"/>
+                  </div>
+                </div>
+                
+								
+							</fieldset>
+							<fieldset title="Step 2">
+								<legend>description two</legend>
+								<div class="control-group">
+                  <label class="control-label">First Name</label>
+                  <div class="controls">
+                    <input type="text" placeholder="First Name" class="input-large">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Last Name</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Last Name" class="input-large">
+                  </div>
+                </div>
+                
+                
+                
+							</fieldset>
+							<fieldset title="Step 3">
+								<legend>description three</legend>
+								<div class="control-group">
+                  <label class="control-label">Text Input</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Text Input" class="input-large">
+                  </div>
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Checkbox</label>
+                  <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox" value="">
+    Option one is this and that—be sure to include why it's great
+    </label>
+                     </div>
+                  
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">Radio</label>
+                  <div class="controls">
+    
+     
+    <label class="radio">
+    <input type="radio" name="optionsRadios" value="option1" checked>
+    Option one is this and that—be sure to include why it's great
+    </label>
+                  </div>
+                  
+                </div>
+							</fieldset>
+							<button type="submit" class="finish btn btn-extend"> Finish!</button>
+						</form>
+                
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+     
+     
+     </div>
+      <div class="row-fluid">
+        <h3>Markup</h3>
+        <pre class=" prettyprint linenums">
+&lt;div class=&quot;box-widget stepy-widget&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;widget-head clearfix&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div id=&quot;stepy_tabby&quot; class=&quot;pull-right&quot;&gt; &lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;widget-container&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;form-container grid-form form-background &quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;form id=&quot;stepy&quot; class=&quot; form-horizontal left-align form-well&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;fieldset title=&quot;Step 1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;description one&lt;/legend&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!--Step 1--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/fieldset&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;fieldset title=&quot;Step 2&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;description two&lt;/legend&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!--Step 2--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/fieldset&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;fieldset title=&quot;Step 3&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;description three&lt;/legend&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!--Step 3--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/fieldset&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button type=&quot;submit&quot; class=&quot;finish btn btn-extend&quot;&gt; Finish!&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;</pre>
+        <h3>Dependent Files</h3>
+        <pre class=" prettyprint linenums">
+/*--- Stepy Wizard ---*/
+&lt;script src=&quot;js/stepy.jquery.js&quot;&gt;&lt;/script&gt;</pre>
+        <h3>Custom Script <small>pontus-script.js</small></h3>
+        <pre class=" prettyprint linenums">
+
+    /*==JQUERY STEPY==*/
+    $('#stepy').stepy({
+        backLabel: 'Back',
+        nextLabel: 'Next',
+        errorImage: true,
+        block: true,
+        description: true,
+        legend: false,
+        titleClick: true,
+        titleTarget: '#stepy_tabby',
+        validate: true
+    });
+    $('#stepy_form').stepy({
+        backLabel: 'Back',
+        nextLabel: 'Next',
+        errorImage: true,
+        block: true,
+        description: true,
+        legend: false,
+        titleClick: true,
+        titleTarget: '#top_tabby',
+        validate: true
+    });
+
+    $('#stepy_form').validate({
+        errorPlacement: function (error, element) {
+            $('#stepy_form div.stepy-error').append(error);
+        },
+        rules: {
+            'name': 'required',
+            'email': 'required',
+        },
+        messages: {
+            'name': {
+                required: 'Name field is required!'
+            },
+            'email': {
+                required: 'Email field is requerid!'
+            },
+        }
+    });
+
+});
+      </pre>
+      </div>
+      <div class="row-fluid">
+        <div class="page-header" id="form-validation">
+          <h3>Form Validation</h3>
+        </div>
+        <h3>Dependent Files</h3>
+        <pre class=" prettyprint linenums">
+/*--- Form Validation ---*/
+&lt;script src=&quot;js/jquery.validate.js&quot;&gt;&lt;/script&gt;
+        </pre>
+        <h3>Custom Script <small>pontus-script.js</small></h3>
+        <pre class=" prettyprint linenums">
+
+    /*FORM VALIDATOR*/
+    $("#commentForm").validate();
+
+    // validate signup form on keyup and submit
+    $("#signupForm").validate({
+        rules: {
+            firstname: "required",
+            lastname: "required",
+            username: {
+                required: true,
+                minlength: 2
+            },
+            password: {
+                required: true,
+                minlength: 5
+            },
+            confirm_password: {
+                required: true,
+                minlength: 5,
+                equalTo: "#password"
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            topic: {
+                required: "#newsletter:checked",
+                minlength: 2
+            },
+            agree: "required"
+        },
+        messages: {
+            firstname: "Please enter your firstname",
+            lastname: "Please enter your lastname",
+            username: {
+                required: "Please enter a username",
+                minlength: "Your username must consist of at least 2 characters"
+            },
+            password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long"
+            },
+            confirm_password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long",
+                equalTo: "Please enter the same password as above"
+            },
+            email: "Please enter a valid email address",
+            agree: "Please accept our policy"
+        }
+    });
+
+    // propose username by combining first- and lastname
+    $("#username").focus(function () {
+        var firstname = $("#firstname").val();
+        var lastname = $("#lastname").val();
+        if (firstname && lastname && !this.value) {
+            this.value = firstname + "." + lastname;
+        }
+    });
+
+    //code to hide topic selection, disable for demo
+    var newsletter = $("#newsletter");
+    // newsletter topics are optional, hide at first
+    var inital = newsletter.is(":checked");
+    var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("disable-topic");
+    var topicInputs = topics.find("input").attr("disabled", !inital);
+    // show when newsletter is checked
+    newsletter.click(function () {
+        topics[this.checked ? "removeClass" : "addClass"]("disable-topic");
+        topicInputs.attr("disabled", !this.checked);
+    });
+
+      </pre>
+     
+      <div class="page-header" id="pages">
+        <h1>Pages</h1>
+      </div>
+      <div class="row-fluid">
+        <p>In this template I included 14 predefined pages. All Pages structure are same as like as other pages. All pages are bellow:</p>
+        <pre>[+] PAGES
+    + Error Pages - 5 types nice error pages here 
+       = 403 Error Page
+       = 404 Error Page
+       = 405 Error Page
+       = 500 Error Page
+       = 503 Error Page
+     + Login Page - a simple cool login page here
+     + Flip Login Page - login page with flip efffect
+     + Forgot Password - forgot password page here
+     + Inbox - a good looking mail box here
+     + User Profile - a nice user profile with timeline 
+     + Invoice - a invoice template
+     + Gallery - image gallery
+     + Search Page - search page with list switcher 
+        </pre>
+      </div>
+      <div class="page-header" id="themes-layout">
+        <h1>Themes And Layout</h1>
+      </div>
+      <div class="row-fluid">
+       
+        <p>Here have a individual css file for theme. If you need to change theme colors then please write all css here. Here I will include more color scheme when I will release more version. </p>
+        <pre class="prettyprint linenums">
+&lt;link id=&quot;themes&quot; href=&quot;css/themes.css&quot; rel=&quot;stylesheet&quot;&gt;</pre>
+        <h1>Layout</h1>
+        <p>This template support fluid and fixed both layout. Both layout is responsive.  Here I gave 6 predefine layout. You can use any layout as your choice. Following layout I included in pontus: </p>
+<pre>
++ Blank Layout - this a blank layout
++ Layout 01 - layout without leftbar 
++ Layout 02 - layout with scroll leftbar
++ Layout 03 - layout with sidebar but no leftbar
++ Layout With Sidebar - layout with sidebar
++ Fixed Layout - fixed width layout</pre>
+      </div>
+      <div class="page-header" id="psd-files">
+        <h1>Psd Files</h1>
+      </div>
+      <div class="row-fluid">
+        <p>This is very powerful and mordern template where is used CSS3. No image is used for themes and layout unless icons. No PSD file is require for this template. Everything is depend on css. So here .psd file is not important. I included three .psd files though psd is no need here. Those three files I made only make a visual outline for my work. one is for layout and another is for error page. Here have avatar 40x40 .psd that I used for dropdown list avatar. If you need it may help you but I think no need that at all. </p>
+      </div>
+      <div class="page-header" id="source-credit">
+        <h1>Sources and Credits</h1>
+      </div>
+      <div class="row-fluid">
+        <h3>Plugins</h3>
+        <table width="100%" class="table table-bordered">
+          <tr>
+            <td width="22%"><strong>Plugins</strong></td>
+            <td width="78%"><strong>Source</strong></td>
+          </tr>
+          <tr>
+            <td>jQuery Chosen </td>
+            <td><a href="http://harvesthq.github.com/chosen/">http://harvesthq.github.com/chosen/</a></td>
+          </tr>
+          <tr>
+            <td>jQuery  Uniform </td>
+            <td><a href="http://uniformjs.com/">http://uniformjs.com/</a></td>
+          </tr>
+          <tr>
+            <td>Bootstrap</td>
+            <td><a href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a></td>
+          </tr>
+          <tr>
+            <td>jQuery Noty</td>
+            <td><a href="http://needim.github.com/noty/">http://needim.github.com/noty/</a></td>
+          </tr>
+          <tr>
+            <td>Tags Input</td>
+            <td><a href="http://xoxco.com/clickable/jquery-tags-input">http://xoxco.com/clickable/jquery-tags-input</a></td>
+          </tr>
+          <tr>
+            <td>Text Editor</td>
+            <td><a href="http://premiumsoftware.net/cleditor">http://premiumsoftware.net/cleditor</a></td>
+          </tr>
+          <tr>
+            <td>Min Chart</td>
+            <td><a href="http://omnipotent.net/jquery.sparkline/#s-about">sparkline</a></td>
+          </tr>
+          <tr>
+            <td>colorBox</td>
+            <td><a href="http://www.jacklmoore.com/colorbox">http://www.jacklmoore.com/colorbox</a></td>
+          </tr>
+          <tr>
+            <td>iOS orientationchange</td>
+            <td><a href="https://github.com/scottjehl/iOS-Orientationchange-Fix">https://github.com/scottjehl/iOS-Orientationchange-Fix</a></td>
+          </tr>
+          <tr>
+            <td>UI Touch Punch</td>
+            <td><a href="http://touchpunch.furf.com/">http://touchpunch.furf.com/</a></td>
+          </tr>
+          <tr>
+            <td>NIce Scroll</td>
+            <td><a href="http://areaaperta.com/nicescroll">http://areaaperta.com/nicescroll</a></td>
+          </tr>
+          <tr>
+            <td>css3 mediaquery.js</td>
+            <td><a href="http://code.google.com/p/css3-mediaqueries-js/">http://code.google.com/p/css3-mediaqueries-js/</a></td>
+          </tr>
+          <tr>
+            <td>Multi Field Extender</td>
+            <td><a href="http://code.google.com/p/jquery-dynamic-form/">http://code.google.com/p/jquery-dynamic-form/</a></td>
+          </tr>
+          <tr>
+            <td>eLfinder</td>
+            <td><a href="http://elfinder.org/">http://elfinder.org/</a></td>
+          </tr>
+          <tr>
+            <td>Check All</td>
+            <td><a href="https://github.com/mjball/jQuery-CheckAll">https://github.com/mjball/jQuery-CheckAll</a></td>
+          </tr>
+          <tr>
+            <td>Data Table</td>
+            <td><a href="http://datatables.net/">http://datatables.net/</a></td>
+          </tr>
+          <tr>
+            <td>Full Calendar</td>
+            <td><a href="http://arshaw.com/fullcalendar/">http://arshaw.com/fullcalendar/</a></td>
+          </tr>
+          <tr>
+            <td>Input Mask</td>
+            <td><a href="http://digitalbush.com/projects/masked-input-plugin/">http://digitalbush.com/projects/masked-input-plugin/</a></td>
+          </tr>
+          <tr>
+            <td>Raty</td>
+            <td><a href="http://www.wbotelhos.com/raty/">http://www.wbotelhos.com/raty/</a></td>
+          </tr>
+          <tr>
+            <td>Smart Wizard</td>
+            <td><a href="http://techlaboratory.net/products.php?product=smartwizard">http://techlaboratory.net/products.php?product=smartwizard</a></td>
+          </tr>
+          <tr>
+            <td>Accordion</td>
+            <td><a href="http://jquery.bassistance.de/accordion/demo/">http://jquery.bassistance.de/accordion/demo/</a></td>
+          </tr>
+          <tr>
+            <td>jQuery Validation</td>
+            <td><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">http://bassistance.de/jquery-plugins/jquery-plugin-validation/</a></td>
+          </tr>
+          <tr>
+            <td>Chart</td>
+            <td><a href="http://www.jqplot.com/">http://www.jqplot.com/</a></td>
+          </tr>
+          <tr>
+            <td>Multi File Upload</td>
+            <td><a href="http://www.plupload.com/">http://www.plupload.com/</a></td>
+          </tr>
+          <tr>
+            <td>Few CSS inspiration</td>
+            <td><a href="http://www.webinterfacelab.com">http://www.webinterfacelab.com</a></td>
+          </tr>
+          <tr>
+            <td>Sliding Actions Menu</td>
+            <td><a href="http://tympanus.net/codrops/2010/05/31/sliding-checkbox-actions-menu-with-jquery/">http://tympanus.net/codrops/</a></td>
+          </tr>
+        </table>
+        <h3>Icons</h3>
+        <table width="100%" class="table table-bordered">
+          <tr>
+            <td width="22%"><strong>Name</strong></td>
+            <td width="78%"><strong>Source</strong></td>
+          </tr>
+          <tr>
+            <td>Iconsweets</td>
+            <td><a href="http://iconsweets.com/">http://iconsweets.com/</a> by <a href="http://yummygum.com/">yummygum</a></td>
+          </tr>
+          <tr>
+            <td>Led Icons</td>
+            <td><a href="http://led24.de/iconset/">Led Icons</a> by <a href="http://twitter.com/gasyoun">Gasyoun</a><a href="http://uniformjs.com/"></a></td>
+          </tr>
+          <tr>
+            <td>glyphicons</td>
+            <td><a href="<a href="http://glyphicons.com" target="_blank">Glyphicons</a></td>
+          </tr>
+          <tr>
+            <td>pc.de</td>
+            <td><a href="http://pc.de/ico/">http://pc.de/ico/</a> <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.de">http://creativecommons.org/licenses/by-sa/3.0/deed.de</a></td>
+          </tr>
+        </table>
+        <h3>Images &amp; Patterns</h3>
+        <table width="100%" class="table table-bordered">
+          <tr>
+            <td width="22%"><strong>Name</strong></td>
+            <td width="78%"><strong>Source</strong></td>
+          </tr>
+          <tr>
+            <td>Patterns</td>
+            <td><a href="http://subtlepatterns.com/">http://subtlepatterns.com/</a></td>
+          </tr>
+        </table>
+      </div>
+
+    
+    
+      </div>
+      </div>
+      </div>
+      
+    </section>
+    
+    
+    
+
+    
+  </div>
+     
+    </div>
+    
+    
+  </div>
+</div>
+<script src="js/respond.min.js"></script> 
+<script src="js/ios-orientationchange-fix.js"></script>
+</body>
+</html>

@@ -29,7 +29,6 @@
         Menu Hover
       =================================*/
         $(function() {
-            
             $('li.dropdown').mouseenter(function() {
               if($('body').hasClass('menu_hover')) {
                 $(this).addClass('open')
@@ -39,12 +38,7 @@
                 $(this).removeClass('open')
               }
             });
-            
-            
-            
-              
         });
-        
   %body.menu_hover
     .top-bar
       .scroll-top
@@ -482,20 +476,6 @@
           %li
             %span.active-page-icon.frames_blk
             %span Blank Layout
-      .container-fluid
-        .row-fluid
-          .page-header
-            %h2 Blank Html Layout
-        .row-fluid
-          .span12
-            .box-widget
-              .widget-head.clearfix
-                %span.h-icon
-                  %i.gray-icons.flag_2
-                %h4 Boxy Widget
-              .widget-container
-                .widget-block
-                  %p
-                    This is blank layout format. This layout page have no extra jQuery plugins and extra css files. Only two JS files is included here.
+      = yield
     %script{:src => "/assets/admin/respond.min.js"}
     %script{:src => "/assets/admin/ios-orientationchange-fix.js"}

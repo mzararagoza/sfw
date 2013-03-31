@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   #before_filter :redirect_if_logged_in
   def index
-    redirect_to :action => "/admins/"
+    redirect_to "/admins"
   end
   def login
     render :layout => 'login'

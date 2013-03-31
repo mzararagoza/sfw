@@ -95,42 +95,7 @@
           .row-fluid
             .span3
               .logo
-                %img{:alt => "Anchor", :height => "68", :src => "/assets/admin/sfw_logo.png", :width => "180"}/
-                .btn-group.dropdown-append
-                  %a.dropdown-toggle.btn{"data-toggle" => "dropdown", :href => "#", :title => "Recent Updates"}
-                    %span.notify-tiptop.tips-green 100
-                    %i.gray-icons.list_image
-                  .dropdown-menu.msg-dropdown.pull-right
-                    %ul.msg-list
-                      %li.clearfix
-                        %h6.dropdown-h.pull-left Recent Updates
-                        %span.pull-right.msg-count
-                          %a{:href => "#"} 12 New
-                      %li.clearfix
-                        %a{:href => "#"}
-                          %span.dropdown-thumb
-                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/order-40x40.png", :width => "40"}/
-                          %span
-                            %i Order
-                            $3,645.8 Dollars order is pending. waiting for approval...
-                      %li.clearfix
-                        %a{:href => "#"}
-                          %span.dropdown-thumb
-                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/events-40x40.png", :width => "40"}/
-                          %span
-                            %i Events
-                            Total 30 new events is created...
-                          %span.notification-meta Last Week
-                      %li.clearfix
-                        %a{:href => "#"}
-                          %span.dropdown-thumb
-                            %img{:alt => "Avatar", :height => "40", :src => "/assets/admin/files-40x40.png", :width => "40"}/
-                          %span
-                            %i Files
-                            Total 2,564 files are posted in last week...
-                          %span.notification-meta Last Week
-                      %li.clearfix
-                        %a.btn.btn-block.view-all{:href => "#"} View All
+                %img{:alt => "Anchor", :height => "100", :src => "/assets/admin/sfw_logo.png"}
     .navbar.navbar-fixed-top
       .navbar-inner
         .container-fluid
@@ -140,6 +105,37 @@
                 %a{:href => "/admins"}
                   %i.white-icons.home
                   Home
+            %ul.nav.pull-right
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.white-icons.admin_user_2
+                  =current_admin.full_name.titleize
+                  %b.caret
+                .dropdown-menu.admin-dropdown
+                  .clearfix
+                    .admin-user-thumb
+                      %span.large-gray-icon.admin_user_blk
+                    .admin-menu-link
+                      %ul
+                        %li
+                          %a{:href => "#"}
+                            %i.gray-icons.user
+                            =current_admin.full_name.titleize
+                        %li
+                          %a{:href => "#"}
+                            %i.gray-icons.mail
+                            =current_admin.email.downcase
+                        -#%li
+                          %a{:href => "#"}
+                            %i.gray-icons.create_write
+                            Edit Profile
+                        -#%li
+                          %a{:href => "#"}
+                            %i.gray-icons.cog_2
+                            Settings
+                  .admin-action
+                    = link_to(destroy_admin_session_path, :method => :delete ) do
+                      %button.btn.btn-extend.btn-block{:type => "button"} Logout 
     .left-bar
       .side-nav
         %ul

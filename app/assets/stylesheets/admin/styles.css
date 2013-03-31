@@ -1326,7 +1326,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	border-right:#dedede 1px solid;
 	border-bottom:#dedede 1px solid;
 	position: fixed;
-	left:180px;
+	left:400px;
 	top:40px;
 	z-index:1000;
 }

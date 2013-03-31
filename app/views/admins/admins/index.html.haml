@@ -16,41 +16,6 @@
     all admin
     %span all the admins in the system
 
-
--#.span12.widget
-  .widget-header
-    %span.title
-      =link_to t(:add_admins), new_admins_admin_path, :class => 'btn btn-info pull-right'
-  .widget-content.table-container
-    %table#dtable.table.table-striped
-      %thead
-        %tr
-          %th=t(:admin_id)
-          %th=t(:admin_name)
-          %th=t(:active)
-          %th=t(:email)
-          %th
-      %tbody
-        - admins.each do |a|
-          %tr
-            %td= link_to a.id, admins_admin_path(a)
-            %td= link_to a.full_name, admins_admin_path(a)
-            %td
-              - if a.active
-                %span{:class=> 'label label-success'}
-                  yes
-              - else
-                %span{:class=> 'label label-important'}
-                  no
-            %td= mail_to a.email
-            %td
-              = link_to edit_admins_admin_path(a), :class => 'btn btn-small btn-info' do
-                edit
-
--# content_for :pagefooter do
-  %script{ :src => "/assets/users/datatables.js"}
-
-
 .container-fluid
   .row-fluid
     .span12

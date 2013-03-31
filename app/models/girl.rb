@@ -7,5 +7,12 @@ class Girl < ActiveRecord::Base
   before_validation { |girl| girl.emergency_contact1_phone = emergency_contact1_phone.to_s.gsub(/[^0-9]/, "").to_s }
   before_validation { |girl| girl.emergency_contact2_phone = emergency_contact2_phone.to_s.gsub(/[^0-9]/, "").to_s }
 
+  def full_name
+    if middle_name.to_s
+      first_name.to_s + ' ' + middle_name.to_s[0...1]  + '. ' + last_name.to_s
+    else
+      first_name.to_s + ' ' + last_name.to_s
+    end
+  end
 end
 

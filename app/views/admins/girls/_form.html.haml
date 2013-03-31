@@ -1,0 +1,31 @@
+= simple_form_for([:admins, girl], :html => {:class => 'form-horizontal' }) do |f|
+  = f.input :first_name
+  = f.input :middle_name
+  = f.input :last_name
+  = f.input :social_security
+  = f.input :dob, :input_html => {:id => 'dp1'}
+  = f.input :address
+  = f.input :address2
+  = f.input :city
+  = f.input :state
+  = f.input :zip
+  = f.input :phone
+  = f.input :is_taking_medication
+  = f.input :list_dosage
+  = f.input :clean_date, :input_html => {:id => 'dp2'}
+  = f.input :drugs_of_choice
+  = f.input :emergency_contact1_first_name
+  = f.input :emergency_contact1_last_name
+  = f.input :emergency_contact1_phone
+  = f.input :emergency_contact1_relation
+  = f.input :emergency_contact2_first_name
+  = f.input :emergency_contact2_last_name
+  = f.input :emergency_contact2_phone
+  = f.input :emergency_contact2_relation
+  = f.input :insurance_provider
+  = f.input :group_code
+  = f.input :policy_number
+  = f.input :email
+  = f.input :active
+  = f.button :submit, :class => 'pull-right btn btn-info'
+

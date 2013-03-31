@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330175131) do
+ActiveRecord::Schema.define(:version => 20130331180426) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20130330175131) do
     t.string   "middle_name",                   :default => ""
     t.string   "last_name",                     :default => ""
     t.string   "social_security",               :default => ""
-    t.datetime "dob"
+    t.string   "dob",                           :default => ""
     t.string   "address",                       :default => ""
     t.string   "address2",                      :default => ""
     t.string   "city",                          :default => ""
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20130330175131) do
     t.string   "phone",                         :default => ""
     t.boolean  "is_taking_medication",          :default => false
     t.string   "list_dosage",                   :default => ""
-    t.datetime "clean_date"
+    t.string   "clean_date",                    :default => ""
     t.string   "drugs_of_choice",               :default => ""
     t.string   "emergency_contact1_first_name", :default => ""
     t.string   "emergency_contact1_last_name",  :default => ""
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(:version => 20130330175131) do
     t.string   "policy_number",                 :default => ""
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
+    t.string   "email",                         :default => ""
+    t.boolean  "active",                        :default => true
   end
 
 end

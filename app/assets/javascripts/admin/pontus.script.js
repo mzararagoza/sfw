@@ -634,7 +634,15 @@ $(function () {
 
     /*==Date Picker==*/
     $('#dp1').datepicker();
+    $('#dp2').datepicker();
     $('#dp3').datepicker();
+    $('#dp4').datepicker();
+    $('#dp5').datepicker();
+    $('#dp6').datepicker();
+    $('#dp7').datepicker();
+    $('#dp8').datepicker();
+    $('#dp9').datepicker();
+    $('#dp10').datepicker();
 });
 
 

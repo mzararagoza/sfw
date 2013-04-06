@@ -9,6 +9,7 @@ SobrietyforwomenAdmin::Application.routes.draw do
       resources :ui
       resources :admins
       resources :girls
+      resources :payments
       resources :profile, :only => [:edit, :update]
       resources :users
       #mount Resque::Server.new, :at => "/resque"

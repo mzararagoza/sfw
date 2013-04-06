@@ -1,0 +1,18 @@
+= provide(:title, 'Payments')
+= provide(:page_title, 'Payments')
+= provide(:page_icon, 'active-page-icon large-gray-icon price_tags_blk')
+
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li.active
+      %i.icon-official
+      =t(:payments)
+  %h1#main-heading
+    Add payment
+
+=render 'form'

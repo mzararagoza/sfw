@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Fabricate(:admin, :email => 'admin@test.com')
+10.times { Fabricate(:girl) }

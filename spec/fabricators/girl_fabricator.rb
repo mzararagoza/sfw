@@ -28,5 +28,14 @@ Fabricator(:girl) do
   policy_number { 'ABC123' }
   email { Faker::Internet.email }
   active { true }
+
+  arrival_date { DateTime.now - 10.days }
+  departure_date {}
+  referral_source { 'St Mary Hospital' }
+  referral_phone_number { Faker::PhoneNumber.cell_phone }
+  insurance_provider_phone_number { Faker::PhoneNumber.cell_phone }
+  clean_urine_upon_arriva { false }
+  photo { '' }
+  drivers_license { Random.rand(1000000000) + 99999999 }
 end
 

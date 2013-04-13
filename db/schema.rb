@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413123853) do
+ActiveRecord::Schema.define(:version => 20130413184606) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -46,36 +46,43 @@ ActiveRecord::Schema.define(:version => 20130413123853) do
   add_index "admins", ["unlock_token"], :name => "index_admins_on_unlock_token", :unique => true
 
   create_table "girls", :force => true do |t|
-    t.string   "first_name",                    :default => ""
-    t.string   "middle_name",                   :default => ""
-    t.string   "last_name",                     :default => ""
-    t.string   "social_security",               :default => ""
-    t.string   "dob",                           :default => ""
-    t.string   "address",                       :default => ""
-    t.string   "address2",                      :default => ""
-    t.string   "city",                          :default => ""
-    t.string   "state",                         :default => ""
-    t.string   "zip",                           :default => ""
-    t.string   "phone",                         :default => ""
-    t.boolean  "is_taking_medication",          :default => false
-    t.string   "list_dosage",                   :default => ""
-    t.string   "clean_date",                    :default => ""
-    t.string   "drugs_of_choice",               :default => ""
-    t.string   "emergency_contact1_first_name", :default => ""
-    t.string   "emergency_contact1_last_name",  :default => ""
-    t.string   "emergency_contact1_phone",      :default => ""
-    t.string   "emergency_contact1_relation",   :default => ""
-    t.string   "emergency_contact2_first_name", :default => ""
-    t.string   "emergency_contact2_last_name",  :default => ""
-    t.string   "emergency_contact2_phone",      :default => ""
-    t.string   "emergency_contact2_relation",   :default => ""
-    t.string   "insurance_provider",            :default => ""
-    t.string   "group_code",                    :default => ""
-    t.string   "policy_number",                 :default => ""
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
-    t.string   "email",                         :default => ""
-    t.boolean  "active",                        :default => true
+    t.string   "first_name",                      :default => ""
+    t.string   "middle_name",                     :default => ""
+    t.string   "last_name",                       :default => ""
+    t.string   "social_security",                 :default => ""
+    t.string   "dob",                             :default => ""
+    t.string   "address",                         :default => ""
+    t.string   "address2",                        :default => ""
+    t.string   "city",                            :default => ""
+    t.string   "state",                           :default => ""
+    t.string   "zip",                             :default => ""
+    t.string   "phone",                           :default => ""
+    t.boolean  "is_taking_medication",            :default => false
+    t.string   "list_dosage",                     :default => ""
+    t.string   "clean_date",                      :default => ""
+    t.string   "drugs_of_choice",                 :default => ""
+    t.string   "emergency_contact1_first_name",   :default => ""
+    t.string   "emergency_contact1_last_name",    :default => ""
+    t.string   "emergency_contact1_phone",        :default => ""
+    t.string   "emergency_contact1_relation",     :default => ""
+    t.string   "emergency_contact2_first_name",   :default => ""
+    t.string   "emergency_contact2_last_name",    :default => ""
+    t.string   "emergency_contact2_phone",        :default => ""
+    t.string   "emergency_contact2_relation",     :default => ""
+    t.string   "insurance_provider",              :default => ""
+    t.string   "group_code",                      :default => ""
+    t.string   "policy_number",                   :default => ""
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+    t.string   "email",                           :default => ""
+    t.boolean  "active",                          :default => true
+    t.string   "arrival_date",                    :default => ""
+    t.string   "departure_date",                  :default => ""
+    t.string   "referral_source",                 :default => ""
+    t.string   "referral_phone_number",           :default => ""
+    t.string   "insurance_provider_phone_number", :default => ""
+    t.boolean  "clean_urine_upon_arriva",         :default => true
+    t.string   "photo",                           :default => ""
   end
 
   create_table "payments", :force => true do |t|

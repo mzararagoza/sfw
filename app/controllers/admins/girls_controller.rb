@@ -14,7 +14,7 @@ class Admins::GirlsController < AdminController
   def update
     if girl.save
       flash[:notice] = t(:girl_was_successfully_updated)
-      redirect_to(admins_girs_path)
+      redirect_to(admins_girls_path)
     else
       render :edit
     end

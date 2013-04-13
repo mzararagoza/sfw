@@ -1,8 +1,8 @@
 module ApplicationHelper
   def payment_type_list
     [
-      ['Credit','credit'],
-      ['Debit','debit']
+      ['Receive Funds','receive_funds'],
+      ['Return Funds','return_funds']
     ]
   end
 

@@ -3,5 +3,7 @@
   = f.input :amount
   = f.input :payment_date, :input_html => {:id => 'dp1'}
   = f.input :payment_type, :collection => payment_type_list,  :as => :select, :error => false, include_blank: false, :label => 'Purpose'
+  = f.input :payment_method, :collection => payment_method_list,  :as => :select, :error => false, include_blank: false, :label => 'Purpose'
+  = f.input :payment_number
   = f.input :note
   = f.button :submit, :class => 'pull-right btn btn-info'

@@ -5,4 +5,12 @@ module ApplicationHelper
       ['Debit','debit']
     ]
   end
+
+  def payment_method_list
+    [
+      ['Cash','cash'],
+      ['Check','chrck'],
+      ['Credit Card','credit_card']
+    ]
+  end
 end

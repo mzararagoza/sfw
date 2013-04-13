@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130406153349) do
+ActiveRecord::Schema.define(:version => 20130413123853) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -80,12 +80,14 @@ ActiveRecord::Schema.define(:version => 20130406153349) do
 
   create_table "payments", :force => true do |t|
     t.integer  "girl_id"
-    t.decimal  "amount",       :precision => 8, :scale => 2
-    t.string   "payment_date",                               :default => ""
+    t.decimal  "amount",         :precision => 8, :scale => 2
+    t.string   "payment_date",                                 :default => ""
     t.string   "payment_type"
     t.text     "note"
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
+    t.string   "payment_method",                               :default => ""
+    t.string   "payment_number",                               :default => ""
   end
 
 end

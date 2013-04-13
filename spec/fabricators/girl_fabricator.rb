@@ -37,5 +37,9 @@ Fabricator(:girl) do
   clean_urine_upon_arriva { false }
   photo { '' }
   drivers_license { Random.rand(1000000000) + 99999999 }
+
+  sponsor_first_name { Faker::Name.first_name }
+  sponsor_last_name { Faker::Name.last_name }
+  sponsor_phone { Faker::PhoneNumber.cell_phone }
 end
 

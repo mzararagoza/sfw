@@ -70,4 +70,15 @@ module ApplicationHelper
         ['Wyoming', 'WY']
       ]
   end
+
+  def note_consequence_list
+    [
+      ['Warning','warning'],
+      ['Early Curfew','early curfew'],
+      ['Cleaning','cleaning'],
+      ['Termination','termination'],
+      ['House Senior','house_senior'],
+      ['Move to Middle Unit','move_to_middle_unit'],
+    ]
+  end
 end

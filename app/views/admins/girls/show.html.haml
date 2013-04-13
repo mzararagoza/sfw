@@ -17,6 +17,8 @@
 
 .container-fluid
   .row-fluid
+    .span12
+      = link_to 'Addd Note', new_admins_note_path(girl), :class => 'btn btn-info pull-right'
     %strong girl_id
     = girl.id
     %br
@@ -46,5 +48,14 @@
     %br
     %strong= t(:policy_number)
     = girl.policy_number
-
-
+    %h1 Notes
+    - girl.notes.each do |n|
+      %strong Note
+      = n.note
+      %br
+      %strong Consequence
+      = n.consequence
+      %br
+      %strong By
+      = n.admin.full_name.titleize
+      %hr

@@ -1,0 +1,5 @@
+= simple_form_for([:admins, note], :html => {:class => 'form-horizontal' }) do |f|
+  = f.input :girl_id, :as => :hidden, :input_html => {:value => girl.id }
+  = f.input :note
+  = f.input :consequence, :as => :select, :collection => note_consequence_list 
+  = f.button :submit, :class => 'pull-right btn btn-info'

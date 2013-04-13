@@ -12,6 +12,7 @@ SobrietyforwomenAdmin::Application.routes.draw do
       resources :payments
       resources :profile, :only => [:edit, :update]
       resources :users
+      resources :notes
       #mount Resque::Server.new, :at => "/resque"
       get '/dashboard' => 'dashboards#index', as: :dashboard
       get '/' => 'dashboards#index'

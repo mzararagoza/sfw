@@ -1,6 +1,6 @@
 class Admin < ActiveRecord::Base
   # Include default devise modules. Others available are:
-
+  has_many :notes
   devise :database_authenticatable, :registerable,
              :recoverable, :rememberable, :trackable, :validatable
 

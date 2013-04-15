@@ -8,6 +8,8 @@ class Girl < ActiveRecord::Base
   before_validation { |girl| girl.emergency_contact1_phone = emergency_contact1_phone.to_s.gsub(/[^0-9]/, "").to_s }
   before_validation { |girl| girl.emergency_contact2_phone = emergency_contact2_phone.to_s.gsub(/[^0-9]/, "").to_s }
 
+  mount_uploader :photo, PhotoUploader
+
   def full_name
     if middle_name.to_s.length > 0
       first_name.to_s + ' ' + middle_name.to_s[0...1]  + '. ' + last_name.to_s

@@ -19,43 +19,69 @@
   .row-fluid
     .span12
       = link_to 'Addd Note', new_admins_note_path(girl), :class => 'btn btn-info pull-right'
-    %strong girl_id
-    = girl.id
-    %br
-    %strong= t(:name)
-    = girl.full_name.titleize
-    %br
-    %strong= t(:ssn)
-    = girl.social_security
-    %br
-    %strong= t(:is_taking_medication)
-    = girl.is_taking_medication
-    %br
-    %strong= t(:list_dosage)
-    = girl.list_dosage
-    %br
-    %strong= t(:clean_date)
-    = girl.clean_date
-    %br
-    %strong= t(:drugs_of_choice)
-    = girl.drugs_of_choice
-    %br
-    %strong= t(:insurance_provider)
-    = girl.insurance_provider
-    %br
-    %strong= t(:group_code)
-    = girl.group_code
-    %br
-    %strong= t(:policy_number)
-    = girl.policy_number
-    %h1 Notes
-    - girl.notes.each do |n|
-      %strong Note
-      = n.note
       %br
-      %strong Consequence
-      = n.consequence
       %br
-      %strong By
-      = n.admin.full_name.titleize
-      %hr
+      = link_to 'Addd Payment', new_admins_payment_path(girl), :class => 'btn btn-info pull-right'
+    .span6
+      %strong girl_id
+      = girl.id
+      %br
+      %strong= t(:name)
+      = girl.full_name.titleize
+      %br
+      %strong= t(:ssn)
+      = girl.social_security
+      %br
+      %strong= t(:is_taking_medication)
+      = girl.is_taking_medication
+      %br
+      %strong= t(:list_dosage)
+      = girl.list_dosage
+      %br
+      %strong= t(:clean_date)
+      = girl.clean_date
+      %br
+      %strong= t(:drugs_of_choice)
+      = girl.drugs_of_choice
+      %br
+      %strong= t(:insurance_provider)
+      = girl.insurance_provider
+      %br
+      %strong= t(:group_code)
+      = girl.group_code
+      %br
+      %strong= t(:policy_number)
+      = girl.policy_number
+      %h1 Payments
+      - girl.payments.each do |p|
+        %strong Amount
+        = p.amount
+        %br
+        %strong payment_date
+        = p.payment_date
+        %br
+        %strong payment_type
+        = p.payment_type
+        %br
+        %strong note
+        = p.note
+        %br
+        %strong payment_method
+        = p.payment_method
+        %br
+        %strong payment_number
+        = p.payment_number
+        %hr
+      %h1 Notes
+      - girl.notes.each do |n|
+        %strong Note
+        = n.note
+        %br
+        %strong Consequence
+        = n.consequence
+        %br
+        %strong By
+        = n.admin.full_name.titleize
+        %hr
+    .span5
+      = image_tag girl.photo, :class => 'img-polaroid' unless girl.photo.blank?

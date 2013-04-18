@@ -53,7 +53,7 @@
       %strong= t(:policy_number)
       = girl.policy_number
       %h1 Payments
-      - girl.payments.each do |p|
+      - girl.payments.order("id DESC").each do |p|
         %strong Amount
         = p.amount
         %br
@@ -73,7 +73,7 @@
         = p.payment_number
         %hr
       %h1 Notes
-      - girl.notes.each do |n|
+      - girl.notes.order("id DESC").each do |n|
         %strong Note
         = n.note
         %br

@@ -2,7 +2,7 @@
 = provide(:page_title, 'Admins')
 = provide(:page_icon, 'active-page-icon large-gray-icon admin_user_blk')
 
-- content_for :pageheader do
+-content_for :pageheader do
   %ul.breadcrumb
     %li
       = link_to admins_dashboard_path do
@@ -16,37 +16,38 @@
     all admin
     %span all the admins in the system
 
-.container-fluid
-  .row-fluid
-    .span12
-      .box-widget
-        .widget-head.clearfix
-          %span.h-icon
-            %i.blue-icons.admin_user_2
-          %h4 Admins
-          =link_to t(:add_admins), new_admins_admin_path, :class => 'btn btn-info pull-right'
-        .widget-container
-          %table.data-tbl-boxy.table.table-striped.table-well.responsive
-            %thead
-              %tr
-                %th=t(:admin_id)
-                %th=t(:admin_name)
-                %th=t(:active)
-                %th=t(:email)
-                %th
-            %tbody
-              - admins.each do |a|
-                %tr
-                  %td= link_to a.id, admins_admin_path(a)
-                  %td= link_to a.full_name, admins_admin_path(a)
-                  %td
-                    - if a.active
-                      %span{:class=> 'label label-success'}
-                        yes
-                    - else
-                      %span{:class=> 'label label-important'}
-                        no
-                  %td= mail_to a.email
-                  %td
-                    = link_to edit_admins_admin_path(a), :class => 'btn btn-small btn-info' do
-                      edit
+
+=link_to t(:add_admins), new_admins_admin_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      %i.icon-table
+      Admins
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:admin_id)
+          %th=t(:admin_name)
+          %th=t(:active)
+          %th=t(:email)
+          %th
+      %tbody
+        - admins.each do |a|
+          %tr
+            %td= link_to a.id, admins_admin_path(a)
+            %td= link_to a.full_name, admins_admin_path(a)
+            %td
+              - if a.active
+                %span{:class=> 'label label-success'}
+                  yes
+              - else
+                %span{:class=> 'label label-important'}
+                  no
+            %td= mail_to a.email
+            %td
+              = link_to 'Edit', edit_admins_admin_path(a), :class => 'btn btn-small btn-info'
+
+
+
+

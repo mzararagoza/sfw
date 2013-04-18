@@ -16,7 +16,48 @@
     All Girls
     %span all the girls in the system
 
-.container-fluid
+=link_to t(:add_girl), new_admins_girl_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      %i.icon-table
+      Admins
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:girl_id)
+          %th=t(:name)
+          %th=t(:ssn)
+          %th=t(:is_taking_medication)
+          %th=t(:list_dosage)
+          %th=t(:clean_date)
+          %th=t(:drugs_of_choice)
+          %th=t(:insurance_provider)
+          %th=t(:group_code)
+          %th=t(:policy_number)
+          %th=t(:last_payment_date)
+          %th=t(:photo)
+          %th
+      %tbody
+        - girls.each do |g|
+          %tr
+            %td= link_to g.id, admins_girl_path(g)
+            %td= link_to g.full_name.titleize, admins_girl_path(g)
+            %td= g.social_security
+            %td= g.is_taking_medication
+            %td= g.list_dosage
+            %td= g.clean_date
+            %td= g.drugs_of_choice
+            %td= g.insurance_provider
+            %td= g.group_code
+            %td= g.policy_number
+            %td= g.payments.last.payment_date if g.payments != []
+            %td= image_tag g.photo, :width => '50', :class => 'img-polaroid' unless g.photo.blank?
+            %td
+              = link_to edit_admins_girl_path(g), :class => 'btn btn-small btn-info' do
+                edit
+-#.container-fluid
   .row-fluid
     .span12
       .box-widget
@@ -24,39 +65,6 @@
           %span.h-icon
             %i.ledcolor-icons.user_female_co
           %h4 Girls
-          =link_to t(:add_girl), new_admins_girl_path, :class => 'btn btn-info pull-right'
         .widget-container
           %table.data-tbl-boxy.table.table-striped.table-well.responsive
             %thead
-              %tr
-                %th=t(:girl_id)
-                %th=t(:name)
-                %th=t(:ssn)
-                %th=t(:is_taking_medication)
-                %th=t(:list_dosage)
-                %th=t(:clean_date)
-                %th=t(:drugs_of_choice)
-                %th=t(:insurance_provider)
-                %th=t(:group_code)
-                %th=t(:policy_number)
-                %th=t(:last_payment_date)
-                %th=t(:photo)
-                %th
-            %tbody
-              - girls.each do |g|
-                %tr
-                  %td= link_to g.id, admins_girl_path(g)
-                  %td= link_to g.full_name.titleize, admins_girl_path(g)
-                  %td= g.social_security
-                  %td= g.is_taking_medication
-                  %td= g.list_dosage
-                  %td= g.clean_date
-                  %td= g.drugs_of_choice
-                  %td= g.insurance_provider
-                  %td= g.group_code
-                  %td= g.policy_number
-                  %td= g.payments.last.payment_date if g.payments != []
-                  %td= image_tag g.photo, :width => '50', :class => 'img-polaroid' unless g.photo.blank?
-                  %td
-                    = link_to edit_admins_girl_path(g), :class => 'btn btn-small btn-info' do
-                      edit

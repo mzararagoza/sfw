@@ -1,43 +1,165 @@
 = image_tag girl.photo, :class => 'img-polaroid' unless girl.photo.blank?
-= simple_form_for([:admins, girl], :html => {:class => 'form-horizontal' }) do |f|
-  = f.input :first_name
-  = f.input :middle_name
-  = f.input :last_name
-  = f.input :arrival_date, :input_html => {:id => 'dp1'}
-  = f.input :departure_date, :input_html => {:id => 'dp2'}
-  = f.input :social_security
-  = f.input :dob
-  = f.input :address
-  = f.input :address2
-  = f.input :city
-  = f.input :state, :as => :select, :collection => us_states
-  = f.input :zip
-  = f.input :drivers_license
-  = f.input :phone
-  = f.input :email
-  = f.input :is_taking_medication
-  = f.input :list_dosage
-  = f.input :clean_date, :input_html => {:id => 'dp3'}
-  = f.input :drugs_of_choice
-  = f.input :emergency_contact1_first_name
-  = f.input :emergency_contact1_last_name
-  = f.input :emergency_contact1_phone
-  = f.input :emergency_contact1_relation
-  = f.input :emergency_contact2_first_name
-  = f.input :emergency_contact2_last_name
-  = f.input :emergency_contact2_phone
-  = f.input :emergency_contact2_relation
-  = f.input :insurance_provider
-  = f.input :insurance_provider_phone_number
-  = f.input :group_code
-  = f.input :policy_number
-  = f.input :clean_urine_upon_arriva
-  = f.input :referral_source
-  = f.input :referral_phone_number
-  = f.input :sponsor_first_name
-  = f.input :sponsor_last_name
-  = f.input :sponsor_phone
-  = f.input :photo
-  = f.input :active
-  = f.button :submit, :class => 'pull-right btn btn-info'
+.mws-panel.grid_8
+  .mws-panel-header
+    %span Inline Form
+  .mws-panel-body.no-padding
+    = simple_form_for([:admins, girl], :html => {:class => 'mws-form' }) do |f|
+      .mws-form-inline
+        .mws-form-row
+          %label.mws-form-label= t(:first_name)
+          .mws-form-item
+            = f.input :first_name, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:middle_name)
+          .mws-form-item
+            = f.input :middle_name, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:last_name)
+          .mws-form-item
+            = f.input :last_name, :label => false, input_html: { class: 'small'}
+        .mws-form-row
+          %label.mws-form-label= t(:arrival_date)
+          .mws-form-item
+            = f.input :arrival_date, :input_html => {:id => 'dp1'}, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:departure_date)
+          .mws-form-item
+            = f.input :departure_date, :input_html => {:id => 'dp2'}, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:social_security)
+          .mws-form-item
+            = f.input :social_security, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:dob)
+          .mws-form-item
+            = f.input :dob, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:address)
+          .mws-form-item
+            = f.input :address, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:address2)
+          .mws-form-item
+            = f.input :address2, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:city)
+          .mws-form-item
+            = f.input :city, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:state)
+          .mws-form-item
+            = f.input :state, :as => :select, :collection => us_states, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:zip)
+          .mws-form-item
+            = f.input :zip, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:drivers_license)
+          .mws-form-item
+            = f.input :drivers_license, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:phone)
+          .mws-form-item
+            = f.input :phone, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:email)
+          .mws-form-item
+            = f.input :email, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:is_taking_medication)
+          .mws-form-item
+            = f.input :is_taking_medication, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:list_dosage)
+          .mws-form-item
+            = f.input :list_dosage, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:clean_date)
+          .mws-form-item
+            = f.input :clean_date, :input_html => {:id => 'dp3'}, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:drugs_of_choice)
+          .mws-form-item
+            = f.input :drugs_of_choice, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:emergency_contact1_first_name)
+          .mws-form-item
+            = f.input :emergency_contact1_first_name, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:emergency_contact1_last_name)
+          .mws-form-item
+            = f.input :emergency_contact1_last_name, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:emergency_contact1_phone)
+          .mws-form-item
+            = f.input :emergency_contact1_phone, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:emergency_contact1_relation)
+          .mws-form-item
+            = f.input :emergency_contact1_relation, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:emergency_contact2_first_name)
+          .mws-form-item
+            = f.input :emergency_contact2_first_name, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:emergency_contact2_last_name)
+          .mws-form-item
+            = f.input :emergency_contact2_last_name, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:emergency_contact2_phone)
+          .mws-form-item
+            = f.input :emergency_contact2_phone, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:emergency_contact2_relation)
+          .mws-form-item
+            = f.input :clean_date, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:clean_date)
+          .mws-form-item
+            = f.input :insurance_provider, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:insurance_provider_phone_number)
+          .mws-form-item
+            = f.input :insurance_provider_phone_number, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:group_code)
+          .mws-form-item
+            = f.input :group_code, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:policy_number)
+          .mws-form-item
+            = f.input :policy_number, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:clean_urine_upon_arriva)
+          .mws-form-item
+            = f.input :clean_urine_upon_arriva, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:referral_source)
+          .mws-form-item
+            = f.input :referral_source, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:sponsor_first_name)
+          .mws-form-item
+            = f.input :referral_phone_number, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:sponsor_first_name)
+          .mws-form-item
+            = f.input :sponsor_first_name, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:sponsor_last_name)
+          .mws-form-item
+            = f.input :sponsor_last_name, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:sponsor_phone)
+          .mws-form-item
+            = f.input :sponsor_phone, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:photo)
+          .mws-form-item
+            = f.input :photo, :label => false
+        .mws-form-row
+          %label.mws-form-label= t(:active)
+          .mws-form-item
+            = f.input :active, :label => false
+            = f.button :submit, :class => 'pull-right btn btn-info'
 

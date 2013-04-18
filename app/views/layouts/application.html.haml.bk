@@ -234,9 +234,7 @@
         / Inner Container End
         / Footer
         #mws-footer
-          Copyright Sobriety For Women 
-          2012
-          All Rights Reserved.
+          Copyright Your Website 2012. All Rights Reserved.
       / Main Container End
     / JavaScript Plugins
     %script{:src => "/assets/admin2/libs/jquery-1.8.3.min.js"}
@@ -249,9 +247,8 @@
     %script{:src => "/assets/admin2/jui/js/jquery.ui.touch-punch.js"}
     / Plugin Scripts
     %script{:src => "/assets/admin2/plugins/datatables/jquery.dataTables.min.js"}
-    %script{:src => "/assets/admin2/plugins/colorpicker/colorpicker-min.js"}
     /[if lt IE 9]
-      %script{:src => "/assets/admin2/libs/excanvas.min.js"}
+      <script src="js/libs/excanvas.min.js"></script>
     %script{:src => "/assets/admin2/plugins/flot/jquery.flot.min.js"}
     %script{:src => "/assets/admin2/plugins/flot/plugins/jquery.flot.tooltip.min.js"}
     %script{:src => "/assets/admin2/plugins/flot/plugins/jquery.flot.pie.min.js"}
@@ -267,27 +264,4 @@
     %script{:src => "/assets/admin2/core/themer.js"}
     / Demo Scripts (remove if not needed)
     %script{:src => "/assets/admin2/demo/demo.dashboard.js"}
-   
- 
-    / JavaScript Plugins
-    %script{:src => "/assets/admin2/libs/jquery-1.8.3.min.js"}
-    %script{:src => "/assets/admin2/libs/jquery.mousewheel.min.js"}
-    %script{:src => "/assets/admin2/libs/jquery.placeholder.min.js"}
-    %script{:src => "/assets/admin2/custom-plugins/fileinput.js"}
-    / jQuery-UI Dependent Scripts
-    %script{:src => "/assets/admin2/jui/js/jquery-ui-1.9.2.min.js"}
-    %script{:src => "/assets/admin2/jui/jquery-ui.custom.min.js"}
-    %script{:src => "/assets/admin2/jui/js/jquery.ui.touch-punch.js"}
-    / Plugin Scripts
-    %script{:src => "/assets/admin2/plugins/datatables/jquery.dataTables.min.js"}
-    %script{:src => "/assets/admin2/plugins/colorpicker/colorpicker-min.js"}
-    / Core Script
-    %script{:src => "/assets/admin2/bootstrap/js/bootstrap.min.js"}
-    %script{:src => "/assets/admin2/core/mws.js"}
-    / Themer Script (Remove if not needed)
-    %script{:src => "/assets/admin2/core/themer.js"}
-    / Demo Scripts (remove if not needed)
-    %script{:src => "/assets/admin2/demo/demo.table.js"}
-
     = yield :pagefooter
-

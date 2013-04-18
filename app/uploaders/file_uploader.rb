@@ -9,7 +9,7 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-     %w(doc docx log msg odt pages rtf tex txt wpd wps bmp dds gif jpg png psd pspimage tga thm tif tiff yuv pdf)
+     %w(pdf)
   end
 
   # Process files as they are uploaded:

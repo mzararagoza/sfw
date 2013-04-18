@@ -22,6 +22,14 @@
       %br
       %br
       = link_to 'Add Payment', new_admins_payment_path(girl), :class => 'btn btn-info pull-right'
+    .clear
+    -#.span12
+      = link_to t(:opportunities_rules), girl.opportunities_rules_url, :class => 'btn btn-info' if girl.opportunities_rules
+      = link_to t(:aa_meeting_sheet), girl.aa_meeting_sheet_url, :class => 'btn btn-info' if girl.aa_meeting_sheet
+      = link_to t(:release_of_liability), girl.release_of_liability_url, :class => 'btn btn-info' if girl.release_of_liability
+      = link_to t(:opportunities_intake_form), girl.opportunities_intake_form_url, :class => 'btn btn-info' if girl.opportunities_intake_form
+      = link_to t(:opportunities_relapse_plan), girl.opportunities_relapse_plan_url, :class => 'btn btn-info' if girl.opportunities_relapse_plan
+      = link_to t(:sober_inc), girl.sober_inc_url , :class => 'btn btn-info' if girl.sober_inc
     .span6
       %strong girl_id
       = girl.id

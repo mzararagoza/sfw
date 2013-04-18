@@ -1,108 +1,30 @@
 !!!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
 %html{:lang => "en"}
+  / <![endif]
   %head
     %meta{:charset => "utf-8"}/
-    %title Sobriety For Women login
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "Admin Panel Template", :name => "description"}/
-    %meta{:content => "Westilian: Kamrujaman Shohel", :name => "author"}/
-    / styles
-    %link{:href => "/assets/admin/bootstrap.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin/styles.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin//prettify.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin/aristo-ui.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin/fullcalendar.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin/elfinder.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin/jquery.jqplot.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin/responsive-tables.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin/bootstrap-responsive.css", :rel => "stylesheet"}/
-    %link{:href => "/assets/admin/themes.css", :rel => "stylesheet"}/
-    %link{:href => "http://fonts.googleapis.com/css?family=Rokkitt:400,700", :rel => "stylesheet", :type => "text/css"}/
-    /[if IE 7]
-      <link rel="stylesheet" type="text/css" href="/assets/admin/ie/ie7.css" />
-    /[if IE 8]
-      <link rel="stylesheet" type="text/css" href="/assets/admin/ie/ie8.css" />
-    /[if IE 9]
-      <link rel="stylesheet" type="text/css" href="/assets/admin/ie/ie9.css" />
-    / fav and touch icons
-    %link{:href => "/assets/admin/ico/favicon.ico", :rel => "shortcut icon"}/
-    %link{:href => "/assets/admin/ico/apple-touch-icon-144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}/
-    %link{:href => "/assets/admin/ico/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}/
-    %link{:href => "/assets/admin/ico/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}/
-    %link{:href => "/assets/admin/ico/apple-touch-icon-57-precomposed.png", :rel => "apple-touch-icon-precomposed"}/
-    / ============ javascript ===========
-    %script{:src => "/assets/admin/jquery.js"}
-    %script{:src => "/assets/admin/bootstrap.min.js"}
-    %script{:src => "/assets/admin/jquery-ui-1.8.16.custom.min.js"}
-    %script{:src => "/assets/admin/jquery.data-table.js"}
-    %script{:src => "/assets/admin/prettify.js"}
-    %script{:src => "/assets/admin/jquery.metadata.js"}
-    %script{:src => "/assets/admin/jquery.validate.js"}
-    %script{:src => "/assets/admin/stepy.jquery.js"}
-    %script{:src => "/assets/admin/inputmask.jquery.js"}
-    %script{:src => "/assets/admin/jquery.tagsinput.js"}
-    %script{:src => "/assets/admin/uniform.jquery.js"}
-    %script{:src => "/assets/admin/fullcalendar.min.js"}
-    %script{:src => "/assets/admin/gcal.js"}
-    %script{:src => "/assets/admin/elfinder.min.js"}
-    %script{:src => "/assets/admin/jquery.notify.js"}
-    %script{:src => "/assets/admin/responsive-tables.js"}
-    %script{:src => "/assets/admin/jquery.cleditor.js"}
-    / RANGE DATE PICKER
-    %script{:src => "/assets/admin/jquery.slider.min.js"}
-    %script{:src => "/assets/admin/date.js", :type => "text/javascript"}
-    %script{:src => "/assets/admin/daterangepicker.js", :type => "text/javascript"}
-    %script{:src => "/assets/admin/bootstrap-datepicker.js", :type => "text/javascript"}
-    %script{:src => "/assets/admin/bootstrap-colorpicker.js", :type => "text/javascript"}
-    %script{:src => "/assets/admin/chosen.jquery.js"}
-    %script{:src => "/assets/admin/input-limiter.jquery.js"}
-    %script{:src => "/assets/admin/jquery.autosize.js"}
-    %script{:src => "/assets/admin/raty.jquery.js"}
-    %script{:src => "/assets/admin/easing.jquery.js"}
-    %script{:src => "/assets/admin/iphone-style-checkboxes.js"}
-    %script{:src => "/assets/admin/duallist.jquery.js"}
-    %script{:src => "/assets/admin/ui.spinner.min.js"}
-    %script{:src => "https://www.google.com/jsapi"}
-    %script{:src => "/assets/admin/jquery.sparkline.min.js"}
-    / JqPlot CHART
-    %script{:src => "/assets/admin/excanvas.min.js"}
-    %script{:src => "/assets/admin/jquery.jqplot.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.highlighter.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.cursor.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.barRenderer.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.pointLabels.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.dateAxisRenderer.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.pieRenderer.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.donutRenderer.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.categoryAxisRenderer.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.logAxisRenderer.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.canvasTextRenderer.min.js"}
-    %script{:src => "/assets/admin/chart/jqplot.canvasAxisTickRenderer.min.js"}
-    / html5.js for IE less than 9
-    /[if lt IE 9]
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    %script{:src => "/assets/admin/pontus.script.js"}
-  %body.menu_hover
-    %center
-      =image_tag '/assets/admin/sfw_logo.png'
-    %br
-    #login-errors-wrap
-      - unless flash[:notice].blank?
-        %br
-        %br
-        .alert.fade.in
-          = content_tag :div, flash[:notice]
-      - unless flash[:error].blank?
-        %br
-        %br
-        .alert.alert-danger.fade.in
-          = content_tag :div, flash[:error]
-      - unless flash[:alert].blank?
-        %br
-        %br
-        .alert.alert-info.fade.in
-          = content_tag :div, flash[:alert]
-    %br{:style => 'clear:both;'}
-    =yield
-  %script{:src => "/assets/admin/respond.min.js"}
-  %script{:src => "/assets/admin/ios-orientationchange-fix.js"}
+    / Viewport Metatag
+    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
+    / Required Stylesheets
+    %link{:href => "/assets/admin2/bootstrap/css/bootstrap.min.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/admin2/fonts/ptsans/stylesheet.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/admin2/fonts/icomoon/style.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/admin2/login.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/admin2/mws-theme.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %title MWS Admin - Login Page
+  %body
+    = yield
+    / JavaScript Plugins
+    %script{:src => "/assets/admin2/libs/jquery-1.8.3.min.js"}
+    %script{:src => "/assets/admin2/libs/jquery.placeholder.min.js"}
+    %script{:src => "/assets/admin2/custom-plugins/fileinput.js"}
+    / jQuery-UI Dependent Scripts
+    %script{:src => "/assets/admin2/jui/js/jquery-ui-effects.min.js"}
+    / Plugin Scripts
+    %script{:src => "/assets/admin2/plugins/validate/jquery.validate-min.js"}
+    / Login Script
+    %script{:src => "/assets/admin2/core/login.js"}

@@ -37,6 +37,7 @@
           %th=t(:group_code)
           %th=t(:policy_number)
           %th=t(:last_payment_date)
+          %th=t(:active)
           %th=t(:photo)
           %th
       %tbody
@@ -53,6 +54,11 @@
             %td= g.group_code
             %td= g.policy_number
             %td= g.payments.last.payment_date if g.payments != []
+            %td
+              - if g.active
+                .badge.badge-success Yes
+              -else
+                .badge.badge-important No
             %td= image_tag g.photo, :width => '50', :class => 'img-polaroid' unless g.photo.blank?
             %td
               = link_to edit_admins_girl_path(g), :class => 'btn btn-small btn-info' do

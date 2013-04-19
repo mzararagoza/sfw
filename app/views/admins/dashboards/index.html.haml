@@ -2,3 +2,31 @@
 = provide(:page_title, 'Home')
 = provide(:page_icon, 'active-page-icon large-gray-icon home_blk')
 
+.mws-panel.grid_4
+  .mws-panel-header
+    %span Active Girls
+  .mws-panel-body.no-padding
+    %form.mws-form{:action => "form_layouts.html"}
+      %fieldset.mws-form-inline
+        .mws-form-row.bordered
+          .mws-panel.grid_8
+            .mws-panel-header
+              %span
+                %i.icon-table
+                Active Girls in the Systems
+            .mws-panel-body.no-padding
+              %table.mws-table
+                %thead
+                  %tr
+                    %th= t(:name)
+                    %th= t(:last_payment_date)
+                    %th= t(:arrival_date)
+                %tbody
+                  - girls.each do |g|
+                    %tr
+                      %td= link_to g.full_name.titleize, admins_girl_path(g)
+                      %td= g.payments.last.payment_date if g.payments != []
+                      %td= g.arrival_date
+      .mws-button-row
+        %input.btn.btn-danger{:type => "submit", :value => "Submit"}/
+        %input.btn{:type => "reset", :value => "Reset"}/

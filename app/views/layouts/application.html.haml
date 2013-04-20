@@ -11,7 +11,6 @@
     %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
     / Plugin Stylesheets first to ease overrides
     %link{:href => "/assets/admin2/plugins/colorpicker/colorpicker.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "/assets/admin2/custom-plugins/wizard/wizard.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     / Required Stylesheets
     %link{:href => "/assets/admin2/bootstrap/css/bootstrap.min.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/admin2/fonts/ptsans/stylesheet.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
@@ -27,13 +26,10 @@
     / Theme Stylesheet
     %link{:href => "/assets/admin2/mws-theme.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/admin2/themer.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
-    %title
-      = yield(:title)
-      |
-      = t(:sobriety_for_women)
+    %title MWS Admin - Table
   %body
     / Themer (Remove if not needed)
-    -##mws-themer
+    #mws-themer
       #mws-themer-content
         #mws-themer-ribbon
         #mws-themer-toggle
@@ -77,11 +73,11 @@
       #mws-logo-container
         / Logo Wrapper, images put within this wrapper will always be vertically centered
         #mws-logo-wrap
-          %img{:alt => "mws admin", :src => "/assets/admin/sfw_logo.png"}/
+          %img{:alt => "S4W admin", :src => "/assets/admin/sfw_logo.png"}/
       / User Tools (notifications, logout, profile, change password)
       #mws-user-tools.clearfix
         / Notifications
-        -#mws-user-notif.mws-dropdown-menu
+        -##mws-user-notif.mws-dropdown-menu
           %a.mws-dropdown-trigger{"data-toggle" => "dropdown", :href => "#"}
             %i.icon-exclamation-sign
           / Unread notification count
@@ -117,7 +113,7 @@
               .mws-dropdown-viewall
                 %a{:href => "#"} View All Notifications
         / Messages
-        -#mws-user-message.mws-dropdown-menu
+        -##mws-user-message.mws-dropdown-menu
           %a.mws-dropdown-trigger{"data-toggle" => "dropdown", :href => "#"}
             %i.icon-envelope
           / Unred messages count
@@ -164,7 +160,8 @@
           / Username and Functions
           #mws-user-functions
             #mws-username
-              Hello, John Doe
+              Hello,
+              = current_admin.full_name.titleize
             %ul
               %li
                 %a{:href => "#"} Profile
@@ -186,7 +183,8 @@
           %span
         / Searchbox
         #mws-searchbox.mws-inset
-          %img{:alt => "mws admin", :src => "/assets/admin/sfw_logo.png"}/
+          %br
+          %br
           -#%form{:action => "typography.html"}
             %input.mws-search-input{:placeholder => "Search...", :type => "text"}/
             %button.mws-search-submit{:type => "submit"}
@@ -195,7 +193,7 @@
         #mws-navigation
           %ul
             %li{ :class => "#{'active' if params[:controller] == 'admins/dashboards'}" }
-              = link_to  admins_dashboard_path do 
+              = link_to admins_dashboard_path do
                 %i.icol32-speedometer
                 Dashboard
             %li{ :class => "#{'active' if params[:controller] == 'admins/admins'}" }
@@ -205,70 +203,1017 @@
             %li{ :class => "#{'active' if params[:controller] == 'admins/girls'}" }
               = link_to admins_girls_path do
                 %i.icol32-female
-                Girls
+                Girls 
+          -#%ul
+            %li
+              %a{:href => "dashboard.html"}
+                %i.icon-home
+                Dashboard
+            %li
+              %a{:href => "charts.html"}
+                %i.icon-graph
+                Charts
+            %li
+              %a{:href => "calendar.html"}
+                %i.icon-calendar
+                Calendar
+            %li
+              %a{:href => "files.html"}
+                %i.icon-folder-closed
+                File Manager
+            %li.active
+              %a{:href => "table.html"}
+                %i.icon-table
+                Table
+            %li
+              %a{:href => "#"}
+                %i.icon-list
+                Forms
+              %ul
+                %li
+                  %a{:href => "form_layouts.html"} Layouts
+                %li
+                  %a{:href => "form_elements.html"} Elements
+                %li
+                  %a{:href => "form_wizard.html"} Wizard
+            %li
+              %a{:href => "widgets.html"}
+                %i.icon-cogs
+                Widgets
+            %li
+              %a{:href => "typography.html"}
+                %i.icon-font
+                Typography
+            %li
+              %a{:href => "grids.html"}
+                %i.icon-th
+                Grids & Panels
+            %li
+              %a{:href => "gallery.html"}
+                %i.icon-pictures
+                Gallery
+            %li
+              %a{:href => "error.html"}
+                %i.icon-warning-sign
+                Error Page
+            %li
+              %a{:href => "icons.html"}
+                %i.icon-pacman
+                Icons
+                %span.mws-nav-tooltip 2000+
       / Main Container Start
       #mws-container.clearfix
         / Inner Container Start
         .container
-          - unless flash[:notice].blank?
-            %br
-            %br
-            .alert.fade.in
-              = link_to 'x', '#',:class => 'close', 'data-dismiss' => 'alert'
-              = content_tag :div, flash[:notice]
-          - unless flash[:error].blank?
-            %br
-            %br
-            .alert.alert-danger.fade.in
-              = link_to 'x', '#',:class => 'close', 'data-dismiss' => 'alert'
-              = content_tag :div, flash[:error]
-          - unless flash[:alert].blank?
-            %br
-            %br
-            .alert.alert-info.fade.in
-              = link_to 'x', '#',:class => 'close', 'data-dismiss' => 'alert'
-              = content_tag :div, flash[:alert]
-          = yield :pageheader
-          = yield
+          / Statistics Button Container
+          -#.mws-stat-container.clearfix
+            / Statistic Item
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-building
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Floors Climbed
+                %span.mws-stat-value 324
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-sport
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Calories Burned
+                %span.mws-stat-value.down 74%
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-walk
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Kilometers Walked
+                %span.mws-stat-value 14
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-bug
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Bugs Fixed
+                %span.mws-stat-value.up 22%
+            %a.mws-stat{:href => "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-car
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Cars Repaired
+                %span.mws-stat-value 77
+          / Panels Start
+          .mws-panel.grid_8
+            .mws-panel-header
+              %span
+                %i.icon-table
+                Simple Table
+            .mws-panel-body.no-padding
+              %table.mws-table
+                %thead
+                  %tr
+                    %th Rendering engine
+                    %th Browser
+                    %th Platform(s)
+                    %th Engine version
+                    %th CSS grade
+                %tbody
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 4.0
+                    %td Win 95+
+                    %td 4
+                    %td X
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 5.0
+                    %td Win 95+
+                    %td 5
+                    %td C
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 5.5
+                    %td Win 95+
+                    %td 5.5
+                    %td A
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 6
+                    %td Win 98+
+                    %td 6
+                    %td A
+                  %tr
+                    %td Trident
+                    %td Internet Explorer 7
+                    %td Win XP SP2+
+                    %td 7
+                    %td A
+                  %tr
+                    %td Trident
+                    %td AOL browser (AOL desktop)
+                    %td Win XP
+                    %td 6
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 1.0
+                    %td Win 98+ / OSX.2+
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 1.5
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Camino 1.5
+                    %td OSX.3+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Netscape 7.2
+                    %td Win 95+ / Mac OS 8.6-9.2
+                    %td 1.7
+                    %td A
+          .mws-panel.grid_8
+            .mws-panel-header
+              %span
+                %i.icon-table
+                Table with Toolbar
+            .mws-panel-toolbar
+              .btn-toolbar
+                .btn-group
+                  %a.btn{:href => "#"}
+                    %i.icol-accept
+                    Accept
+                  %a.btn{:href => "#"}
+                    %i.icol-cross
+                    Reject
+                  %a.btn{:href => "#"}
+                    %i.icol-printer
+                    Print
+                  %a.btn{:href => "#"}
+                    %i.icol-arrow-refresh
+                    Renew
+                  %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    %span.caret
+                  %ul.dropdown-menu.pull-right
+                    %li
+                      %a{:href => "#"}
+                        %i.icol-disconnect
+                        Disconnect From Server
+                    %li.divider
+                    %li.dropdown-submenu
+                      %a{:href => "#"} More Options
+                      %ul.dropdown-menu
+                        %li
+                          %a{:href => "#"} Contact Administrator
+                        %li
+                          %a{:href => "#"} Destroy Table
+            .mws-panel-body.no-padding
+              %table.mws-table
+                %thead
+                  %tr
+                    %th.checkbox-column
+                      %input{:type => "checkbox"}/
+                    %th Rendering engine
+                    %th Browser
+                    %th Platform(s)
+                    %th Engine version
+                    %th CSS grade
+                %tbody
+                  %tr
+                    %td.checkbox-column
+                      %input{:type => "checkbox"}/
+                    %td Trident
+                    %td Internet Explorer 4.0
+                    %td Win 95+
+                    %td 4
+                    %td X
+                  %tr
+                    %td.checkbox-column
+                      %input{:type => "checkbox"}/
+                    %td Trident
+                    %td Internet Explorer 5.0
+                    %td Win 95+
+                    %td 5
+                    %td C
+                  %tr
+                    %td.checkbox-column
+                      %input{:type => "checkbox"}/
+                    %td Trident
+                    %td Internet Explorer 5.5
+                    %td Win 95+
+                    %td 5.5
+                    %td A
+                  %tr
+                    %td.checkbox-column
+                      %input{:type => "checkbox"}/
+                    %td Trident
+                    %td Internet Explorer 6
+                    %td Win 98+
+                    %td 6
+                    %td A
+                  %tr
+                    %td.checkbox-column
+                      %input{:type => "checkbox"}/
+                    %td Trident
+                    %td Internet Explorer 7
+                    %td Win XP SP2+
+                    %td 7
+                    %td A
+          .mws-panel.grid_8
+            .mws-panel-header
+              %span
+                %i.icon-table
+                Default Data Table
+            .mws-panel-body.no-padding
+              %table.mws-datatable.mws-table
+                %thead
+                  %tr
+                    %th Rendering engine
+                    %th Browser
+                    %th Platform(s)
+                    %th Engine version
+                    %th CSS grade
+                %tbody
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 4.0
+                    %td Win 95+
+                    %td 4
+                    %td X
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 5.0
+                    %td Win 95+
+                    %td 5
+                    %td C
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 5.5
+                    %td Win 95+
+                    %td 5.5
+                    %td A
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 6
+                    %td Win 98+
+                    %td 6
+                    %td A
+                  %tr
+                    %td Trident
+                    %td Internet Explorer 7
+                    %td Win XP SP2+
+                    %td 7
+                    %td A
+                  %tr
+                    %td Trident
+                    %td AOL browser (AOL desktop)
+                    %td Win XP
+                    %td 6
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 1.0
+                    %td Win 98+ / OSX.2+
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 1.5
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 2.0
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 3.0
+                    %td Win 2k+ / OSX.3+
+                    %td 1.9
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Camino 1.0
+                    %td OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Camino 1.5
+                    %td OSX.3+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Netscape 7.2
+                    %td Win 95+ / Mac OS 8.6-9.2
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Netscape Browser 8
+                    %td Win 98SE+
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Netscape Navigator 9
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.0
+                    %td Win 95+ / OSX.1+
+                    %td 1
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.1
+                    %td Win 95+ / OSX.1+
+                    %td 1.1
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.2
+                    %td Win 95+ / OSX.1+
+                    %td 1.2
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.3
+                    %td Win 95+ / OSX.1+
+                    %td 1.3
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.4
+                    %td Win 95+ / OSX.1+
+                    %td 1.4
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.5
+                    %td Win 95+ / OSX.1+
+                    %td 1.5
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.6
+                    %td Win 95+ / OSX.1+
+                    %td 1.6
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.7
+                    %td Win 98+ / OSX.1+
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.8
+                    %td Win 98+ / OSX.1+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Seamonkey 1.1
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Epiphany 2.20
+                    %td Gnome
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td Safari 1.2
+                    %td OSX.3
+                    %td 125.5
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td Safari 1.3
+                    %td OSX.3
+                    %td 312.8
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td Safari 2.0
+                    %td OSX.4+
+                    %td 419.3
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td Safari 3.0
+                    %td OSX.4+
+                    %td 522.1
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td OmniWeb 5.5
+                    %td OSX.4+
+                    %td 420
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td iPod Touch / iPhone
+                    %td iPod
+                    %td 420.1
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td S60
+                    %td S60
+                    %td 413
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 7.0
+                    %td Win 95+ / OSX.1+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 7.5
+                    %td Win 95+ / OSX.2+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 8.0
+                    %td Win 95+ / OSX.2+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 8.5
+                    %td Win 95+ / OSX.2+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 9.0
+                    %td Win 95+ / OSX.3+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 9.2
+                    %td Win 88+ / OSX.3+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 9.5
+                    %td Win 88+ / OSX.3+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera for Wii
+                    %td Wii
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Nokia N800
+                    %td N800
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Nintendo DS browser
+                    %td Nintendo DS
+                    %td 8.5
+                    %td
+                      C/A
+                      %sup 1
+                  %tr
+                    %td KHTML
+                    %td Konqureror 3.1
+                    %td KDE 3.1
+                    %td 3.1
+                    %td C
+                  %tr
+                    %td KHTML
+                    %td Konqureror 3.3
+                    %td KDE 3.3
+                    %td 3.3
+                    %td A
+                  %tr
+                    %td KHTML
+                    %td Konqureror 3.5
+                    %td KDE 3.5
+                    %td 3.5
+                    %td A
+                  %tr
+                    %td Tasman
+                    %td Internet Explorer 4.5
+                    %td Mac OS 8-9
+                    %td -
+                    %td X
+                  %tr
+                    %td Tasman
+                    %td Internet Explorer 5.1
+                    %td Mac OS 7.6-9
+                    %td 1
+                    %td C
+                  %tr
+                    %td Tasman
+                    %td Internet Explorer 5.2
+                    %td Mac OS 8-X
+                    %td 1
+                    %td C
+                  %tr
+                    %td Misc
+                    %td NetFront 3.1
+                    %td Embedded devices
+                    %td -
+                    %td C
+                  %tr
+                    %td Misc
+                    %td NetFront 3.4
+                    %td Embedded devices
+                    %td -
+                    %td A
+                  %tr
+                    %td Misc
+                    %td Dillo 0.8
+                    %td Embedded devices
+                    %td -
+                    %td X
+                  %tr
+                    %td Misc
+                    %td Links
+                    %td Text only
+                    %td -
+                    %td X
+                  %tr
+                    %td Misc
+                    %td Lynx
+                    %td Text only
+                    %td -
+                    %td X
+                  %tr
+                    %td Misc
+                    %td IE Mobile
+                    %td Windows Mobile 6
+                    %td -
+                    %td C
+                  %tr
+                    %td Misc
+                    %td PSP browser
+                    %td PSP
+                    %td -
+                    %td C
+                  %tr
+                    %td Other browsers
+                    %td All others
+                    %td -
+                    %td -
+                    %td U
+          .mws-panel.grid_8
+            .mws-panel-header
+              %span
+                %i.icon-table
+                Data Table with Numbered Pagination
+            .mws-panel-body.no-padding
+              %table.mws-datatable-fn.mws-table
+                %thead
+                  %tr
+                    %th Rendering engine
+                    %th Browser
+                    %th Platform(s)
+                    %th Engine version
+                    %th CSS grade
+                %tbody
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 4.0
+                    %td Win 95+
+                    %td 4
+                    %td X
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 5.0
+                    %td Win 95+
+                    %td 5
+                    %td C
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 5.5
+                    %td Win 95+
+                    %td 5.5
+                    %td A
+                  %tr
+                    %td Trident
+                    %td
+                      Internet
+                      Explorer 6
+                    %td Win 98+
+                    %td 6
+                    %td A
+                  %tr
+                    %td Trident
+                    %td Internet Explorer 7
+                    %td Win XP SP2+
+                    %td 7
+                    %td A
+                  %tr
+                    %td Trident
+                    %td AOL browser (AOL desktop)
+                    %td Win XP
+                    %td 6
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 1.0
+                    %td Win 98+ / OSX.2+
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 1.5
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 2.0
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Firefox 3.0
+                    %td Win 2k+ / OSX.3+
+                    %td 1.9
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Camino 1.0
+                    %td OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Camino 1.5
+                    %td OSX.3+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Netscape 7.2
+                    %td Win 95+ / Mac OS 8.6-9.2
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Netscape Browser 8
+                    %td Win 98SE+
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Netscape Navigator 9
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.0
+                    %td Win 95+ / OSX.1+
+                    %td 1
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.1
+                    %td Win 95+ / OSX.1+
+                    %td 1.1
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.2
+                    %td Win 95+ / OSX.1+
+                    %td 1.2
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.3
+                    %td Win 95+ / OSX.1+
+                    %td 1.3
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.4
+                    %td Win 95+ / OSX.1+
+                    %td 1.4
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.5
+                    %td Win 95+ / OSX.1+
+                    %td 1.5
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.6
+                    %td Win 95+ / OSX.1+
+                    %td 1.6
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.7
+                    %td Win 98+ / OSX.1+
+                    %td 1.7
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Mozilla 1.8
+                    %td Win 98+ / OSX.1+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Seamonkey 1.1
+                    %td Win 98+ / OSX.2+
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Gecko
+                    %td Epiphany 2.20
+                    %td Gnome
+                    %td 1.8
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td Safari 1.2
+                    %td OSX.3
+                    %td 125.5
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td Safari 1.3
+                    %td OSX.3
+                    %td 312.8
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td Safari 2.0
+                    %td OSX.4+
+                    %td 419.3
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td Safari 3.0
+                    %td OSX.4+
+                    %td 522.1
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td OmniWeb 5.5
+                    %td OSX.4+
+                    %td 420
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td iPod Touch / iPhone
+                    %td iPod
+                    %td 420.1
+                    %td A
+                  %tr
+                    %td Webkit
+                    %td S60
+                    %td S60
+                    %td 413
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 7.0
+                    %td Win 95+ / OSX.1+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 7.5
+                    %td Win 95+ / OSX.2+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 8.0
+                    %td Win 95+ / OSX.2+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 8.5
+                    %td Win 95+ / OSX.2+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 9.0
+                    %td Win 95+ / OSX.3+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 9.2
+                    %td Win 88+ / OSX.3+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera 9.5
+                    %td Win 88+ / OSX.3+
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Opera for Wii
+                    %td Wii
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Nokia N800
+                    %td N800
+                    %td -
+                    %td A
+                  %tr
+                    %td Presto
+                    %td Nintendo DS browser
+                    %td Nintendo DS
+                    %td 8.5
+                    %td
+                      C/A
+                      %sup 1
+                  %tr
+                    %td KHTML
+                    %td Konqureror 3.1
+                    %td KDE 3.1
+                    %td 3.1
+                    %td C
+                  %tr
+                    %td KHTML
+                    %td Konqureror 3.3
+                    %td KDE 3.3
+                    %td 3.3
+                    %td A
+                  %tr
+                    %td KHTML
+                    %td Konqureror 3.5
+                    %td KDE 3.5
+                    %td 3.5
+                    %td A
+                  %tr
+                    %td Tasman
+                    %td Internet Explorer 4.5
+                    %td Mac OS 8-9
+                    %td -
+                    %td X
+                  %tr
+                    %td Tasman
+                    %td Internet Explorer 5.1
+                    %td Mac OS 7.6-9
+                    %td 1
+                    %td C
+                  %tr
+                    %td Tasman
+                    %td Internet Explorer 5.2
+                    %td Mac OS 8-X
+                    %td 1
+                    %td C
+                  %tr
+                    %td Misc
+                    %td NetFront 3.1
+                    %td Embedded devices
+                    %td -
+                    %td C
+                  %tr
+                    %td Misc
+                    %td NetFront 3.4
+                    %td Embedded devices
+                    %td -
+                    %td A
+                  %tr
+                    %td Misc
+                    %td Dillo 0.8
+                    %td Embedded devices
+                    %td -
+                    %td X
+                  %tr
+                    %td Misc
+                    %td Links
+                    %td Text only
+                    %td -
+                    %td X
+                  %tr
+                    %td Misc
+                    %td Lynx
+                    %td Text only
+                    %td -
+                    %td X
+                  %tr
+                    %td Misc
+                    %td IE Mobile
+                    %td Windows Mobile 6
+                    %td -
+                    %td C
+                  %tr
+                    %td Misc
+                    %td PSP browser
+                    %td PSP
+                    %td -
+                    %td C
+                  %tr
+                    %td Other browsers
+                    %td All others
+                    %td -
+                    %td -
+                    %td U
           / Panels End
         / Inner Container End
         / Footer
         #mws-footer
-          Copyright Sobriety For Women 
-          2012
-          All Rights Reserved.
+          Copyright Your Website 2012. All Rights Reserved.
       / Main Container End
-    / JavaScript Plugins
-    %script{:src => "/assets/admin2/libs/jquery-1.8.3.min.js"}
-    %script{:src => "/assets/admin2/libs/jquery.mousewheel.min.js"}
-    %script{:src => "/assets/admin2/libs/jquery.placeholder.min.js"}
-    %script{:src => "/assets/admin2/custom-plugins/fileinput.js"}
-    / jQuery-UI Dependent Scripts
-    %script{:src => "/assets/admin2/jui/js/jquery-ui-1.9.2.min.js"}
-    %script{:src => "/assets/admin2/jui/jquery-ui.custom.min.js"}
-    %script{:src => "/assets/admin2/jui/js/jquery.ui.touch-punch.js"}
-    / Plugin Scripts
-    %script{:src => "/assets/admin2/plugins/datatables/jquery.dataTables.min.js"}
-    %script{:src => "/assets/admin2/plugins/colorpicker/colorpicker-min.js"}
-    /[if lt IE 9]
-      %script{:src => "/assets/admin2/libs/excanvas.min.js"}
-    %script{:src => "/assets/admin2/plugins/flot/jquery.flot.min.js"}
-    %script{:src => "/assets/admin2/plugins/flot/plugins/jquery.flot.tooltip.min.js"}
-    %script{:src => "/assets/admin2/plugins/flot/plugins/jquery.flot.pie.min.js"}
-    %script{:src => "/assets/admin2/plugins/flot/plugins/jquery.flot.stack.min.js"}
-    %script{:src => "/assets/admin2/plugins/flot/plugins/jquery.flot.resize.min.js"}
-    %script{:src => "/assets/admin2/plugins/colorpicker/colorpicker-min.js"}
-    %script{:src => "/assets/admin2/plugins/validate/jquery.validate-min.js"}
-    %script{:src => "/assets/admin2/custom-plugins/wizard/wizard.min.js"}
-    / Core Script
-    %script{:src => "/assets/admin2/bootstrap/js/bootstrap.min.js"}
-    %script{:src => "/assets/admin2/core/mws.js"}
-    / Themer Script (Remove if not needed)
-    %script{:src => "/assets/admin2/core/themer.js"}
-    / Demo Scripts (remove if not needed)
-    %script{:src => "/assets/admin2/demo/demo.dashboard.js"}
-   
- 
     / JavaScript Plugins
     %script{:src => "/assets/admin2/libs/jquery-1.8.3.min.js"}
     %script{:src => "/assets/admin2/libs/jquery.mousewheel.min.js"}
@@ -288,6 +1233,3 @@
     %script{:src => "/assets/admin2/core/themer.js"}
     / Demo Scripts (remove if not needed)
     %script{:src => "/assets/admin2/demo/demo.table.js"}
-
-    = yield :pagefooter
-

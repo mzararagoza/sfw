@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420122153) do
+ActiveRecord::Schema.define(:version => 20130420144134) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -44,6 +44,31 @@ ActiveRecord::Schema.define(:version => 20130420122153) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
   add_index "admins", ["unlock_token"], :name => "index_admins_on_unlock_token", :unique => true
+
+  create_table "exams", :force => true do |t|
+    t.integer  "girl_id"
+    t.string   "date_perform"
+    t.string   "drug_test_results_on_site"
+    t.string   "drug_test_results_lab"
+    t.string   "insurance_billed_amount"
+    t.string   "insurance_billed_date"
+    t.string   "amount_paid"
+    t.string   "date_paid"
+    t.string   "insurance_company"
+    t.string   "benzodiazeipines"
+    t.string   "barbituates"
+    t.string   "cocaine"
+    t.string   "tetrahydrocannabinol"
+    t.string   "methamphetamines"
+    t.string   "opiates"
+    t.string   "maximum_tolerated_dose"
+    t.string   "tricyclic_antidepressants"
+    t.string   "oxycodone"
+    t.string   "phencyclidine"
+    t.string   "amphetamines"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
 
   create_table "expenses", :force => true do |t|
     t.integer  "admin_id"

@@ -17,23 +17,26 @@
 
 .container-fluid
   .row-fluid
-    .span12
+    .grid_1
       = link_to 'Edit Girl', edit_admins_girl_path(girl), :class => 'btn btn-info pull-right'
-      %br
-      %br
+    .grid_1
       = link_to 'Add Note', new_admins_note_path(girl), :class => 'btn btn-info pull-right'
-      %br
-      %br
+    .grid_1
       = link_to 'Add Payment', new_admins_payment_path(girl), :class => 'btn btn-info pull-right'
+    .grid_1
+      = link_to 'Add Drug Test', new_admins_exam_path(girl), :class => 'btn btn-info pull-right'
     .clear
-    .span12
+    .grid_12
+      %br
       = link_to t(:opportunities_rules), girl.opportunities_rules_url, :class => 'btn btn-info' if girl.opportunities_rules?
       = link_to t(:aa_meeting_sheet), girl.aa_meeting_sheet_url, :class => 'btn btn-info' if girl.aa_meeting_sheet?
       = link_to t(:release_of_liability), girl.release_of_liability_url, :class => 'btn btn-info' if girl.release_of_liability?
       = link_to t(:opportunities_intake_form), girl.opportunities_intake_form_url, :class => 'btn btn-info' if girl.opportunities_intake_form?
       = link_to t(:opportunities_relapse_plan), girl.opportunities_relapse_plan_url, :class => 'btn btn-info' if girl.opportunities_relapse_plan?
       = link_to t(:sober_inc), girl.sober_inc_url , :class => 'btn btn-info' if girl.sober_inc?
+    .clear
     .grid_4
+      %br
       %strong girl_id
       = girl.id
       %br
@@ -64,6 +67,7 @@
       %strong= t(:policy_number)
       = girl.policy_number
     .grid_4
+      %br
       = image_tag girl.photo, :class => 'img-polaroid' unless girl.photo.blank?
 .clear
 .grid_12
@@ -118,3 +122,27 @@
                     %td= n.note
                     %td= n.consequence
                     %td= n.admin.full_name.titleize
+.clear
+.grid_12
+.mws-panel.grid_4
+  .mws-panel-body.no-padding
+    %fieldset.mws-form-inline
+      .mws-form-row.bordered
+        .mws-panel.grid_8
+          .mws-panel-header
+            %span
+              %i.icon-table
+              Drug Tests
+          .mws-panel-body.no-padding
+            %table.mws-table
+              %thead
+                %tr
+                  %th= t(:date_perform)
+                  %th= t(:drug_test_results_on_site)
+                  %th= t(:drug_test_results_lab)
+              %tbody
+                - girl.exams.order("id DESC").each do |e|
+                  %tr
+                    %td= e.date_perform
+                    %td= e.drug_test_results_on_site
+                    %td= e.drug_test_results_lab

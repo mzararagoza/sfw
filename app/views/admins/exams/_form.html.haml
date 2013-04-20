@@ -1,0 +1,22 @@
+= simple_form_for([:admins, exam], :html => {:class => 'form-horizontal' }) do |f|
+  = f.input :girl_id, :as => :hidden, :input_html => {:value => girl.id }
+  = f.input :date_perform
+  = f.input :drug_test_results_on_site
+  = f.input :drug_test_results_lab
+  = f.input :insurance_billed_amount
+  = f.input :insurance_billed_date
+  = f.input :amount_paid
+  = f.input :date_paid
+  = f.input :insurance_company
+  = f.input :benzodiazeipines
+  = f.input :barbituates
+  = f.input :cocaine
+  = f.input :tetrahydrocannabinol
+  = f.input :methamphetamines
+  = f.input :opiates
+  = f.input :maximum_tolerated_dose
+  = f.input :tricyclic_antidepressants
+  = f.input :oxycodone
+  = f.input :phencyclidine
+  = f.input :amphetamines
+  = f.button :submit, :class => 'pull-right btn btn-info'

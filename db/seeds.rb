@@ -10,6 +10,7 @@ Fabricate(:admin, :email => 'admin@test.com', :first_name => 'Moises', :last_nam
   Fabricate(:girl) 
   2.times { Fabricate(:note) }
   2.times { Fabricate(:payment) }
+  Fabricate(:exam)
 }
 10.times { 
   Fabricate(:vendor)

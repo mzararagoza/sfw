@@ -164,9 +164,10 @@
               = current_admin.full_name.titleize
             %ul
               %li
-                %a{:href => "#"} Profile
+                %a{:href => '/admins/profile/' + current_admin.id.to_s + '/edit'}
+                  Profile
               %li
-                %a{:href => "index.html"} Logout
+                = link_to 'Logout', destroy_admin_session_path, :method => :delete 
     / Start Main Wrapper
     #mws-wrapper
       / Necessary markup, do not remove

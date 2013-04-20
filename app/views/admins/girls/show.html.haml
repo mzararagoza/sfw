@@ -33,7 +33,7 @@
       = link_to t(:opportunities_intake_form), girl.opportunities_intake_form_url, :class => 'btn btn-info' if girl.opportunities_intake_form?
       = link_to t(:opportunities_relapse_plan), girl.opportunities_relapse_plan_url, :class => 'btn btn-info' if girl.opportunities_relapse_plan?
       = link_to t(:sober_inc), girl.sober_inc_url , :class => 'btn btn-info' if girl.sober_inc?
-    .span6
+    .grid_4
       %strong girl_id
       = girl.id
       %br
@@ -63,36 +63,58 @@
       %br
       %strong= t(:policy_number)
       = girl.policy_number
-      %h1 Payments
-      - girl.payments.order("id DESC").each do |p|
-        %strong Amount
-        = p.amount
-        %br
-        %strong payment_date
-        = p.payment_date
-        %br
-        %strong payment_type
-        = p.payment_type
-        %br
-        %strong note
-        = p.note
-        %br
-        %strong payment_method
-        = p.payment_method
-        %br
-        %strong payment_number
-        = p.payment_number
-        %hr
-      %h1 Notes
-      - girl.notes.order("id DESC").each do |n|
-        %strong Note
-        = n.note
-        %br
-        %strong Consequence
-        = n.consequence
-        %br
-        %strong By
-        = n.admin.full_name.titleize
-        %hr
-    .span5
+    .grid_4
       = image_tag girl.photo, :class => 'img-polaroid' unless girl.photo.blank?
+.clear
+.grid_12
+.mws-panel.grid_4
+  .mws-panel-body.no-padding
+    %fieldset.mws-form-inline
+      .mws-form-row.bordered
+        .mws-panel.grid_8
+          .mws-panel-header
+            %span
+              %i.icon-table
+              Payments
+          .mws-panel-body.no-padding
+            %table.mws-table
+              %thead
+                %tr
+                  %th= t(:amount)
+                  %th= t(:payment_date)
+                  %th= t(:payment_type)
+                  %th= t(:payment_method)
+                  %th= t(:payment_number)
+                  %th= t(:note)
+              %tbody
+                - girl.payments.order("id DESC").each do |p|
+                  %tr
+                    %td= p.amount
+                    %td= p.payment_date
+                    %td= p.payment_type
+                    %td= p.payment_method
+                    %td= p.payment_number
+                    %td= p.note
+
+.mws-panel.grid_4
+  .mws-panel-body.no-padding
+    %fieldset.mws-form-inline
+      .mws-form-row.bordered
+        .mws-panel.grid_8
+          .mws-panel-header
+            %span
+              %i.icon-table
+              Notes
+          .mws-panel-body.no-padding
+            %table.mws-table
+              %thead
+                %tr
+                  %th= t(:note)
+                  %th= t(:consequence)
+                  %th= t(:by)
+              %tbody
+                - girl.notes.order("id DESC").each do |n|
+                  %tr
+                    %td= n.note
+                    %td= n.consequence
+                    %td= n.admin.full_name.titleize

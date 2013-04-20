@@ -1,0 +1,12 @@
+= simple_form_for([:admins, expense], :html => {:class => 'form-horizontal' }) do |f|
+  - if params[:format]
+    = f.input :vendor_id, :as => :hidden, :input_html => {:value => vendor.id }
+  -else 
+    = f.association :vendor_id, label_method: :full_name, value_method: :id, include_blank: false
+  = f.input :amount
+  = f.input :payment_date, :input_html => {:id => 'dp1'}
+  = f.input :payment_type, :collection => vendor_payment_type_list,  :as => :select, :error => false, include_blank: false
+  = f.input :pdf_upload
+  = f.input :note
+  = f.button :submit, :class => 'pull-right btn btn-info'
+

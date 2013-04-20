@@ -19,6 +19,9 @@
   .row-fluid
     .span12
       = link_to 'Edit', edit_admins_vendor_path(vendor), :class => 'btn btn-info pull-right'
+      %br
+      %br
+      = link_to 'Add Expense', new_admins_expense_path(vendor), :class => 'btn btn-info pull-right'
     .span6
       %strong id
       = vendor.id
@@ -41,3 +44,17 @@
       %br
       %strong= t(:description)
       = vendor.description
+
+      %h1 Expenses
+      - vendor.expenses.order("id DESC").each do |e|
+        %strong Amount
+        = e.amount
+        %br
+        %strong Payment Date
+        = e.payment_date
+        %br
+        %strong Payment Type
+        = e.payment_type
+        %br
+        = link_to t(:receipt), e.pdf_upload_url, :class => 'btn btn-info', :target => '_blank' if e.pdf_upload?
+        %hr

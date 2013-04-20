@@ -1,8 +1,15 @@
 module ApplicationHelper
   def payment_type_list
     [
-      ['Receive Funds','receive_funds'],
-      ['Return Funds','return_funds']
+      ['receive funds','receive_funds'],
+      ['return funds','return_funds']
+    ]
+  end
+  
+  def vendor_payment_type_list
+    [
+      ['Paid','paid'],
+      ['Return','return']
     ]
   end
 

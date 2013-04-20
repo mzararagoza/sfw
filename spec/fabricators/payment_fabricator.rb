@@ -8,6 +8,7 @@ Fabricator(:payment) do
     p.girl ||= Girl.last || Fabricate(:girl)
   end
 end
+
 Fabricator(:debit, from: :payment) do
   payment_type { 'debit' }
 end

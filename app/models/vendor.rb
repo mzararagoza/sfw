@@ -1,4 +1,5 @@
 class Vendor < ActiveRecord::Base
+  has_many :expenses
 
   attr_accessible :first_name,:last_name,:address,:address2, :city, :state, :zip, :phone_number, :email, :description
 

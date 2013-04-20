@@ -1,0 +1,43 @@
+= provide(:title, 'Girls')
+= provide(:page_title, 'Girls')
+= provide(:page_icon, 'active-page-icon large-gray-icon dress_blk')
+
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li.active
+      %i.icon-official
+      =t(:vendors)
+  %h1#main-heading
+    %span= vendor.full_name.titleize
+
+.container-fluid
+  .row-fluid
+    .span12
+      = link_to 'Edit', edit_admins_vendor_path(vendor), :class => 'btn btn-info pull-right'
+    .span6
+      %strong id
+      = vendor.id
+      %br
+      %strong= t(:name)
+      = vendor.full_name.titleize
+      %br
+      %strong= t(:address)
+      = vendor.address
+      %br= vendor.address2 if vendor.address2?
+      = vendor.city + ','
+      = vendor.state
+      = vendor.zip
+      %br
+      %strong= t(:phone_number)
+      = vendor.phone_number
+      %br
+      %strong= t(:email)
+      = vendor.email
+      %br
+      %strong= t(:description)
+      = vendor.description

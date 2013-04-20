@@ -12,6 +12,7 @@
     / Plugin Stylesheets first to ease overrides
     %link{:href => "/assets/admin2/plugins/colorpicker/colorpicker.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     / Required Stylesheets
+    %link{:href => "/assets/admin/bootstrap-responsive.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/admin2/bootstrap/css/bootstrap.min.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/admin2/fonts/ptsans/stylesheet.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/admin2/fonts/icomoon/style.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
@@ -73,7 +74,10 @@
       #mws-logo-container
         / Logo Wrapper, images put within this wrapper will always be vertically centered
         #mws-logo-wrap
-          %img{:alt => "S4W admin", :src => "/assets/admin/sfw_logo.png"}/
+          .visible-desktop
+            %img{:alt => "S4W admin", :src => "/assets/admin/sfw_logo.png"}/
+          .visible-tablet
+            %img{:alt => "S4W admin", :src => "/assets/admin/sfw_logo.png"}/
       / User Tools (notifications, logout, profile, change password)
       #mws-user-tools.clearfix
         / Notifications
@@ -167,7 +171,7 @@
                 %a{:href => '/admins/profile/' + current_admin.id.to_s + '/edit'}
                   Profile
               %li
-                = link_to 'Logout', destroy_admin_session_path, :method => :delete 
+                = link_to 'Logout', destroy_admin_session_path, :method => :delete
     / Start Main Wrapper
     #mws-wrapper
       / Necessary markup, do not remove
@@ -182,8 +186,8 @@
           %span
         / Searchbox
         #mws-searchbox.mws-inset
-          %br
-          %br
+          .visible-phone
+            %img{:alt => "S4W admin", :src => "/assets/admin/sfw_logo.png"}/
           -#%form{:action => "typography.html"}
             %input.mws-search-input{:placeholder => "Search...", :type => "text"}/
             %button.mws-search-submit{:type => "submit"}

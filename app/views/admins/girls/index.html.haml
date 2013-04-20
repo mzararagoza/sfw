@@ -39,6 +39,7 @@
           %th=t(:last_payment_date)
           %th=t(:active)
           %th=t(:photo)
+          %th=t(:reason_for_leaving)
           %th
       %tbody
         - girls.each do |g|
@@ -60,6 +61,7 @@
               -else
                 .badge.badge-important No
             %td= image_tag g.photo, :width => '50', :class => 'img-polaroid' unless g.photo.blank?
+            %td= g.reason_for_leaving
             %td
               = link_to edit_admins_girl_path(g), :class => 'btn btn-small btn-info' do
                 edit

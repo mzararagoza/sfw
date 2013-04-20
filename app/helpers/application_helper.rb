@@ -81,4 +81,13 @@ module ApplicationHelper
       ['Move to Middle Unit','move_to_middle_unit'],
     ]
   end
+  def reason_for_leaving_list
+    [
+      ['Completed Term', 'completed_term'],
+      ['Failure to pay rent','failure_to_pay_rent'],
+      ['Behavioral Issue', 'behavioral_issue'],
+      ['Relapse','relampe'],
+      ['Other','other'],
+    ]
+  end
 end

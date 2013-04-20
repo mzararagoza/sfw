@@ -189,6 +189,10 @@
             = f.input :sober_inc, :label => false
             %br
         .mws-form-row
+          %label.mws-form-label= t(:reason_for_leaving)
+          .mws-form-item
+            = f.input :reason_for_leaving, :as => :select, :collection => reason_for_leaving_list, :label => false
+        .mws-form-row
           %label.mws-form-label= t(:active)
           .mws-form-item
             = f.input :active, :label => false

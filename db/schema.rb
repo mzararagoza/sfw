@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420023419) do
+ActiveRecord::Schema.define(:version => 20130420040724) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20130420023419) do
     t.string   "opportunities_intake_form",       :default => ""
     t.string   "opportunities_relapse_plan",      :default => ""
     t.string   "sober_inc",                       :default => ""
+    t.string   "reason_for_leaving",              :default => ""
   end
 
   create_table "notes", :force => true do |t|

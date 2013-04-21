@@ -4,6 +4,7 @@ SobrietyforwomenAdmin::Application.routes.draw do
                                        :passwords => 'admins/passwords',
                                        :confirmations => 'admins/confirmations'
   }
+
   authenticate :admin do
     namespace :admins do
       resources :ui

@@ -177,7 +177,6 @@
                 %a{:href => '/admins/profile/' + current_admin.id.to_s + '/edit'}
                   Profile
               %li
-                =link_to  "sign out as admin", destroy_admin_session_url, method: :delete
                 = link_to 'Logout', destroy_admin_session_path, :method => :delete
     / Start Main Wrapper
     #mws-wrapper

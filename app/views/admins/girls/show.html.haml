@@ -111,7 +111,7 @@
                     %th
                       - return_funds = girl.payments.sum(:amount,:conditions=> "payment_type = 'return_funds'" )
                       = number_to_currency(return_funds)
-                    %th Dif
+                    %th Differnce
                     %th= number_to_currency(receive_funds - return_funds)
                     %th
 

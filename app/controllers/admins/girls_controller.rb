@@ -1,6 +1,7 @@
 class Admins::GirlsController < AdminController
   expose(:girls){ Girl.order("id DESC").scoped{} }
   expose(:girl)
+  expose(:payments) { Payment}
 
   def create
     if girl.save

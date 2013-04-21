@@ -16,7 +16,7 @@ SobrietyforwomenAdmin::Application.routes.draw do
       resources :vendors
       resources :expenses
       resources :exams
-      #mount Resque::Server.new, :at => "/resque"
+      resources :vacations
       get '/dashboard' => 'dashboards#index', as: :dashboard
       get '/' => 'dashboards#index'
     end

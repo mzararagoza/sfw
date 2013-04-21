@@ -26,7 +26,7 @@
     .grid_1
       = link_to 'Add Drug Test', new_admins_exam_path(girl), :class => 'btn btn-info pull-right'
     .grid_1
-      =# link_to 'Add Pass', new_admins_pass_path(girl), :class => 'btn btn-info pull-right'
+      = link_to 'Add Pass', new_admins_vacation_path(girl), :class => 'btn btn-info pull-right'
     .clear
     .grid_12
       %br
@@ -163,3 +163,27 @@
                     %td= e.date_perform
                     %td= e.drug_test_results_on_site
                     %td= e.drug_test_results_lab
+.mws-panel.grid_4
+  .mws-panel-body.no-padding
+    %fieldset.mws-form-inline
+      .mws-form-row.bordered
+        .mws-panel.grid_8
+          .mws-panel-header
+            %span
+              %i.icon-table
+              Pass
+          .mws-panel-body.no-padding
+            %table.mws-table
+              %thead
+                %tr
+                  %th= t(:issued_date)
+                  %th= t(:departure_date)
+                  %th= t(:return_date)
+                  %th
+              %tbody
+                - girl.vacations.order("id DESC").each do |v|
+                  %tr
+                    %td= v.issued_date
+                    %td= v.departure_date
+                    %td= v.return_date
+                    %td= link_to 'Edit', edit_admins_vacation_path(v), :class => 'btn btn-small btn-info'

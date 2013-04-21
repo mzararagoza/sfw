@@ -1,0 +1,27 @@
+= provide(:title, 'Girls')
+= provide(:page_title, 'Girls')
+= provide(:page_icon, 'active-page-icon large-gray-icon dress_blk')
+
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li
+      = link_to admins_girls_path do
+        %i.icon-official
+        =t(:girls)
+      %span.divider /
+    %li.active
+      %i.icos-plus 
+      =t(:create)
+  %h1#main-heading
+    Set pass for 
+    =girl.full_name.titleize
+
+=render 'form'
+
+
+

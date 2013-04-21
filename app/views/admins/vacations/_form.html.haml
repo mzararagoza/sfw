@@ -1,0 +1,10 @@
+= simple_form_for([:admins, vacation], :html => {:class => 'form-horizontal' }) do |f|
+  - if params[:format]
+    = f.input :girl_id, :as => :hidden, :input_html => {:value => girl.id }
+  -else 
+    = f.input :girl_id, :as => :hidden, :input_html => {:value => vacation.girl.id }
+  = f.input :issued_date
+  = f.input :departure_date
+  = f.input :return_date
+  = f.button :submit, :class => 'pull-right btn btn-info'
+

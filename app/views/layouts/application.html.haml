@@ -23,11 +23,17 @@
     %link{:href => "/assets/admin2/demo.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     / jQuery-UI Stylesheet
     %link{:href => "/assets/admin2/jui/css/jquery.ui.all.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/admin2/jui/css/jquery.ui.timepicker.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/admin2/jui/jquery-ui.custom.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     / Theme Stylesheet
     %link{:href => "/assets/admin2/mws-theme.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/admin2/themer.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %title MWS Admin - Table
+
+    / Plugin Stylesheets first to ease overrides
+    %link{:href => "/assets/admin2/plugins/imgareaselect/css/imgareaselect-default.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/admin2/plugins/jgrowl/jquery.jgrowl.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    / Required Stylesheets
   %body
     / Themer (Remove if not needed)
     -#mws-themer
@@ -171,6 +177,7 @@
                 %a{:href => '/admins/profile/' + current_admin.id.to_s + '/edit'}
                   Profile
               %li
+                =link_to  "sign out as admin", destroy_admin_session_url, method: :delete
                 = link_to 'Logout', destroy_admin_session_path, :method => :delete
     / Start Main Wrapper
     #mws-wrapper
@@ -289,6 +296,7 @@
     %script{:src => "/assets/admin2/jui/js/jquery-ui-1.9.2.min.js"}
     %script{:src => "/assets/admin2/jui/jquery-ui.custom.min.js"}
     %script{:src => "/assets/admin2/jui/js/jquery.ui.touch-punch.js"}
+    %script{:src => "/assets/admin2/jui/js/timepicker/jquery-ui-timepicker.min.js"}
     / Plugin Scripts
     %script{:src => "/assets/admin2/plugins/datatables/jquery.dataTables.min.js"}
     %script{:src => "/assets/admin2/plugins/colorpicker/colorpicker-min.js"}
@@ -299,3 +307,11 @@
     %script{:src => "/assets/admin2/core/themer.js"}
     / Demo Scripts (remove if not needed)
     %script{:src => "/assets/admin2/demo/demo.table.js"}
+    %script{:src => "/assets/admin2/demo/demo.widget.js"}
+
+    / JavaScript Plugins
+    %script{:src => "/assets/admin2/plugins/imgareaselect/jquery.imgareaselect.min.js"}
+    %script{:src => "/assets/admin2/plugins/jgrowl/jquery.jgrowl-min.js"}
+    %script{:src => "/assets/admin2/plugins/validate/jquery.validate-min.js"}
+    %script{:src => "/assets/admin2/plugins/colorpicker/colorpicker-min.js"}
+    / Core Script

@@ -2,7 +2,12 @@ class Admins::NotesController < AdminController
   expose(:notes){ Note.order("id DESC").scoped{} }
   expose(:note)
   expose(:girl){ 
-    Girl.find(params[:format])
+    if params[:format] 
+      girl = Girl.find(params[:format])
+    else
+      girl = payment.girl.id
+    end
+    girl
   }
 
   def create

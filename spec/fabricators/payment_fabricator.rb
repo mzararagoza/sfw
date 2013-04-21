@@ -1,6 +1,6 @@
 Fabricator(:payment) do
   payment_date { DateTime.now }
-  payment_type { 'credit' }
+  payment_type { 'receive_funds' }
   amount { rand(1000)*10 }
   note { Faker::Lorem.sentence }
 
@@ -10,6 +10,6 @@ Fabricator(:payment) do
 end
 
 Fabricator(:debit, from: :payment) do
-  payment_type { 'debit' }
+  payment_type { 'return_funds' }
 end
 

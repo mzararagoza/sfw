@@ -2,7 +2,7 @@
   - if params[:format]
     = f.input :girl_id, :as => :hidden, :input_html => {:value => girl.id }
   -else 
-    = f.association :girl, label_method: :full_name, value_method: :id, include_blank: false
+    = f.input :girl_id, :as => :hidden, :input_html => {:value => payment.girl.id }
   = f.input :amount
   = f.input :payment_date, :input_html => {:id => 'dp1'}
   = f.input :payment_type, :collection => payment_type_list,  :as => :select, :error => false, include_blank: false, :label => 'Purpose'

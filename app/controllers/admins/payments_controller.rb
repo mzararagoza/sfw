@@ -1,12 +1,13 @@
 class Admins::PaymentsController < AdminController
   expose(:payments){ Payment.order("id DESC").scoped{} }
   expose(:payment)
-  expose(:girl){ 
+  expose(:girl){
     if params[:format] 
-      Girl.find(params[:format])
+      girl = Girl.find(params[:format])
     else
-      Girl.all
+      girl = payment.girl.id
     end
+    girl
   }
 
   def create

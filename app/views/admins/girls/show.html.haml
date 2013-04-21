@@ -90,15 +90,30 @@
                   %th= t(:payment_method)
                   %th= t(:payment_number)
                   %th= t(:note)
-              %tbody
+                  %th
+                %tbody
                 - girl.payments.order("id DESC").each do |p|
                   %tr
-                    %td= p.amount
+                    %td= number_to_currency(p.amount)
                     %td= p.payment_date
                     %td= p.payment_type
                     %td= p.payment_method
                     %td= p.payment_number
                     %td= p.note
+                    %td= link_to 'Edit', edit_admins_payment_path(p), :class => 'btn btn-small btn-info'
+                %tfoot
+                  %tr
+                    %th Receive Funds
+                    %th
+                      - receive_funds = girl.payments.sum(:amount,:conditions=> "payment_type = 'receive_funds'" )
+                      = number_to_currency(receive_funds)
+                    %th Return Funds
+                    %th
+                      - return_funds = girl.payments.sum(:amount,:conditions=> "payment_type = 'return_funds'" )
+                      = number_to_currency(return_funds)
+                    %th Dif
+                    %th= number_to_currency(receive_funds - return_funds)
+                    %th
 
 .mws-panel.grid_4
   .mws-panel-body.no-padding

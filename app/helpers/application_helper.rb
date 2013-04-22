@@ -93,7 +93,7 @@ module ApplicationHelper
       ['Completed Term', 'completed_term'],
       ['Failure to pay rent','failure_to_pay_rent'],
       ['Behavioral Issue', 'behavioral_issue'],
-      ['Relapse','relampe'],
+      ['Relapse','relapse'],
       ['Other','other'],
     ]
   end

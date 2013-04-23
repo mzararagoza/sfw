@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421135536) do
+ActiveRecord::Schema.define(:version => 20130423203039) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -66,8 +66,9 @@ ActiveRecord::Schema.define(:version => 20130421135536) do
     t.string   "oxycodone"
     t.string   "phencyclidine"
     t.string   "amphetamines"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.string   "exam_pdf",                  :default => ""
   end
 
   create_table "expenses", :force => true do |t|

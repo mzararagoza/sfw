@@ -1,23 +1,106 @@
-= simple_form_for([:admins, exam], :html => {:class => 'form-horizontal' }) do |f|
+= simple_form_for([:admins, exam], :html => {:class => 'mws-form' }) do |f|
   = f.input :girl_id, :as => :hidden, :input_html => {:value => girl.id }
-  = f.input :date_perform
-  = f.input :drug_test_results_on_site
-  = f.input :drug_test_results_lab
-  = f.input :insurance_billed_amount
-  = f.input :insurance_billed_date
-  = f.input :amount_paid
-  = f.input :date_paid
-  = f.input :insurance_company
-  = f.input :benzodiazeipines
-  = f.input :barbituates
-  = f.input :cocaine
-  = f.input :tetrahydrocannabinol
-  = f.input :methamphetamines
-  = f.input :opiates
-  = f.input :maximum_tolerated_dose
-  = f.input :tricyclic_antidepressants
-  = f.input :oxycodone
-  = f.input :phencyclidine
-  = f.input :amphetamines
-  = f.input :exam_pdf
-  = f.button :submit, :class => 'pull-right btn btn-info'
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:date_perform)
+      .mws-form-item
+      = f.input :date_perform, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:drug_test_results_on_site)
+      .mws-form-item
+      = f.input :drug_test_results_on_site, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:drug_test_results_lab)
+      .mws-form-item
+      = f.input :drug_test_results_lab, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:insurance_billed_amount)
+      .mws-form-item
+      = f.input :insurance_billed_amount, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:insurance_billed_date)
+      .mws-form-item
+      = f.input :insurance_billed_date, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:amount_paid)
+      .mws-form-item
+      = f.input :amount_paid, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:date_paid)
+      .mws-form-item
+      = f.input :date_paid, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:insurance_company)
+      .mws-form-item
+      = f.input :insurance_company, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:benzodiazeipines)
+      .mws-form-item
+      = f.input :benzodiazeipines, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:barbituates)
+      .mws-form-item
+      = f.input :barbituates, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:cocaine)
+      .mws-form-item
+      = f.input :cocaine, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:tetrahydrocannabinol)
+      .mws-form-item
+      = f.input :tetrahydrocannabinol, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:methamphetamines)
+      .mws-form-item
+      = f.input :methamphetamines, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:opiates)
+      .mws-form-item
+      = f.input :opiates, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:maximum_tolerated_dose)
+      .mws-form-item
+      = f.input :maximum_tolerated_dose, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:tricyclic_antidepressants)
+      .mws-form-item
+      = f.input :tricyclic_antidepressants, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:oxycodone)
+      .mws-form-item
+      = f.input :oxycodone, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:phencyclidine)
+      .mws-form-item
+      = f.input :phencyclidine, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:amphetamines)
+      .mws-form-item
+      = f.input :amphetamines, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:exam_pdf)
+      .mws-form-item
+      = f.input :exam_pdf, :label => false
+  .mws-form-inline
+    .mws-form-row
+      .mws-form-item
+      = f.button :submit, :class => 'pull-right btn btn-info'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423203039) do
+ActiveRecord::Schema.define(:version => 20130423220035) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130423203039) do
     t.string   "authentication_token"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.string   "photo",                  :default => ""
   end
 
   add_index "admins", ["authentication_token"], :name => "index_admins_on_authentication_token", :unique => true

@@ -168,7 +168,10 @@
         #mws-user-info.mws-inset
           / User Photo
           #mws-user-photo
-            %img{:alt => "User Photo", :src => "/assets/admin2/example/profile.jpg"}/
+            -if current_admin.photo?
+              = image_tag current_admin.photo
+            -else
+              %img{:alt => "User Photo", :src => "/assets/admin2/example/profile.jpg"}/
           / Username and Functions
           #mws-user-functions
             #mws-username

@@ -1,5 +1,13 @@
 = simple_form_for([:admins, note], :html => {:class => 'form-horizontal' }) do |f|
   = f.input :girl_id, :as => :hidden, :input_html => {:value => girl.id }
-  = f.input :note
-  = f.input :consequence, :as => :select, :collection => note_consequence_list 
-  = f.button :submit, :class => 'pull-right btn btn-info'
+  .mws-form-row
+    %label.mws-form-label= t(:note)
+    .mws-form-item
+    = f.input :note, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:consequence)
+    .mws-form-item
+    = f.input :consequence, :as => :select, :collection => note_consequence_list , :label => false
+  .mws-form-row
+    .mws-form-item
+    = f.button :submit, :class => 'pull-right btn btn-info'

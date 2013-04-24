@@ -1,11 +1,31 @@
 = simple_form_for([:admins, admin], :html => {:class => 'form-horizontal' }) do |f|
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :email
-  = f.input :active
-  = f.input :password
-  = f.input :password_confirmation
-  = f.button :submit, :class => 'pull-right btn btn-info'
+  .mws-form-row
+    %label.mws-form-label= t(:first_name)
+    .mws-form-item
+    = f.input :first_name, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:last_name)
+    .mws-form-item
+    = f.input :last_name, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:email)
+    .mws-form-item
+    = f.input :email, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:active)
+    .mws-form-item
+    = f.input :active, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:password)
+    .mws-form-item
+    = f.input :password, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:password_confirmation)
+    .mws-form-item
+    = f.input :password_confirmation, :label => false
+  .mws-form-row
+    .mws-form-item
+    = f.button :submit, :class => 'pull-right btn btn-info'
 
 
 

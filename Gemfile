@@ -34,6 +34,7 @@ gem 'spreewald'
 gem 'numbers_and_words'
 gem 'awesome_print'
 gem 'gibbon' #MailChimp
+gem 'twilio-ruby'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'

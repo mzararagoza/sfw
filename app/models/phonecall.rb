@@ -1,4 +1,5 @@
 class Phonecall
+
   def send(to, message)
     twilio_client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
     twilio_account = twilio_client.account

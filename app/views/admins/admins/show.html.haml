@@ -33,6 +33,7 @@
     =admin.email
   .span1
     Photo:
+    = image_tag admin.photo, :class => 'img-polaroid' if admin.photo?
   .span1
   .span10
     -if admin.active

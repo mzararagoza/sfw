@@ -222,6 +222,10 @@
               = link_to admins_vendors_path do
                 %i.icol32-share
                 Vendors
+            %li{ :class => "#{'active' if params[:controller] == 'admins/vendors'}" }
+              = link_to new_admins_message_path do
+                %i.icol32-qip-angry
+                Message
           -#%ul
             %li
               %a{:href => "dashboard.html"}

@@ -1,1 +1,48 @@
-app/views/admins/leads/index.html.haml
+= provide(:title, 'Admins')
+= provide(:page_title, 'Admins')
+= provide(:page_icon, 'active-page-icon large-gray-icon admin_user_blk')
+
+-content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li.active
+      %i.icon-official
+      =t(:leads)
+  %h1#main-heading
+    all leads
+
+
+=link_to t(:add), new_admins_lead_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      %i.icon-table
+      Leads
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:name)
+          %th=t(:phone)
+          %th=t(:email)
+          %th=t(:source)
+          %th
+      %tbody
+        - lead.each do |l|
+          %tr
+            %td= link_to l.id, admins_lead_path(l)
+            %td= link_to l.full_name, admins_lead_path(l)
+            %td= l.phone
+            %td= l.email
+            %td= l.source
+            %td
+              = link_to 'Edit', edit_admins_lead_path(l), :class => 'btn btn-small btn-info'
+
+
+
+

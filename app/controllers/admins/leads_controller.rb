@@ -1,6 +1,6 @@
 class Admins::LeadsController < AdminController
   expose(:leads){ Lead.order("id DESC").scoped{} }
-  expose(:lead)
+  expose(:lead){ Lead.all}
   
   def create
     if lead.save

@@ -19,6 +19,6 @@ class CreateLeads < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :exams
+    drop_table :leads
   end
 end

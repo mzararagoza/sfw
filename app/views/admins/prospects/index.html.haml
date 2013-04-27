@@ -1,0 +1,49 @@
+= provide(:title, 'Admins')
+= provide(:page_title, 'Admins')
+= provide(:page_icon, 'active-page-icon large-gray-icon admin_user_blk')
+
+-content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li.active
+      %i.icon-official
+      =t(:leads)
+  %h1#main-heading
+    Leads
+
+
+=link_to t(:add), new_admins_prospect_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      %i.icon-table
+      Leads
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:name)
+          %th=t(:address)
+          %th=t(:phone)
+          %th=t(:email)
+          %th=t(:source)
+          %th=t(:notes)
+          %th=t(:outcome)
+          %th
+      %tbody
+        - prospects.each do |p|
+          %tr
+            %td= link_to p.id, admins_prospect_path(p)
+            %td= link_to p.full_name, admins_prospect_path(p)
+            %td= p.address
+            %td= p.phone
+            %td= p.email
+            %td= p.source
+            %td= p.notes
+            %td= p.outcome
+            %td= link_to 'Edit', edit_admins_prospect_path(p), :class => 'btn btn-small btn-info'

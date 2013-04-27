@@ -1,0 +1,66 @@
+= simple_form_for([:admins, prospect], :html => {:class => 'form-horizontal' }) do |f|
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:first_name)
+      .mws-form-item
+        = f.input :first_name, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:last_name)
+      .mws-form-item
+        = f.input :last_name, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:address)
+      .mws-form-item
+        = f.input :address, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:address2)
+      .mws-form-item
+        = f.input :address2, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:city)
+      .mws-form-item
+        = f.input :city, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:state)
+      .mws-form-item
+        = f.input :state, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:zip)
+      .mws-form-item
+        = f.input :zip, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:phome)
+      .mws-form-item
+        = f.input :phone, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:email)
+      .mws-form-item
+        = f.input :email, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:source)
+      .mws-form-item
+        = f.input :source, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:notes)
+      .mws-form-item
+        = f.input :notes, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:outcome)
+      .mws-form-item
+        = f.input :outcome, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:first_name)
+      .mws-form-item
+        = f.button :submit, :class => 'pull-right btn btn-info'

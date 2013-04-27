@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427025332) do
+ActiveRecord::Schema.define(:version => 20130427154941) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -135,23 +135,6 @@ ActiveRecord::Schema.define(:version => 20130427025332) do
     t.string   "reason_for_leaving",              :default => ""
   end
 
-  create_table "leads", :force => true do |t|
-    t.string   "first_name", :default => ""
-    t.string   "last_name",  :default => ""
-    t.string   "address",    :default => ""
-    t.string   "address2",   :default => ""
-    t.string   "city",       :default => ""
-    t.string   "state",      :default => ""
-    t.string   "zip",        :default => ""
-    t.string   "phone",      :default => ""
-    t.string   "email",      :default => ""
-    t.string   "source",     :default => ""
-    t.text     "notes",      :default => ""
-    t.string   "outcome",    :default => ""
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-  end
-
   create_table "messages", :force => true do |t|
     t.integer  "admin_id"
     t.string   "message"
@@ -178,6 +161,23 @@ ActiveRecord::Schema.define(:version => 20130427025332) do
     t.datetime "updated_at",                                                   :null => false
     t.string   "payment_method",                               :default => ""
     t.string   "payment_number",                               :default => ""
+  end
+
+  create_table "prospects", :force => true do |t|
+    t.string   "first_name", :default => ""
+    t.string   "last_name",  :default => ""
+    t.string   "address",    :default => ""
+    t.string   "address2",   :default => ""
+    t.string   "city",       :default => ""
+    t.string   "state",      :default => ""
+    t.string   "zip",        :default => ""
+    t.string   "phone",      :default => ""
+    t.string   "email",      :default => ""
+    t.string   "source",     :default => ""
+    t.text     "notes",      :default => ""
+    t.string   "outcome",    :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "vacations", :force => true do |t|

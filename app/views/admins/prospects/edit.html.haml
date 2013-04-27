@@ -1,0 +1,21 @@
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      %a{:href => "/admins/dashboard"}
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li
+      %a{:href => "/admins/prospects"}
+        %i.icon-official
+        =t(:leads)
+      %span.divider /
+    %li.active
+      %i.icon-edit
+      =t(:edit)
+  %h1#main-heading
+    Update Lead
+
+=render 'form'
+
+

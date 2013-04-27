@@ -222,7 +222,11 @@
               = link_to admins_vendors_path do
                 %i.icol32-share
                 Vendors
-            %li{ :class => "#{'active' if params[:controller] == 'admins/vendors'}" }
+            %li{ :class => "#{'active' if params[:controller] == 'admins/leads'}" }
+              = link_to new_admins_lead_path do
+                %i.icol32-reseller-programm
+                Leads
+            %li{ :class => "#{'active' if params[:controller] == 'admins/messages'}" }
               = link_to new_admins_message_path do
                 %i.icol32-qip-angry
                 Message

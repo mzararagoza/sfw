@@ -24,3 +24,11 @@
                     %td= link_to g.full_name.titleize, admins_girl_path(g)
                     %td= g.payments.last.payment_date if g.payments != []
                     %td= g.arrival_date
+.mws-panel.grid_4
+  .mws-panel-header
+    %span
+      %i.icon-chart
+      Pie Chart 1
+  .mws-panel-body
+    .mws-panel-content
+      = render 'shared/income_expense_chart'

@@ -10,6 +10,7 @@
     / Viewport Metatag
     %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
     / Plugin Stylesheets first to ease overrides
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js", :type => "text/javascript"} 
     = javascript_include_tag 'jquery_ujs'
     %script{:src => "/js/rails.js"}
     %link{:href => "/assets/admin2/plugins/colorpicker/colorpicker.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
@@ -326,4 +327,7 @@
     %script{:src => "/assets/admin2/plugins/jgrowl/jquery.jgrowl-min.js"}
     %script{:src => "/assets/admin2/plugins/validate/jquery.validate-min.js"}
     %script{:src => "/assets/admin2/plugins/colorpicker/colorpicker-min.js"}
+    %script{:src => "/js/highcharts/highcharts.js"}
+    %script{:src => "/js/highcharts/modules/exporting.js"}
     / Core Script
+    = yield :pagefooter

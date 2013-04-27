@@ -1,0 +1,41 @@
+#subscriptions_chart{:style=> 'min-width: 200px; height: 400px; margin: 0 auto'}
+-content_for :pagefooter do 
+  :javascript
+    $(function () {
+        var chart;
+        var data = [#{ Girl.all.map{ |g| "['" +  g.full_name.titleize + "', " + g.payments.sum(:amount,:conditions=> "payment_type = 'receive_funds'" ).to_s + "]" }.join(',') }];
+        $(document).ready(function () {
+
+          // Build the chart
+            $('#subscriptions_chart').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+                  text:  #{Girl.count} + ' Girls'
+                },
+                tooltip: {
+                  valueDecimals: 0
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Subscriptions',
+                    data: data
+                }]
+            });
+        });
+
+    });
+

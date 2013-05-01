@@ -8,6 +8,10 @@
     .mws-form-item
     = f.input :last_name, :label => false
   .mws-form-row
+    %label.mws-form-label= t(:phone)
+    .mws-form-item
+    = f.input :phone, :label => false
+  .mws-form-row
     %label.mws-form-label= t(:email)
     .mws-form-item
     = f.input :email, :label => false

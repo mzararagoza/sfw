@@ -31,6 +31,12 @@ class Admins::MessagesController < AdminController
       sms.send('9545922500', g.full_name + '(' + g.id.to_s  + ')' )
       #sms.send(g.phone, message.message )
     end
+    Admin.where(:active => true).each do |a|
+      sms = Sms.new
+      sms.send('9545922500', a.full_name + '(' + a.id.to_s  + ')' )
+      #sms.send(a.phone, message.message )
+
+    end
   end
 end
 

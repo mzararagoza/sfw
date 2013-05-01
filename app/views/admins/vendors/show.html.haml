@@ -45,16 +45,47 @@
       %strong= t(:description)
       = vendor.description
 
-      %h1 Expenses
-      - vendor.expenses.order("id DESC").each do |e|
-        %strong Amount
-        = e.amount
-        %br
-        %strong Payment Date
-        = e.payment_date
-        %br
-        %strong Payment Type
-        = e.payment_type
-        %br
-        = link_to t(:receipt), e.pdf_upload_url, :class => 'btn btn-info', :target => '_blank' if e.pdf_upload?
-        %hr
+.clear
+.grid_12
+.mws-panel.grid_4
+  .mws-panel-body.no-padding
+    %fieldset.mws-form-inline
+      .mws-form-row.bordered
+        .mws-panel.grid_8
+          .mws-panel-header
+            %span
+              %i.icon-table
+              Expenses
+          .mws-panel-body.no-padding
+            %table.mws-table
+              %thead
+                %tr
+                  %th= t(:amount)
+                  %th= t(:payment_date)
+                  %th= t(:payment_type)
+                  %th= t(:pdf)
+                  %th= t(:note)
+                  %th
+                %tbody
+                - vendor.expenses.order("id DESC").each do |e|
+                  %tr
+                    %td= number_to_currency(e.amount)
+                    %td= e.payment_date
+                    %td= e.payment_type
+                    %td
+                      = link_to 'PDF', e.pdf_upload_url, :class => 'btn btn-small btn-info' if e.pdf_upload_url
+                    %td= e.note
+                    %td= link_to 'Edit', edit_admins_expense_path(e), :class => 'btn btn-small btn-info'
+                %tfoot
+                  %tr
+                    %th Receive Funds
+                    %th
+                      - receive_funds = vendor.expenses.sum(:amount,:conditions=> "payment_type = 'paid'" )
+                      = number_to_currency(receive_funds)
+                    %th Return Funds
+                    %th
+                      - return_funds = vendor.expenses.sum(:amount,:conditions=> "payment_type = 'return'" )
+                      = number_to_currency(return_funds)
+                    %th Differnce
+                    %th= number_to_currency(receive_funds - return_funds)
+                    %th

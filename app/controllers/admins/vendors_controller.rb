@@ -1,6 +1,7 @@
 class Admins::VendorsController < AdminController
   expose(:vendors){ Vendor.order("id DESC").scoped{} }
   expose(:vendor)
+  expose(:expenses) { Expense}
 
   def create
     if vendor.save

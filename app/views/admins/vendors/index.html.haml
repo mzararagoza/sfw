@@ -35,9 +35,20 @@
         - vendors.each do |v|
           %tr
             %td= link_to v.id, admins_vendor_path(v)
-            %td= v.full_name.titleize
+            %td= link_to v.full_name.titleize, admins_vendor_path(v)
             %td= v.address
             %td= v.email
             %td= v.phone_number
             %td= link_to 'edit', edit_admins_vendor_path(v), :class => 'btn btn-small btn-info'
-
+      %tfoot
+        %tr
+          %th{ :colspan => 1, :style => 'color:#ffffff'} Receive Funds
+          %th{ :colspan => 1, :style => 'color:#ffffff'}
+            - receive_funds = expenses.sum(:amount,:conditions=> "payment_type = 'paid'" )
+            = number_to_currency(receive_funds)
+          %th{ :colspan => 1, :style => 'color:#ffffff'} Return Funds
+          %th{ :colspan => 1, :style => 'color:#ffffff'}
+            - return_funds = expenses.sum(:amount,:conditions=> "payment_type = 'return'" )
+            = number_to_currency(return_funds)
+          %th{ :colspan => 1, :style => 'color:#ffffff'}  Differnce
+          %th{ :colspan => 1, :style => 'color:#ffffff'}= number_to_currency(receive_funds - return_funds)

@@ -1,0 +1,17 @@
+= simple_form_for([:admins, document], :html => {:class => 'form-horizontal' }) do |f|
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:name)
+      .mws-form-item
+        = f.input :name, :label => false
+    .mws-form-row
+      %label.mws-form-label= t(:description)
+      .mws-form-item
+        = f.input :description, :label => false
+    .mws-form-row
+      %label.mws-form-label= t(:pdf)
+      .mws-form-item
+        = f.input :pdf_upload, :label => false
+    .mws-form-row
+      .mws-form-item
+        = f.button :submit, :class => 'pull-right btn btn-info'

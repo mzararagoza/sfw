@@ -33,8 +33,7 @@ class Admins::MessagesController < AdminController
     end
     Admin.where(:active => true).each do |a|
       sms = Sms.new
-      sms.send('9545922500', a.full_name + '(' + a.id.to_s  + ')' )
-      #sms.send(a.phone, message.message )
+      sms.send(a.phone, message.message )
 
     end
   end

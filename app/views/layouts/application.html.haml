@@ -231,6 +231,10 @@
               = link_to new_admins_message_path do
                 %i.icol32-qip-angry
                 Message
+            %li{ :class => "#{'active' if params[:controller] == 'admins/messages'}" }
+              = link_to admins_documents_path do
+                %i.icol32-page-white-acrobat
+                Documents
           -#%ul
             %li
               %a{:href => "dashboard.html"}

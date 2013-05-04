@@ -20,6 +20,7 @@ SobrietyforwomenAdmin::Application.routes.draw do
       resources :vacations
       resources :prospects
       resources :messages
+      resources :documents
       get '/dashboard' => 'dashboards#index', as: :dashboard
       get '/' => 'dashboards#index'
     end

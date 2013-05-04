@@ -117,73 +117,76 @@
                     %th= number_to_currency(receive_funds - return_funds)
                     %th
 
-.mws-panel.grid_4
-  .mws-panel-body.no-padding
-    %fieldset.mws-form-inline
-      .mws-form-row.bordered
-        .mws-panel.grid_8
-          .mws-panel-header
-            %span
-              %i.icon-table
-              Notes
-          .mws-panel-body.no-padding
-            %table.mws-table
-              %thead
-                %tr
-                  %th= t(:note)
-                  %th= t(:consequence)
-                  %th= t(:by)
-              %tbody
-                - girl.notes.order("id DESC").each do |n|
-                  %tr
-                    %td= n.note
-                    %td= n.consequence
-                    %td= n.admin.full_name.titleize
-.clear
-.grid_12
-.mws-panel.grid_4
-  .mws-panel-body.no-padding
-    %fieldset.mws-form-inline
-      .mws-form-row.bordered
-        .mws-panel.grid_8
-          .mws-panel-header
-            %span
-              %i.icon-table
-              Drug Tests
-          .mws-panel-body.no-padding
-            %table.mws-table
-              %thead
-                %tr
-                  %th= t(:date_perform)
-                  %th= t(:drug_test_results_on_site)
-                  %th= t(:drug_test_results_lab)
-              %tbody
-                - girl.exams.order("id DESC").each do |e|
-                  %tr
-                    %td= e.date_perform
-                    %td= e.drug_test_results_on_site
-                    %td= e.drug_test_results_lab
-.mws-panel.grid_4
-  .mws-panel-body.no-padding
-    %fieldset.mws-form-inline
-      .mws-form-row.bordered
-        .mws-panel.grid_8
-          .mws-panel-header
-            %span
-              %i.icon-table
-              Pass
-          .mws-panel-body.no-padding
-            %table.mws-table
-              %thead
-                %tr
-                  %th= t(:issued_date)
-                  %th= t(:departure_date)
-                  %th= t(:return_date)
-                  %th
-              %tbody
-                - girl.vacations.order("id DESC").each do |v|
-                  %tr
-                    %td= v.issued_date
-                    %td= v.departure_date
-                    %td= v.return_date
-                    %td= link_to 'Edit', edit_admins_vacation_path(v), :class => 'btn btn-small btn-info'
+  .row-fluid
+    .mws-panel.grid_4
+      .mws-panel-body.no-padding
+        %fieldset.mws-form-inline
+          .mws-form-row.bordered
+            .mws-panel.grid_8
+              .mws-panel-header
+                %span
+                  %i.icon-table
+                  Notes
+              .mws-panel-body.no-padding
+                %table.mws-table
+                  %thead
+                    %tr
+                      %th= t(:note)
+                      %th= t(:consequence)
+                      %th= t(:by)
+                  %tbody
+                    - girl.notes.order("id DESC").each do |n|
+                      %tr
+                        %td= n.note
+                        %td= n.consequence
+                        %td= n.admin.full_name.titleize
+  .row-fluid
+    .clear
+    .grid_12
+    .mws-panel.grid_4
+      .mws-panel-body.no-padding
+        %fieldset.mws-form-inline
+          .mws-form-row.bordered
+            .mws-panel.grid_8
+              .mws-panel-header
+                %span
+                  %i.icon-table
+                  Drug Tests
+              .mws-panel-body.no-padding
+                %table.mws-table
+                  %thead
+                    %tr
+                      %th= t(:date_perform)
+                      %th= t(:drug_test_results_on_site)
+                      %th= t(:drug_test_results_lab)
+                  %tbody
+                    - girl.exams.order("id DESC").each do |e|
+                      %tr
+                        %td= e.date_perform
+                        %td= e.drug_test_results_on_site
+                        %td= e.drug_test_results_lab
+  .row-fluid
+    .mws-panel.grid_4
+      .mws-panel-body.no-padding
+        %fieldset.mws-form-inline
+          .mws-form-row.bordered
+            .mws-panel.grid_8
+              .mws-panel-header
+                %span
+                  %i.icon-table
+                  Pass
+              .mws-panel-body.no-padding
+                %table.mws-table
+                  %thead
+                    %tr
+                      %th= t(:issued_date)
+                      %th= t(:departure_date)
+                      %th= t(:return_date)
+                      %th
+                  %tbody
+                    - girl.vacations.order("id DESC").each do |v|
+                      %tr
+                        %td= v.issued_date
+                        %td= v.departure_date
+                        %td= v.return_date
+                        %td= link_to 'Edit', edit_admins_vacation_path(v), :class => 'btn btn-small btn-info'

@@ -70,7 +70,9 @@
       = girl.policy_number
     .grid_4
       %br
-      = image_tag girl.photo,  :width => '100', :class => 'img-polaroid' unless girl.photo.blank?
+      - unless girl.photo.blank?
+        = link_to girl.photo do
+          = image_tag girl.photo
       = image_tag girl.license_front,  :width => '100',:class => 'img-polaroid' unless girl.license_front.blank?
       = image_tag girl.license_back,  :width => '100',:class => 'img-polaroid' unless girl.license_back.blank?
       = image_tag girl.insurance_card_front,  :width => '100',:class => 'img-polaroid' unless girl.insurance_card_front.blank?

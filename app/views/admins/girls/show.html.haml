@@ -70,7 +70,11 @@
       = girl.policy_number
     .grid_4
       %br
-      = image_tag girl.photo, :class => 'img-polaroid' unless girl.photo.blank?
+      = image_tag girl.photo,  :width => '100', :class => 'img-polaroid' unless girl.photo.blank?
+      = image_tag girl.photo,  :width => '100',:class => 'img-polaroid' unless girl.photo.blank?
+      = image_tag girl.photo,  :width => '100',:class => 'img-polaroid' unless girl.photo.blank?
+      = image_tag girl.photo,  :width => '100',:class => 'img-polaroid' unless girl.photo.blank?
+      = image_tag girl.photo,  :width => '100',:class => 'img-polaroid' unless girl.photo.blank?
 .clear
 .grid_12
 .mws-panel.grid_4

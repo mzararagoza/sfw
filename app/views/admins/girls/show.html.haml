@@ -70,23 +70,24 @@
       = girl.policy_number
     .grid_4
       %br
-      -# unless girl.photo.blank?
+      - debugger
+      - if girl.photo?
         = link_to girl.photo_url do
           = image_tag girl.photo, :width => '100',:class => 'img-polaroid'
 
-      -# unless girl.license_front.blank?
+      - if girl.license_front?
         = link_to girl.license_front_url do
           = image_tag girl.license_front,  :width => '100',:class => 'img-polaroid'
 
-      -# unless girl.license_back.blank?
+      - if girl.license_back?
         = link_to girl.license_back_url do
           = image_tag girl.license_back,  :width => '100',:class => 'img-polaroid'
 
-      -# unless girl.insurance_card_front.blank?
+      - if girl.insurance_card_front?
         = link_to girl.insurance_card_front_url
           = image_tag girl.insurance_card_front,  :width => '100',:class => 'img-polaroid'
 
-      -# unless girl.insurance_card_back.blank?
+      - if girl.insurance_card_back?
         = link_to girl.insurance_card_back_url
           = image_tag girl.insurance_card_back,  :width => '100',:class => 'img-polaroid'
 .clear

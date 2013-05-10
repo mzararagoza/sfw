@@ -71,7 +71,9 @@
     .grid_4
       %br
       - if girl.photo?
-        = link_to girl.photo_url do
+        = link_to girl.photo_url, :target => '_blank' do
+          %strong Photo
+          %br
           = image_tag girl.photo, :width => '100',:class => 'img-polaroid'
 
       - if girl.license_front?

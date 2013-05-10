@@ -68,7 +68,7 @@
       %br
       %strong= t(:policy_number)
       = girl.policy_number
-    .grid_4
+    .grid_1
       %br
       - if girl.photo?
         = link_to girl.photo_url, :target => '_blank' do
@@ -76,24 +76,32 @@
           %br
           = image_tag girl.photo, :width => '100',:class => 'img-polaroid'
 
+    .grid_1
+      %br
       - if girl.license_front?
         = link_to girl.license_front_url do
           %strong License Front
           %br
           = image_tag girl.license_front,  :width => '100',:class => 'img-polaroid'
 
+    .grid_1
+      %br
       - if girl.license_back?
         = link_to girl.license_back_url do
           %strong License Back
           %br
           = image_tag girl.license_back,  :width => '100',:class => 'img-polaroid'
 
+    .grid_1
+      %br
       - if girl.insurance_card_front?
         = link_to girl.insurance_card_front_url do
           %strong Insurance card Front
           %br
           = image_tag girl.insurance_card_front,  :width => '100',:class => 'img-polaroid'
 
+    .grid_1
+      %br
       - if girl.insurance_card_back?
         = link_to girl.insurance_card_back_url do
           %strong Insurance Card Back

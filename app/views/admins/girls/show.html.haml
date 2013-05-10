@@ -78,18 +78,26 @@
 
       - if girl.license_front?
         = link_to girl.license_front_url do
+          %strong License Front
+          %br
           = image_tag girl.license_front,  :width => '100',:class => 'img-polaroid'
 
       - if girl.license_back?
         = link_to girl.license_back_url do
+          %strong License Back
+          %br
           = image_tag girl.license_back,  :width => '100',:class => 'img-polaroid'
 
       - if girl.insurance_card_front?
         = link_to girl.insurance_card_front_url do
+          %strong Insurance card Front
+          %br
           = image_tag girl.insurance_card_front,  :width => '100',:class => 'img-polaroid'
 
       - if girl.insurance_card_back?
         = link_to girl.insurance_card_back_url do
+          %strong Insurance Card Back
+          %br
           = image_tag girl.insurance_card_back,  :width => '100',:class => 'img-polaroid'
 .clear
 .grid_12

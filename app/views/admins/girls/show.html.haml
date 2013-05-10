@@ -71,12 +71,24 @@
     .grid_4
       %br
       - unless girl.photo.blank?
-        = link_to girl.photo do
-          = image_tag girl.photo
-      = image_tag girl.license_front,  :width => '100',:class => 'img-polaroid' unless girl.license_front.blank?
-      = image_tag girl.license_back,  :width => '100',:class => 'img-polaroid' unless girl.license_back.blank?
-      = image_tag girl.insurance_card_front,  :width => '100',:class => 'img-polaroid' unless girl.insurance_card_front.blank?
-      = image_tag girl.insurance_card_back,  :width => '100',:class => 'img-polaroid' unless girl.insurance_card_back.blank?
+        = link_to girl.photo_url do
+          = image_tag girl.photo, :width => '100',:class => 'img-polaroid'
+
+      - unless girl.license_front.blank?
+        = link_to girl.license_front_url do
+          = image_tag girl.license_front,  :width => '100',:class => 'img-polaroid'
+
+      - unless girl.license_back.blank?
+        = link_to girl.license_back_url do
+          = image_tag girl.license_back,  :width => '100',:class => 'img-polaroid'
+
+      - unless girl.insurance_card_front.blank?
+        = link_to girl.insurance_card_front_url
+          = image_tag girl.insurance_card_front,  :width => '100',:class => 'img-polaroid'
+
+      - unless girl.insurance_card_back.blank?
+        = link_to girl.insurance_card_back_url
+          = image_tag girl.insurance_card_back,  :width => '100',:class => 'img-polaroid'
 .clear
 .grid_12
 .mws-panel.grid_4

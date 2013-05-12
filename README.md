@@ -1,28 +1,5 @@
-referred_by
-fitst_name
-middle_name
-last_name
-social_security
-dob
-address
-address2
-city
-state
-zip
-is_taking_medication
-list_dosage
-clean date
-drugs_of_choice
-emergency_contact1_name
-emergency_contact1_relation
-emergency_contact1_phone
-emergency_contact2_name
-emergency_contact2_relation
-emergency_contact2_phone
-insurance_provider
-group_code
-policy_`number
-
-
-
+Read loag file
+tail -F 50  ./log/test.log
+tail -f log/development.log
+heroku logs -t -a sobrietyforwomen-prod
 

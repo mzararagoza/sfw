@@ -2,7 +2,7 @@ class Admins::MessagesController < AdminController
   expose(:messages){ Message.order("id DESC").scoped{} }
   expose(:message)
 
-  before_filter :send_text, :only => [:create]
+  after_filter :send_text, :only => [:create]
 
   def create
     message.admin_id = current_admin.id
@@ -31,7 +31,8 @@ class Admins::MessagesController < AdminController
       sms.send('9545922500', g.full_name + '(' + g.id.to_s  + ')' )
       #sms.send(g.phone, message.message )
     end
-    Admin.where(:active => true).each do |a|
+    admins = Admin.where(:active => true)
+    admins.each do |a|
       sms = Sms.new
       sms.send(a.phone, message.message )
 

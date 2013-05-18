@@ -199,10 +199,10 @@
                   %tbody
                     - girl.exams.order("id DESC").each do |e|
                       %tr
-                        %td= e.date_perform
+                        %td= link_to e.date_perform, admins_exam_path(e)
                         %td= e.drug_test_results_on_site
                         %td= e.drug_test_results_lab
-                        %td=# link_to 'View', admins_exam(e), :class => 'btn btn-info'
+                        %td= link_to 'Edit', edit_admins_exam_path(e), :class => 'btn btn-info'
   .row-fluid
     .mws-panel.grid_4
       .mws-panel-body.no-padding

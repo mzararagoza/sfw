@@ -8,7 +8,7 @@ class Admins::MessagesController < AdminController
     message.admin_id = current_admin.id
     if message.save
       flash[:notice] = t(:message_was_successfully_created)
-      redirect_to(admins_dashboard_path)
+      redirect_to(admins_messages_path)
     else
       render :new
     end

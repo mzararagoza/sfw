@@ -2,6 +2,65 @@
 = provide(:page_title, 'Home')
 = provide(:page_icon, 'active-page-icon large-gray-icon home_blk')
 
+
+
+
+.mws-stat-container.clearfix
+  #Girls
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-female
+    %span.mws-stat-content
+      %span.mws-stat-title Total Girls
+      %span.mws-stat-value= Girl.count
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-female
+    %span.mws-stat-content
+      %span.mws-stat-title Active Girls
+      %span.mws-stat-value= Girl.where(:active => true).count
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-female
+    %span.mws-stat-content
+      %span.mws-stat-title Receive Funds
+      - receive_funds = Payment.sum(:amount,:conditions=> "payment_type = 'receive_funds'" )
+      %span.mws-stat-value= number_to_currency(receive_funds)
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-female
+    %span.mws-stat-content
+      %span.mws-stat-title Return Funds
+      - return_funds = Payment.sum(:amount,:conditions=> "payment_type = 'return_funds'" )
+      %span.mws-stat-value= number_to_currency(return_funds)
+
+.mws-stat-container.clearfix
+  #vendors
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-share
+    %span.mws-stat-content
+      %span.mws-stat-title Total Vendors
+      %span.mws-stat-value= Vendor.count
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-share
+    %span.mws-stat-content
+      %span.mws-stat-title Receive Funds
+      - receive_funds = Expense.sum(:amount,:conditions=> "payment_type = 'paid'" )
+      %span.mws-stat-value= number_to_currency(receive_funds)
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-share
+    %span.mws-stat-content
+      %span.mws-stat-title Return Funds
+      - return_funds = Expense.sum(:amount,:conditions=> "payment_type = 'return'" )
+      %span.mws-stat-value= number_to_currency(return_funds)
+
+
+
+
+
+
+
+
+
+
+
+
 .mws-panel.grid_4
   .mws-panel-body.no-padding
     %fieldset.mws-form-inline

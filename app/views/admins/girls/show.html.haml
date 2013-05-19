@@ -15,7 +15,272 @@
   %h1#main-heading
     %span= girl.full_name.titleize
 
+
+
+
+
+.clear
+  .grid_12
+    .grid_1
+      - if girl.photo?
+        = link_to girl.photo_url, :target => '_blank' do
+          %strong= girl.full_name
+          %br
+          = image_tag girl.photo,  :width => '100',:class => 'img-circle'
+    .grid_1
+      %br
+      - if girl.license_front?
+        = link_to girl.license_front_url do
+          %strong License Front
+          %br
+          = image_tag girl.license_front,  :width => '100',:class => 'img-polaroid'
+
+    .grid_1
+      %br
+      - if girl.license_back?
+        = link_to girl.license_back_url do
+          %strong License Back
+          %br
+          = image_tag girl.license_back,  :width => '100',:class => 'img-polaroid'
+
+    .grid_1
+      %br
+      - if girl.insurance_card_front?
+        = link_to girl.insurance_card_front_url do
+          %strong Insurance card Front
+          %br
+          = image_tag girl.insurance_card_front,  :width => '100',:class => 'img-polaroid'
+
+    .grid_1
+      %br
+      - if girl.insurance_card_back?
+        = link_to girl.insurance_card_back_url do
+          %strong Insurance Card Back
+          %br
+          = image_tag girl.insurance_card_back,  :width => '100',:class => 'img-polaroid'
+.clear
+  %br
+  .grid_12
+    = link_to t(:opportunities_rules), girl.opportunities_rules_url, :class => 'btn btn-info' if girl.opportunities_rules?
+    = link_to t(:aa_meeting_sheet), girl.aa_meeting_sheet_url, :class => 'btn btn-info' if girl.aa_meeting_sheet?
+    = link_to t(:release_of_liability), girl.release_of_liability_url, :class => 'btn btn-info' if girl.release_of_liability?
+    = link_to t(:opportunities_intake_form), girl.opportunities_intake_form_url, :class => 'btn btn-info' if girl.opportunities_intake_form?
+    = link_to t(:opportunities_relapse_plan), girl.opportunities_relapse_plan_url, :class => 'btn btn-info' if girl.opportunities_relapse_plan?
+    = link_to t(:sober_inc), girl.sober_inc_url , :class => 'btn btn-info' if girl.sober_inc?
+.clear
+  %br
 .container-fluid
+  .row-fluid
+    .new-row
+.mws-panel.grid_4
+  .mws-panel-header
+    = link_to 'Edit', edit_admins_girl_path(girl), :class => 'btn btn-info pull-right'
+    %span
+      %i.icon-book
+      = girl.full_name.titleize
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          id
+        %span.val
+          %span.text-nowrap= girl.id
+      %li
+        %span.key
+          Name
+        %span.val
+          %span.text-nowrap= girl.full_name.titleize
+      %li
+        %span.key
+          Social Security
+        %span.val
+          %span.text-nowrap= girl.social_security
+      %li
+        %span.key
+          dob
+        %span.val
+          %span.text-nowrap= girl.dob
+      %li
+        %span.key
+          address
+        %span.val
+          %span.text-nowrap
+            = girl.address
+            = ',' + girl.address2 if girl.address2
+            %br
+            = girl.city
+            = girl.state
+            = girl.zip
+      %li
+        %span.key
+          Is taking medication
+        %span.val
+          %span.text-nowrap= girl.is_taking_medication
+      %li
+        %span.key
+          List Dosage
+        %span.val
+          %span.text-nowrap= girl.list_dosage
+      %li
+        %span.key
+          clean date
+        %span.val
+          %span.text-nowrap= girl.clean_date
+      %li
+        %span.key
+          drugs of choice
+        %span.val
+          %span.text-nowrap= girl.drugs_of_choice
+      %li
+        %span.key
+          email
+        %span.val
+          %span.text-nowrap= girl.email
+      %li
+        %span.key
+          Status
+        %span.val
+          %span.text-nowrap
+            -if girl.active
+              %span{:class=> 'label label-success'}
+                =t(:active)
+            - else
+              %span{:class=> 'label label-important'}
+                =t(:inactive)
+      %li
+        %span.key
+          Arrival Date
+        %span.val
+          %span.text-nowrap= girl.arrival_date
+      %li
+        %span.key
+          Departure Date
+        %span.val
+          %span.text-nowrap= girl.departure_date
+      %li
+        %span.key
+          Referral Source
+        %span.val
+          %span.text-nowrap= girl.referral_source
+      %li
+        %span.key
+          Referral Phone Number
+        %span.val
+          %span.text-nowrap= girl.referral_phone_number
+      %li
+        %span.key
+          Urine Upon Arrival
+        %span.val
+          %span.text-nowrap
+            - if  girl.clean_urine_upon_arriva
+              %span{:class=> 'label label-success'}
+                =t(:clean)
+            - else
+              %span{:class=> 'label label-important'}
+                =t(:dirty)
+      %li
+        %span.key
+          Drivers License
+        %span.val
+          %span.text-nowrap= girl.drivers_license
+      %li
+        %span.key
+          Reason for leaving
+        %span.val
+          %span.text-nowrap= girl.reason_for_leaving
+.clear
+.mws-panel.grid_4
+  .mws-panel-header
+    %span
+      %i.icon-book
+      Emergency contact
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          contact 1 name
+        %span.val
+          %span.text-nowrap
+            = girl.emergency_contact1_first_name
+            = girl.emergency_contact1_last_name
+      %li
+        %span.key
+          contact 1 phone
+        %span.val
+          %span.text-nowrap= girl.emergency_contact1_phone
+      %li
+        %span.key
+          contact 1 relation
+        %span.val
+          %span.text-nowrap= girl.emergency_contact1_relation
+      %li
+        %span.key
+        %span.val
+          %span.text-nowrap
+      %li
+        %span.key
+          contact 2 name
+        %span.val
+          %span.text-nowrap
+            = girl.emergency_contact2_first_name
+            = girl.emergency_contact2_last_name
+      %li
+        %span.key
+          contact 2 phone
+        %span.val
+          %span.text-nowrap= girl.emergency_contact2_phone
+      %li
+        %span.key
+          contact 2 relation
+        %span.val
+          %span.text-nowrap= girl.emergency_contact2_relation
+      %li
+        %span.key
+          
+        %span.val
+          %span.text-nowrap
+      %li
+        %span.key
+          Sponsor Name
+        %span.val
+          %span.text-nowrap
+            = girl.sponsor_first_name
+            = girl.sponsor_last_name
+      %li
+        %span.key
+          Sponsor Phone
+        %span.val
+          %span.text-nowrap= girl.sponsor_phone
+.clear
+.mws-panel.grid_4
+  .mws-panel-header
+    %span
+      %i.icon-book
+      Insurance
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          Insurance Provider
+        %span.val
+          %span.text-nowrap= girl.insurance_provider
+      %li
+        %span.key
+          Group Code
+        %span.val
+          %span.text-nowrap= girl.group_code
+      %li
+        %span.key
+          Policy Number
+        %span.val
+          %span.text-nowrap= girl.policy_number
+      %li
+        %span.key
+          Phone Number
+        %span.val
+          %span.text-nowrap= girl.insurance_provider_phone_number
+.clear
+-#.container-fluid
   .row-fluid
     .grid_1
       = link_to 'Edit Girl', edit_admins_girl_path(girl), :class => 'btn btn-info pull-right'
@@ -29,13 +294,6 @@
       = link_to 'Add Pass', new_admins_vacation_path(girl), :class => 'btn btn-info pull-right'
     .clear
     .grid_12
-      %br
-      = link_to t(:opportunities_rules), girl.opportunities_rules_url, :class => 'btn btn-info' if girl.opportunities_rules?
-      = link_to t(:aa_meeting_sheet), girl.aa_meeting_sheet_url, :class => 'btn btn-info' if girl.aa_meeting_sheet?
-      = link_to t(:release_of_liability), girl.release_of_liability_url, :class => 'btn btn-info' if girl.release_of_liability?
-      = link_to t(:opportunities_intake_form), girl.opportunities_intake_form_url, :class => 'btn btn-info' if girl.opportunities_intake_form?
-      = link_to t(:opportunities_relapse_plan), girl.opportunities_relapse_plan_url, :class => 'btn btn-info' if girl.opportunities_relapse_plan?
-      = link_to t(:sober_inc), girl.sober_inc_url , :class => 'btn btn-info' if girl.sober_inc?
     .clear
     .grid_2
       %br
@@ -76,37 +334,6 @@
           %br
           = image_tag girl.photo, :width => '100',:class => 'img-polaroid'
 
-    .grid_1
-      %br
-      - if girl.license_front?
-        = link_to girl.license_front_url do
-          %strong License Front
-          %br
-          = image_tag girl.license_front,  :width => '100',:class => 'img-polaroid'
-
-    .grid_1
-      %br
-      - if girl.license_back?
-        = link_to girl.license_back_url do
-          %strong License Back
-          %br
-          = image_tag girl.license_back,  :width => '100',:class => 'img-polaroid'
-
-    .grid_1
-      %br
-      - if girl.insurance_card_front?
-        = link_to girl.insurance_card_front_url do
-          %strong Insurance card Front
-          %br
-          = image_tag girl.insurance_card_front,  :width => '100',:class => 'img-polaroid'
-
-    .grid_1
-      %br
-      - if girl.insurance_card_back?
-        = link_to girl.insurance_card_back_url do
-          %strong Insurance Card Back
-          %br
-          = image_tag girl.insurance_card_back,  :width => '100',:class => 'img-polaroid'
 .clear
 .grid_12
 .mws-panel.grid_4

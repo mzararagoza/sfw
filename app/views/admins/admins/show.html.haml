@@ -20,26 +20,48 @@
   %h1#main-heading
     Admin: 
     = admin.full_name.titleize
-.row-fluid
-  .span12
-    = link_to 'Edit Admin', edit_admins_admin_path(admin), :class => 'btn btn-info pull-right'
-  .span1
-    Name:
-  .span10
-    =admin.full_name.titleize
-  .span1
-    Email:
-  .span10
-    =admin.email
-  .span1
-    Photo:
-    = image_tag admin.photo, :class => 'img-polaroid' if admin.photo?
-  .span1
-  .span10
-    -if admin.active
-      %span{:class=> 'label label-success'}
-        =t(:active)
-    - else
-      %span{:class=> 'label label-important'}
-        =t(:inactive)
-
+.mws-panel.grid_4
+  .mws-panel-header
+    = link_to 'Edit', edit_admins_admin_path(admin), :class => 'btn btn-info pull-right'
+    %span
+      %i.icon-book
+      Admin
+      = admin.full_name.titleize
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          id
+        %span.val
+          %span.text-nowrap= admin.id
+      %li
+        %span.key
+          Name
+        %span.val
+          %span.text-nowrap= admin.full_name.titleize
+      %li
+        %span.key
+          Status
+        %span.val
+          %span.text-nowrap
+            -if admin.active
+              %span{:class=> 'label label-success'}
+                =t(:active)
+            - else
+              %span{:class=> 'label label-important'}
+                =t(:inactive)
+      %li
+        %span.key
+          phone
+        %span.val
+          %span.text-nowrap= admin.phone
+      %li
+        %span.key
+          photo
+        %span.val
+          %span.text-nowrap= image_tag admin.photo, :class => 'img-circle' if admin.photo?
+      %li
+        %span.key
+          Sign in count
+        %span.val
+          %span.text-nowrap= admin.sign_in_count

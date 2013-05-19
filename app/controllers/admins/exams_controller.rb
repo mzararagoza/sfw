@@ -5,7 +5,7 @@ class Admins::ExamsController < AdminController
     if params[:format] 
       girl = Girl.find(params[:format])
     else
-      girl = payment.girl.id
+      girl = exam.girl.id
     end
     girl
   }

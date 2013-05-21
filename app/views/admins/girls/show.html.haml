@@ -20,6 +20,17 @@
 
 
 .clear
+.grid_1
+  = link_to 'Edit Girl', edit_admins_girl_path(girl), :class => 'btn btn-info pull-right'
+.grid_1
+  = link_to 'Add Note', new_admins_note_path(girl), :class => 'btn btn-info pull-right'
+.grid_1
+  = link_to 'Add Payment', new_admins_payment_path(girl), :class => 'btn btn-info pull-right'
+.grid_1
+  = link_to 'Add Drug Test', new_admins_exam_path(girl), :class => 'btn btn-info pull-right'
+.grid_1
+  = link_to 'Add Pass', new_admins_vacation_path(girl), :class => 'btn btn-info pull-right'
+.clear
   .grid_12
     .grid_1
       - if girl.photo?
@@ -282,17 +293,6 @@
 .clear
 -#.container-fluid
   .row-fluid
-    .grid_1
-      = link_to 'Edit Girl', edit_admins_girl_path(girl), :class => 'btn btn-info pull-right'
-    .grid_1
-      = link_to 'Add Note', new_admins_note_path(girl), :class => 'btn btn-info pull-right'
-    .grid_1
-      = link_to 'Add Payment', new_admins_payment_path(girl), :class => 'btn btn-info pull-right'
-    .grid_1
-      = link_to 'Add Drug Test', new_admins_exam_path(girl), :class => 'btn btn-info pull-right'
-    .grid_1
-      = link_to 'Add Pass', new_admins_vacation_path(girl), :class => 'btn btn-info pull-right'
-    .clear
     .grid_12
     .clear
     .grid_2

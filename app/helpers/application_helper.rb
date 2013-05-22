@@ -17,7 +17,8 @@ module ApplicationHelper
     [
       ['Cash','cash'],
       ['Check','chrck'],
-      ['Credit Card','credit_card']
+      ['Credit Card','credit_card'],
+      ['Pay Pay','paypal']
     ]
   end
 

@@ -3,7 +3,7 @@
   :javascript
     $(function () {
         var chart;
-        var data = [#{ Girl.all.map{ |g| "['" +  g.full_name.titleize + "', " + g.payments.sum(:amount,:conditions=> "payment_type = 'receive_funds'" ).to_s + "]" }.join(',') }];
+        var data = [#{ Girl.where(:active => true).map{ |g| "['" +  g.full_name.titleize + "', " + g.payments.sum(:amount,:conditions=> "payment_type = 'receive_funds'" ).to_s + "]" }.join(',') }];
         $(document).ready(function () {
 
           // Build the chart
@@ -14,7 +14,7 @@
                     plotShadow: false
                 },
                 title: {
-                  text:  #{Girl.count} + ' Girls'
+                  text:  #{Girl.where(:active => true).count} + ' Active Girls'
                 },
                 tooltip: {
                   valueDecimals: 0

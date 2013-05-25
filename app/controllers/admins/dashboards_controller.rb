@@ -1,5 +1,5 @@
 class Admins::DashboardsController < AdminController
-  expose(:girls){ Girl.where(:active => true).order("id DESC").scoped{} }
+  expose(:girls){ Girl.order("id DESC").scoped{} }
   expose(:income){ 
      girl = Girl.order("id DESC").scoped{}
      girl.each do |g|

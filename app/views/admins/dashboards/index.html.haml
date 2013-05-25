@@ -78,19 +78,12 @@
                   %th= t(:last_payment_date)
                   %th= t(:arrival_date)
               %tbody
-                - girls.each do |g|
+                - girls.where(:active => true).each do |g|
                   %tr
                     %td= link_to g.full_name.titleize, admins_girl_path(g)
                     %td= g.payments.last.payment_date if g.payments != []
                     %td= g.arrival_date
--#.mws-panel.grid_4
-  .mws-panel-header
-    %span
-      %i.icon-chart
-      Girls Profit
-  .mws-panel-body
-    .mws-panel-content
-      = render 'shared/girls_profit_chart'
+= render 'shared/girls_profit_chart'
 .mws-panel.grid_4
   .mws-panel-header
     %span

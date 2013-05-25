@@ -1,44 +1,23 @@
-#girls_profit_chart{:style=> 'min-width: 200px; height: 400px; margin: 0 auto'}
--content_for :pagefooter do 
-  :javascript
-    $(function () {
-        var chart;
-        var data = [#{ Girl.all.map{ |g| "['" +  g.full_name.titleize + "', " + g.payments.sum(:amount,:conditions=> "payment_type = 'receive_funds'" ).to_s + "]" }.join(',') }];
-        $(document).ready(function () {
-
-          // Build the chart
-            $('#girls_profit_chart').highcharts({
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false
-                },
-                title: {
-                  text:  #{Girl.count} + ' Girls'
-                },
-                tooltip: {
-                  valueDecimals: 0
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: false
-                        },
-                        showInLegend: true
-                    }
-                },
-                series: [{
-                    type: 'pie',
-                    name: 'Subscriptions',
-                    data: [
-                      ['Total Income', #{ rand(1000) } ],
-                      ['Total Expense', 10000]
-                    ]
-                }]
-            });
-        });
-
-    });
+.mws-panel.grid_4
+  .mws-panel-body.no-padding
+    %fieldset.mws-form-inline
+      .mws-form-row.bordered
+        .mws-panel.grid_8
+          .mws-panel-header
+            %span
+              %i.icon-table
+              Girls Stay In Program
+          .mws-panel-body.no-padding
+            %table.mws-table
+              %thead
+                %tr
+                  %th= t(:name)
+                  %th= t(:arrival_date)
+                  %th= t(:departure_date)
+              %tbody
+                - girls.each do |g|
+                  %tr
+                    %td= link_to g.full_name.titleize, admins_girl_path(g)
+                    %td= g.arrival_date
+                    %td= g.departure_date
 

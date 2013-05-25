@@ -83,7 +83,6 @@
                     %td= link_to g.full_name.titleize, admins_girl_path(g)
                     %td= g.payments.last.payment_date if g.payments != []
                     %td= g.arrival_date
-= render 'shared/girls_profit_chart'
 .mws-panel.grid_4
   .mws-panel-header
     %span
@@ -92,3 +91,4 @@
   .mws-panel-body
     .mws-panel-content
       = render 'shared/income_expense_chart'
+= render 'shared/girls_stay_in_program'

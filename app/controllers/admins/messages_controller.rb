@@ -25,17 +25,20 @@ class Admins::MessagesController < AdminController
 
   private
   def send_text
-    girls = Girl.where(:active => true)
-    girls.each do |g|
-      sms = Sms.new
-      sms.send('9545922500', g.full_name + '(' + g.id.to_s  + ')' )
-      #sms.send(g.phone, message.message )
+    if params[:message][:to_girl]
+      girls = Girl.where(:active => true)
+      girls.each do |g|
+        sms = Sms.new
+        sms.send('9545922500', g.full_name + '(' + g.id.to_s  + ')' )
+        #sms.send(g.phone, message.message )
+      end
     end
-    admins = Admin.where(:active => true)
-    admins.each do |a|
-      sms = Sms.new
-      sms.send(a.phone, message.message )
-
+    if params[:message][:to_addmin]
+      admins = Admin.where(:active => true)
+      admins.each do |a|
+        sms = Sms.new
+        sms.send(a.phone, message.message )
+      end
     end
   end
 end

@@ -14,10 +14,12 @@
                   %th= t(:name)
                   %th= t(:arrival_date)
                   %th= t(:departure_date)
+                  %th= t(:reason_for_leaving)
               %tbody
                 - girls.each do |g|
                   %tr
                     %td= link_to g.full_name.titleize, admins_girl_path(g)
                     %td= g.arrival_date
                     %td= g.departure_date
+                    %td= g.reason_for_leaving
 

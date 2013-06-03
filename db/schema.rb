@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525152034) do
+ActiveRecord::Schema.define(:version => 20130603230533) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20130525152034) do
     t.string   "insurance_card_front",            :default => ""
     t.string   "insurance_caed_back",             :default => ""
     t.string   "insurance_card_back",             :default => ""
+    t.string   "lease",                           :default => ""
   end
 
   create_table "messages", :force => true do |t|

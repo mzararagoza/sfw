@@ -1,0 +1,50 @@
+= provide(:title, 'Expenses')
+= provide(:page_title, 'Expenses')
+= provide(:page_icon, 'active-page-icon large-gray-icon price_tags_blk')
+
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li.active
+      %i.icon-official
+      =t(:expensess)
+  %h1#main-heading
+    all expenses
+    %span History of expenses
+
+.container-fluid
+  .row-fluid
+    .span12
+      .box-widget
+        .widget-head.clearfix
+          %span.h-icon
+            %i.ledcolor-icons.money_dollar_co
+          %h4 Expenses
+          =link_to t(:add), new_admins_expense_path, :class => 'btn btn-info pull-right'
+        .widget-container
+          %table.data-tbl-boxy.table.table-striped.table-well.responsive
+            %thead
+              %tr
+                %th=t(:id)
+                %th=t(:amount)
+                %th=t(:payment_type)
+                %th=t(:payment_date)
+                %th=t(:note)
+                %th
+            %tbody
+              - expenses.each do |w|
+                %tr
+                  %td= e.id
+                  %td= e.amount
+                  %td= e.payment_type
+                  %td= e.payment_date
+                  %td= e.note
+                  %td
+                    =# link_to edit_admins_payment_path(p), :class => 'btn btn-small btn-info' do
+                      -#edit
+
+

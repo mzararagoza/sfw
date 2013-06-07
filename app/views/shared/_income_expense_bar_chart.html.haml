@@ -1,0 +1,106 @@
+#monthly_sales_chart{:style => "min-width: 400px; height: 400px; margin: 0 auto"}
+-content_for :pagefooter do
+  -#:javascript
+    $(function () {
+            $('#monthly_sales_chart').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Monthly Sales'
+                },
+                xAxis: {
+                    categories:[
+                      #{ Girl.group("DATE_TRUNC('month', created_at)").count.sort_by{|e| e[0]}.map {|a| "'" + a[0].to_date.strftime('%b %Y').to_s + "'" }.join(',') }
+                      ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Sales'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                  name: 'Monthly Sales',
+                  data: [
+                      #{ Girl.group("DATE_TRUNC('month', created_at)").count.sort_by{|e| e[0]}.map {|a|  a[1].to_s  }.join(',') }
+                      /*49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4*/
+                      ]
+                }]
+            });
+        });
+
+  :javascript
+    $(function () {
+            $('#monthly_sales_chart').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Income, Expensens, Profit'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        'Jan',
+                        'Feb',
+                        'Mar',
+                        'Apr',
+                        'May',
+                        'Jun',
+                        'Jul',
+                        'Aug',
+                        'Sep',
+                        'Oct',
+                        'Nov',
+                        'Dec'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Dolars'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>${point.y:.1f}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Income',
+                    data: [3573, 5326, 6712, 4400, 7700, 1650, 0, 0, 0, 0, 0, 0]
+                }, {
+                    name: 'Expense',
+                    data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+                }, {
+                    name: 'Profit',
+                    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+                }]
+            });
+        });

@@ -62,6 +62,14 @@
 
 
 .mws-panel.grid_4
+  .mws-panel-header
+    %span
+      %i.icon-chart
+      Income Expenses
+  .mws-panel-body
+    .mws-panel-content
+      = render 'shared/income_expense_bar_chart'
+.mws-panel.grid_4
   .mws-panel-body.no-padding
     %fieldset.mws-form-inline
       .mws-form-row.bordered

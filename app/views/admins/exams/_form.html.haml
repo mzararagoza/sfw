@@ -7,7 +7,7 @@
     .mws-form-row
       %label.mws-form-label= t(:date_perform)
       .mws-form-item
-      = f.input :date_perform, :label => false
+      = f.input :date_perform, :label => false, :input_html => {:id => 'dp2', :class => 'datepicker'}
   .mws-form-inline
     .mws-form-row
       %label.mws-form-label= t(:drug_test_results_on_site)
@@ -27,7 +27,7 @@
     .mws-form-row
       %label.mws-form-label= t(:insurance_billed_date)
       .mws-form-item
-      = f.input :insurance_billed_date, :label => false
+      = f.input :insurance_billed_date, :label => false, :input_html => {:id => 'dp2', :class => 'datepicker'}
   .mws-form-inline
     .mws-form-row
       %label.mws-form-label= t(:amount_paid)
@@ -37,7 +37,7 @@
     .mws-form-row
       %label.mws-form-label= t(:date_paid)
       .mws-form-item
-      = f.input :date_paid, :label => false
+      = f.input :date_paid, :label => false ,:input_html => {:id => 'dp2', :class => 'datepicker'}
   .mws-form-inline
     .mws-form-row
       %label.mws-form-label= t(:insurance_company)

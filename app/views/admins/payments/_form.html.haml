@@ -10,7 +10,7 @@
   .mws-form-row
     %label.mws-form-label= t(:payment_date)
     .mws-form-item
-    = f.input :payment_date, :input_html => {:id => 'dp1'}, :label => false
+    = f.input :payment_date, :input_html => {:id => 'dp1', :class => 'datepicker'}, :label => false
   .mws-form-row
     %label.mws-form-label= t(:payment_type)
     .mws-form-item

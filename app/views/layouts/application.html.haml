@@ -334,4 +334,11 @@
     %script{:src => "/js/highcharts/highcharts.js"}
     %script{:src => "/js/highcharts/modules/exporting.js"}
     / Core Script
+    :javascript
+      $(function() {
+        $( ".datepicker" ).datepicker({
+          dateFormat: "yy-mm-dd"
+        });
+        $( ".timepicker" ).timepicker({ 'timeFormat': 'h:i A' });
+      });
     = yield :pagefooter

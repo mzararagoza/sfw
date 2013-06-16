@@ -20,11 +20,11 @@
         .mws-form-row
           %label.mws-form-label= t(:arrival_date)
           .mws-form-item
-            = f.input :arrival_date, :input_html => {:id => 'dp1'}, :label => false
+            = f.input :arrival_date, :input_html => {:id => 'dp1', :class => 'datepicker'}, :label => false
         .mws-form-row
           %label.mws-form-label= t(:departure_date)
           .mws-form-item
-            = f.input :departure_date, :input_html => {:id => 'dp2'}, :label => false
+            = f.input :departure_date, :input_html => {:id => 'dp2', :class => 'datepicker'}, :label => false
         .mws-form-row
           %label.mws-form-label= t(:social_security)
           .mws-form-item
@@ -32,7 +32,7 @@
         .mws-form-row
           %label.mws-form-label= t(:dob)
           .mws-form-item
-            = f.input :dob, :label => false
+            = f.input :dob, :label => false,:input_html => {:class => 'datepicker'}
         .mws-form-row
           %label.mws-form-label= t(:address)
           .mws-form-item
@@ -76,7 +76,7 @@
         .mws-form-row
           %label.mws-form-label= t(:clean_date)
           .mws-form-item
-            = f.input :clean_date, :input_html => {:id => 'dp3'}, :label => false
+            = f.input :clean_date, :input_html => {:id => 'dp3', :class => 'datepicker'}, :label => false
         .mws-form-row
           %label.mws-form-label= t(:drugs_of_choice)
           .mws-form-item

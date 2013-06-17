@@ -27,7 +27,7 @@
 .grid_1
   = link_to 'Add Payment', new_admins_payment_path(girl), :class => 'btn btn-info pull-right'
 .grid_1
-  = link_to 'Add Drug Test', new_admins_exam_path(girl), :class => 'btn btn-info pull-right'
+  = link_to 'Add Drug Test', new_admins_proof_path(girl), :class => 'btn btn-info pull-right'
 .grid_1
   = link_to 'Add Pass', new_admins_vacation_path(girl), :class => 'btn btn-info pull-right'
 .clear
@@ -424,12 +424,21 @@
                       %th= t(:drug_test_results_on_site)
                       %th= t(:drug_test_results_lab)
                       %th
+                      %th
                   %tbody
+                    - girl.proofs.order("id DESC").each do |p|
+                      %tr
+                        %td= link_to p.date_perform, admins_proof_path(p)
+                        %td= p.drug_test_results_on_site
+                        %td= p.drug_test_results_lab
+                        %td= link_to t(:pdf), p.exam_pdf_url, :class => 'btn btn-info' if p.exam_pdf?
+                        %td= link_to 'Edit', edit_admins_proof_path(p), :class => 'btn btn-info'
                     - girl.exams.order("id DESC").each do |e|
                       %tr
                         %td= link_to e.date_perform, admins_exam_path(e)
                         %td= e.drug_test_results_on_site
                         %td= e.drug_test_results_lab
+                        %td= link_to t(:pdf), e.exam_pdf_url, :class => 'btn btn-info' if e.exam_pdf?
                         %td= link_to 'Edit', edit_admins_exam_path(e), :class => 'btn btn-info'
   .row-fluid
     .mws-panel.grid_8

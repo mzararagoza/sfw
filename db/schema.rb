@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616114319) do
+ActiveRecord::Schema.define(:version => 20130616132157) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -53,6 +53,18 @@ ActiveRecord::Schema.define(:version => 20130616114319) do
     t.string   "pdf_upload"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "drugs", :force => true do |t|
+    t.integer  "proof_id"
+    t.string   "code"
+    t.string   "abbreviation"
+    t.boolean  "result"
+    t.string   "unit"
+    t.string   "normal"
+    t.text     "comment"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "exams", :force => true do |t|
@@ -178,6 +190,19 @@ ActiveRecord::Schema.define(:version => 20130616114319) do
     t.datetime "updated_at",                                                   :null => false
     t.string   "payment_method",                               :default => ""
     t.string   "payment_number",                               :default => ""
+  end
+
+  create_table "proofs", :force => true do |t|
+    t.integer "girl_id"
+    t.string  "date_perform"
+    t.string  "drug_test_results_on_site"
+    t.string  "drug_test_results_lab"
+    t.string  "insurance_billed_amount"
+    t.string  "insurance_billed_date"
+    t.string  "amount_paid"
+    t.string  "date_paid"
+    t.string  "insurance_company"
+    t.string  "exam_pdf"
   end
 
   create_table "prospects", :force => true do |t|

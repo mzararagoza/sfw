@@ -5,4 +5,3 @@ class Exam < ActiveRecord::Base
   
   mount_uploader :exam_pdf, FileUploader
 end
-

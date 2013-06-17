@@ -17,6 +17,7 @@ SobrietyforwomenAdmin::Application.routes.draw do
       resources :vendors
       resources :expenses
       resources :exams
+      resources :proofs
       resources :vacations
       resources :prospects
       resources :messages

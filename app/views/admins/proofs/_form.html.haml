@@ -1,0 +1,80 @@
+= simple_form_for([:admins, proof], :html => {:class => 'form-horizontal' }) do |f|
+  - if params[:format]
+    = f.input :girl_id, :as => :hidden, :input_html => {:value => girl.id }
+  -else 
+    = f.input :girl_id, :as => :hidden, :input_html => {:value => exam.girl.id }
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:date_perform)
+      .mws-form-item
+      = f.input :date_perform, :label => false, :input_html => { :class => 'datepicker'}
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:drug_test_results_on_site)
+      .mws-form-item
+      = f.input :drug_test_results_on_site, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:drug_test_results_lab)
+      .mws-form-item
+      = f.input :drug_test_results_lab, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:insurance_billed_amount)
+      .mws-form-item
+      = f.input :insurance_billed_amount, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:insurance_billed_date)
+      .mws-form-item
+      = f.input :insurance_billed_date, :label => false, :input_html => {:class => 'datepicker'}
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:amount_paid)
+      .mws-form-item
+      = f.input :amount_paid, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:date_paid)
+      .mws-form-item
+      = f.input :date_paid, :label => false ,:input_html => {:class => 'datepicker'}
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:insurance_company)
+      .mws-form-item
+      = f.input :insurance_company, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %label.mws-form-label= t(:exam_pdf)
+      .mws-form-item
+      = f.input :exam_pdf, :label => false
+  .mws-form-inline
+    .mws-form-row
+      %hr
+      =t(:drugs)
+  .mws-form-inline
+    .mws-form-row
+      #dynamicInput
+      %a{:name => "add_drug"}
+      = link_to t(:add_drug), '#add_drug', :class => 'btn btn-primary', :onclick => "addInput('dynamicInput')"
+  .mws-form-inline
+    .mws-form-row
+      .mws-form-item
+      = hidden_field_tag :counter
+      = f.button :submit, :class => 'pull-right btn btn-info'
+
+= content_for :pagefooter do
+  :javascript
+    counter = 0;
+    function addInput(divName){
+      var newdiv = document.createElement('div');
+      newdiv.innerHTML =newdiv.innerHTML +  "Code <input id='code_" + counter +"' type='text' title='code' size='15' name='code_" + counter +"' style='color:#000000'>";
+      newdiv.innerHTML =newdiv.innerHTML +  "Abbr <input id='abbreviation_" + counter +"' type='text' title='abbreviation' size='15' name='abbreviation_" + counter +"' style='color:#000000'>";
+      newdiv.innerHTML =newdiv.innerHTML +  "THIS NEEDS TO BE A CHECKBOX Result <input id='result_" + counter +"' type='text' title='result' size='15' name='result_" + counter +"' style='color:#000000'>";
+      newdiv.innerHTML =newdiv.innerHTML +  "Unit <input id='unit_" + counter +"' type='text' title='unit' size='15' name='unit_" + counter +"' style='color:#000000'>";
+      newdiv.innerHTML =newdiv.innerHTML +  "Normal <input id='normal_" + counter +"' type='text' title='normal' size='15' name='normal_" + counter +"' style='color:#000000'>";
+      newdiv.innerHTML =newdiv.innerHTML +  "<br>Comment<br><input id='comment_" + counter +"' type='text' title='comment' size='100%' name='comment_" + counter +"' style='color:#000000'><br><br>";
+      document.getElementById(divName).appendChild(newdiv).setAttribute("id", "dynamicInput_" +counter);
+      document.getElementById('counter').value = counter;
+      counter++;
+    }

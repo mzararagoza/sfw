@@ -235,6 +235,10 @@
               = link_to admins_documents_path do
                 %i.icol32-page-white-acrobat
                 Documents
+            %li{ :class => "#{'active' if params[:controller] == 'admins/links'}" }
+              = link_to admins_links_path do
+                %i.icol32-link
+                Links
           -#%ul
             %li
               %a{:href => "dashboard.html"}

@@ -2,7 +2,7 @@
   - if params[:format]
     = f.input :girl_id, :as => :hidden, :input_html => {:value => girl.id }
   -else 
-    = f.input :girl_id, :as => :hidden, :input_html => {:value => exam.girl.id }
+    = f.input :girl_id, :as => :hidden, :input_html => {:value => proof.girl.id }
   .mws-form-inline
     .mws-form-row
       %label.mws-form-label= t(:date_perform)

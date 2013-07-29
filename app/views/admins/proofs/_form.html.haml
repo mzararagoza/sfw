@@ -32,7 +32,7 @@
     .mws-form-row
       %label.mws-form-label= t(:amount_paid)
       .mws-form-item
-      = f.input :amount_paid, :label => false
+      = f.input :amount_paid2, :label => false
   .mws-form-inline
     .mws-form-row
       %label.mws-form-label= t(:date_paid)
@@ -62,6 +62,17 @@
       .mws-form-item
       = hidden_field_tag :counter
       = f.button :submit, :class => 'pull-right btn btn-info'
+  - proof.drugs.each do |p|
+    %li 
+      %span.key
+        =p.code
+      %span.val
+        %span.text-nowrap
+          =  p.abbreviation
+          =  p.result
+          =  p.unit
+          =  p.normal
+          =  p.comment
 
 = content_for :pagefooter do
   :javascript

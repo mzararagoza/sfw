@@ -292,48 +292,6 @@
         %span.val
           %span.text-nowrap= girl.insurance_provider_phone_number
 .clear
--#.container-fluid
-  .row-fluid
-    .grid_12
-    .clear
-    .grid_2
-      %br
-      %strong girl_id
-      = girl.id
-      %br
-      %strong= t(:name)
-      = girl.full_name.titleize
-      %br
-      %strong= t(:ssn)
-      = girl.social_security
-      %br
-      %strong= t(:is_taking_medication)
-      = girl.is_taking_medication
-      %br
-      %strong= t(:list_dosage)
-      = girl.list_dosage
-      %br
-      %strong= t(:clean_date)
-      = girl.clean_date
-      %br
-      %strong= t(:drugs_of_choice)
-      = girl.drugs_of_choice
-      %br
-      %strong= t(:insurance_provider)
-      = girl.insurance_provider
-      %br
-      %strong= t(:group_code)
-      = girl.group_code
-      %br
-      %strong= t(:policy_number)
-      = girl.policy_number
-    .grid_1
-      %br
-      - if girl.photo?
-        = link_to girl.photo_url, :target => '_blank' do
-          %strong Photo
-          %br
-          = image_tag girl.photo, :width => '100',:class => 'img-polaroid'
 
 .clear
 .grid_12
@@ -423,6 +381,10 @@
                       %th= t(:date_perform)
                       %th= t(:drug_test_results_on_site)
                       %th= t(:drug_test_results_lab)
+                      %th= t(:drug_test_date)
+                      %th= t(:insurance_billed_date)
+                      %th= t(:amount_paid)
+                      %th= t(:date_paid)
                       %th
                       %th
                   %tbody
@@ -431,6 +393,10 @@
                         %td= link_to p.date_perform, admins_proof_path(p)
                         %td= p.drug_test_results_on_site
                         %td= p.drug_test_results_lab
+                        %td= p.date_perform
+                        %td= p.insurance_billed_date
+                        %td= p.amount_paid2
+                        %td= p.date_paid
                         %td= link_to t(:pdf), p.exam_pdf_url, :class => 'btn btn-info' if p.exam_pdf?
                         %td= link_to 'Edit', edit_admins_proof_path(p), :class => 'btn btn-info'
                     - girl.exams.order("id DESC").each do |e|
@@ -438,8 +404,18 @@
                         %td= link_to e.date_perform, admins_exam_path(e)
                         %td= e.drug_test_results_on_site
                         %td= e.drug_test_results_lab
+                        %td= e.date_perform
+                        %td= e.insurance_billed_date
+                        %td= e.amount_paid
+                        %td= e.date_paid
                         %td= link_to t(:pdf), e.exam_pdf_url, :class => 'btn btn-info' if e.exam_pdf?
                         %td= link_to 'Edit', edit_admins_exam_path(e), :class => 'btn btn-info'
+                  %tfoot
+                    %tr
+                      %th Receive Funds
+                      %th
+                        - receive_funds = girl.proofs.sum(:amount_paid2)
+                        = number_to_currency(receive_funds)
   .row-fluid
     .mws-panel.grid_8
       .mws-panel-body.no-padding

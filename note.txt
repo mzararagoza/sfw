@@ -1,0 +1,27 @@
+[0] #<Proof:0x000000074d8648> {
+                               :id => 1,
+                          :girl_id => 1,
+                     :date_perform => "2013-07-02",
+        :drug_test_results_on_site => "Negative",
+            :drug_test_results_lab => "Negative",
+          :insurance_billed_amount => "1200",
+            :insurance_billed_date => "2013-07-08",
+                      :amount_paid => "600",
+                        :date_paid => "2013-07-28",
+                :insurance_company => "AETNA",
+                         :exam_pdf =>
+    },
+    [1] #<Proof:0x000000074d8030> {
+                               :id => 2,
+                          :girl_id => 25,
+                     :date_perform => "2013-06-10",
+        :drug_test_results_on_site => "",
+            :drug_test_results_lab => "",
+          :insurance_billed_amount => "1,200.00",
+            :insurance_billed_date => "2013-06-10",
+                      :amount_paid => "9.45",
+                        :date_paid => "2013-07-18",
+                :insurance_company => "Blue Cross Blue Shield ",
+                         :exam_pdf =>
+    }
+]

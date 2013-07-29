@@ -13,7 +13,7 @@ class Admins::ProofsController < AdminController
   def create
     if proof.save
       flash[:notice] = t(:exam_was_successfully_created)
-      counter = params[:counter].to_i
+      counter = params[:counter].to_i + 1
       counter.times do |c|
         Drug.new(:proof_id => proof.id, :code => params['code_' + c.to_s], :abbreviation => params['abbreviation_' + c.to_s], :result => params['result_' + c.to_s], :unit => params['unit_' + c.to_s], :normal => params['normal_' + c.to_s], :comment => params['comment_' + c.to_s]).save
 
@@ -25,7 +25,7 @@ class Admins::ProofsController < AdminController
   end
 
   def update
-    if exam.save
+    if proof.save
       flash[:notice] = t(:exam_was_successfully_updated)
       redirect_to(admins_girl_path(proof.girl.id))
     else

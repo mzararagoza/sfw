@@ -29,6 +29,18 @@
       %span.mws-stat-title Return Funds
       - return_funds = Payment.sum(:amount,:conditions=> "payment_type = 'return_funds'" )
       %span.mws-stat-value= number_to_currency(return_funds)
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-chameleon
+    %span.mws-stat-content
+      %span.mws-stat-title Drug test Funds
+      - receive_funds = Proof.sum(:amount_paid2 )
+      %span.mws-stat-value= number_to_currency(receive_funds)
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-chameleon
+    %span.mws-stat-content
+      %span.mws-stat-title Total
+      - total_receive_funds = Payment.sum(:amount,:conditions=> "payment_type = 'receive_funds'" ).to_i + Proof.sum(:amount_paid2 ).to_i
+      %span.mws-stat-value= number_to_currency(total_receive_funds)
 
 .mws-stat-container.clearfix
   #vendors
@@ -50,6 +62,13 @@
       - return_funds = Expense.sum(:amount,:conditions=> "payment_type = 'return'" )
       %span.mws-stat-value= number_to_currency(return_funds)
 
+.mws-stat-container.clearfix
+  %a.mws-stat{:href => "#"}
+    %span.mws-stat-icon.icol32-money-bag
+    %span.mws-stat-content
+      %span.mws-stat-title Total
+      - total_receive_funds = Payment.sum(:amount,:conditions=> "payment_type = 'receive_funds'" ).to_i + Proof.sum(:amount_paid2 ).to_i - Expense.sum(:amount,:conditions=> "payment_type = 'paid'" ).to_i
+      %span.mws-stat-value= number_to_currency(total_receive_funds)
 
 
 

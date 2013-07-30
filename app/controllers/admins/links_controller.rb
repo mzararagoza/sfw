@@ -5,7 +5,7 @@ class Admins::LinksController < AdminController
   def create
     if link.save
       flash[:notice] = t(:link_was_successfully_created)
-      redirect_to(links_documents_path)
+      redirect_to(admins_links_path)
     else
       render :new
     end

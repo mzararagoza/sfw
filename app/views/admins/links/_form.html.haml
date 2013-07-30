@@ -1,0 +1,39 @@
+.mws-panel.grid_8
+  .mws-panel-header
+    %span Inline Form
+  .mws-panel-body.no-padding
+    = simple_form_for([:admins, link], :html => {:class => 'form-horizontal' }) do |f|
+      .mws-form-inline
+        .mws-form-row
+          %label.mws-form-label= t(:name)
+          .mws-form-item
+            = f.input :name, :label => false
+      .mws-form-inline
+        .mws-form-row
+          %label.mws-form-label= t(:address)
+          .mws-form-item
+            = f.input :address, :label => false
+      .mws-form-inline
+        .mws-form-row
+          %label.mws-form-label= t(:username)
+          .mws-form-item
+            = f.input :username, :label => false
+      .mws-form-inline
+        .mws-form-row
+          %label.mws-form-label= t(:password)
+          .mws-form-item
+            = f.input :password, :label => false, as: :string
+      .mws-form-inline
+        .mws-form-row
+          %label.mws-form-label= t(:active)
+          .mws-form-item
+            = f.input :active, :label => false
+      .mws-form-inline
+        .mws-form-row
+          %label.mws-form-label= t(:notes)
+          .mws-form-item
+            = f.input :notes, :label => false
+        .mws-form-row
+          .mws-form-item
+            = f.button :submit, :class => 'pull-right btn btn-info'
+

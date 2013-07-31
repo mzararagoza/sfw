@@ -25,7 +25,7 @@ class Admins::MessagesController < AdminController
 
   private
   def send_text
-    if params[:message][:to_girl]
+    if params[:message][:to_girl] == 1
       girls = Girl.where(:active => true)
       girls.each do |g|
         sms = Sms.new
@@ -33,7 +33,7 @@ class Admins::MessagesController < AdminController
         #sms.send(g.phone, message.message )
       end
     end
-    if params[:message][:to_addmin]
+    if params[:message][:to_addmin] == 1
       admins = Admin.where(:active => true)
       admins.each do |a|
         sms = Sms.new

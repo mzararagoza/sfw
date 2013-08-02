@@ -163,7 +163,6 @@ ActiveRecord::Schema.define(:version => 20130729224512) do
   end
 
   create_table "links", :force => true do |t|
-<<<<<<< HEAD
     t.string   "name"
     t.string   "address"
     t.string   "username"
@@ -172,12 +171,6 @@ ActiveRecord::Schema.define(:version => 20130729224512) do
     t.text     "notes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-=======
-    t.string "name"
-    t.string "link"
-    t.string "username"
-    t.string "password"
->>>>>>> links
   end
 
   create_table "messages", :force => true do |t|

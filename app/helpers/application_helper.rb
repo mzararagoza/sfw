@@ -5,7 +5,7 @@ module ApplicationHelper
       ['return funds','return_funds']
     ]
   end
-  
+
   def vendor_payment_type_list
     [
       ['Paid','paid'],
@@ -16,7 +16,7 @@ module ApplicationHelper
   def payment_method_list
     [
       ['Cash','cash'],
-      ['Check','chrck'],
+      ['Check','check'],
       ['Credit Card','credit_card'],
       ['Pay Pal','paypal']
     ]

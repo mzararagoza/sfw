@@ -44,7 +44,7 @@
               = ' / '
               = i.payment_period_end
             %td= i.total_amount_received
-            %td= i.pdf_upload
+            %td= link_to t(:pdf), i.pdf_upload_url, :class => 'btn btn-info' if i.pdf_upload?
             %td= i.description
             %td= link_to 'Edit', edit_admins_insurance_payment_path(i), :class => 'btn btn-small btn-info'
 

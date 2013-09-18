@@ -1,0 +1,24 @@
+= simple_form_for([:admins, insurance_payment], :html => {:class => 'form-horizontal' }) do |f|
+  .mws-form-row
+    %label.mws-form-label= t(:insurance_carrier)
+    .mws-form-item
+    = f.input :insurance_carrier, :as => :select, :collection => insurance_carrier_list, :label => false, :include_blank => false
+    %label.mws-form-label= t(:payment_period_start)
+    .mws-form-item
+    = f.input :payment_period_start, :label => false
+    %label.mws-form-label= t(:payment_period_end)
+    .mws-form-item
+    = f.input :payment_period_end, :label => false
+    %label.mws-form-label= t(:total_amount_received)
+    .mws-form-item
+    = f.input :total_amount_received, :label => false
+    %label.mws-form-label= t(:pdf_upload)
+    .mws-form-item
+    = f.input :pdf_upload, :label => false
+    %label.mws-form-label= t(:description)
+    .mws-form-item
+    = f.input :description, :label => false
+  .mws-form-row
+    .mws-form-item
+    = f.button :submit, :class => 'pull-right btn btn-info'
+

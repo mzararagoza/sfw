@@ -1,0 +1,50 @@
+= provide(:title, 'Insurance Payment')
+= provide(:page_title, 'Admins')
+= provide(:page_icon, 'active-page-icon large-gray-icon admin_user_blk')
+
+-content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li.active
+      %i.icon-official
+      =t(:insurance_payments)
+  %h1#main-heading
+    List Of All
+    %span Insurance Payment
+
+
+=link_to t(:add_insurance_payment), new_admins_insurance_payment_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      %i.icon-table
+      Insurance Payments
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:insurance_carrier)
+          %th=t(:payment_period)
+          %th=t(:total_amount_received)
+          %th=t(:pdf)
+          %th=t(:description)
+          %th
+      %tbody
+        - insurance_payments.each do |i|
+          %tr
+            %td= i.id
+            %td= i.insurance_carrier
+            %td
+              = i.payment_period_start
+              = ' / '
+              = i.payment_period_end
+            %td= i.total_amount_received
+            %td= i.pdf_upload
+            %td= i.description
+            %td= link_to 'Edit', edit_admins_insurance_payment_path(i), :class => 'btn btn-small btn-info'
+

@@ -1,0 +1,20 @@
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      %a{:href => "/admins/dashboard"}
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li
+      = link_to admins_insurance_payments_path do
+        %i.icon-official
+        =t(:insurance_payments)
+      %span.divider /
+    %li.active
+      %i.icon-edit
+      =t(:edit_admin)
+  %h1#main-heading
+    Update Insurance Payments
+
+=render 'form'
+

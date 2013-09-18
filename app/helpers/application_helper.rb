@@ -98,4 +98,14 @@ module ApplicationHelper
       ['Other','other'],
     ]
   end
+
+  def insurance_carrier_list
+    [
+      ['Aetna','aetna'],
+      ['Blue Cross Blue Shield','blue_cross_blue_shield'],
+      ['Cigna','cigna'],
+      ['United Health','united_health'],
+      ['Other','other'],
+    ]
+  end
 end

@@ -231,10 +231,14 @@
               = link_to admins_messages_path do
                 %i.icol32-qip-angry
                 Message
-            %li{ :class => "#{'active' if params[:controller] == 'admins/messages'}" }
+            %li{ :class => "#{'active' if params[:controller] == 'admins/documents'}" }
               = link_to admins_documents_path do
                 %i.icol32-page-white-acrobat
                 Documents
+            %li{ :class => "#{'active' if params[:controller] == 'admins/insurance_payments'}" }
+              = link_to admins_insurance_payments_path do
+                %i.icol32-money
+                Insurance Payment
             %li{ :class => "#{'active' if params[:controller] == 'admins/links'}" }
               = link_to admins_links_path do
                 %i.icol32-link

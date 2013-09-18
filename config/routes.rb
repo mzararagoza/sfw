@@ -23,6 +23,7 @@ SobrietyforwomenAdmin::Application.routes.draw do
       resources :messages
       resources :links
       resources :documents
+      resources :insurance_payments
       get '/dashboard' => 'dashboards#index', as: :dashboard
       get '/' => 'dashboards#index'
     end

@@ -55,7 +55,10 @@
               = p.zip
             %td= p.monthly_cost
             %td
-              = p.girls.where(:active => true).count
+              - if p.girls
+                = p.girls.where(:active => true).count
+              - else 
+                0
               = '/'
               = p.beds
             %td

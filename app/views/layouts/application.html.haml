@@ -219,6 +219,10 @@
               = link_to admins_girls_path do
                 %i.icol32-female
                 Girls 
+            %li{ :class => "#{'active' if params[:controller] == 'admins/girls'}" }
+              = link_to admins_properties_path do
+                %i.icol32-house
+                Properties
             %li{ :class => "#{'active' if params[:controller] == 'admins/vendors'}" }
               = link_to admins_vendors_path do
                 %i.icol32-share

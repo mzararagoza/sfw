@@ -1,0 +1,77 @@
+= simple_form_for([:admins, property], :html => {:class => 'form-horizontal' }) do |f|
+  .mws-form-row
+    %label.mws-form-label= t(:name)
+    .mws-form-item
+    = f.input :name, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:address)
+    .mws-form-item
+    = f.input :address, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:address2)
+    .mws-form-item
+    = f.input :address2, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:city)
+    .mws-form-item
+    = f.input :city, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:state)
+    .mws-form-item
+    = f.input :state, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:zip)
+    .mws-form-item
+    = f.input :zip, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:rooms)
+    .mws-form-item
+    = f.input :rooms, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:beds)
+    .mws-form-item
+    = f.input :beds, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:sqft)
+    .mws-form-item
+    = f.input :sqft, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:owner)
+    .mws-form-item
+    = f.input :owner, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:owner_address)
+    .mws-form-item
+    = f.input :owner_address, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:owner_address2)
+    .mws-form-item
+    = f.input :owner_address2, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:owner_city)
+    .mws-form-item
+    = f.input :owner_city, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:owner_state)
+    .mws-form-item
+    = f.input :owner_state, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:owner_zip)
+    .mws-form-item
+    = f.input :owner_zip, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:owner_phone)
+    .mws-form-item
+    = f.input :owner_phone, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:owner_email)
+    .mws-form-item
+    = f.input :owner_email, :label => false
+  .mws-form-row
+    %label.mws-form-label= t(:monthly_cost)
+    .mws-form-item
+    = f.input :monthly_cost, :label => false
+  .mws-form-row
+    .mws-form-item
+    = f.button :submit, :class => 'pull-right btn btn-info'
+

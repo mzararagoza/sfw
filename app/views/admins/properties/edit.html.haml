@@ -1,0 +1,20 @@
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li
+      = link_to admins_properties_path do
+        %i.icon-official
+        =t(:Properties)
+      %span.divider /
+    %li.active
+      %i.icos-plus 
+      =t(:update)
+  %h1#main-heading
+    Update property
+
+=render 'form'
+

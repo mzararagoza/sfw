@@ -1,0 +1,24 @@
+= provide(:title, 'Properties')
+= provide(:page_title, 'Properties')
+= provide(:page_icon, 'active-page-icon large-gray-icon admin_user_blk')
+
+- content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li
+      = link_to admins_properties_path do
+        %i.icon-official
+        =t(:Properties)
+      %span.divider /
+    %li.active
+      %i.icos-plus 
+      =t(:create)
+  %h1#main-heading
+    Create a property
+
+=render 'form'
+

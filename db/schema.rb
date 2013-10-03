@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130918025116) do
+ActiveRecord::Schema.define(:version => 20131003021125) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(:version => 20130918025116) do
     t.string   "insurance_caed_back",             :default => ""
     t.string   "insurance_card_back",             :default => ""
     t.string   "lease",                           :default => ""
+    t.integer  "property_id"
   end
 
   create_table "insurance_payments", :force => true do |t|
@@ -226,6 +227,30 @@ ActiveRecord::Schema.define(:version => 20130918025116) do
     t.string  "insurance_company"
     t.string  "exam_pdf"
     t.decimal "amount_paid2"
+  end
+
+  create_table "properties", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.integer  "rooms"
+    t.integer  "beds"
+    t.integer  "sqft"
+    t.string   "owner"
+    t.string   "owner_address"
+    t.string   "owner_address2"
+    t.string   "owner_city"
+    t.string   "owner_state"
+    t.string   "owner_zip"
+    t.string   "owner_phone"
+    t.string   "owner_email"
+    t.decimal  "monthly_cost"
+    t.boolean  "active",         :default => true
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "prospects", :force => true do |t|

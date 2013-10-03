@@ -1,0 +1,62 @@
+= provide(:title, 'Properties')
+= provide(:page_title, 'Properties')
+= provide(:page_icon, 'active-page-icon large-gray-icon admin_user_blk')
+
+-content_for :pageheader do
+  %ul.breadcrumb
+    %li
+      = link_to admins_dashboard_path do
+        %i.icon-home
+        =t(:dashboard)
+      %span.divider /
+    %li.active
+      %i.icon-official
+      =t(:properties)
+  %h1#main-heading
+    all Properties
+
+
+=link_to t(:add_property), new_admins_property_path, :class => 'btn btn-info pull-right'
+.mws-panel.grid_8.mws-collapsible
+  .mws-panel-header
+    %span
+      %i.icon-table
+      Properties
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th=t(:id)
+          %th=t(:name)
+          %th=t(:address)
+          %th=t(:onwer)
+          %th=t(:onwer_address)
+          %th=t(:monthly_cost)
+          %th Girls / Beds
+          %th
+      %tbody
+        - properties.each do |p|
+          %tr
+            -#%td= link_to p.id, admins_property_path(p)
+            %td= p.id
+            %td= p.name
+            %td
+              = p.address
+              = p.address2
+              = p.city
+              = p.state
+              = p.zip
+            %td= p.owner
+            %td
+              = p.owner_address
+              = p.owner_address2
+              = p.city
+              = p.state
+              = p.zip
+            %td= p.monthly_cost
+            %td
+              = p.girls.where(:active => true).count
+              = '/'
+              = p.beds
+            %td
+              = link_to 'Edit', edit_admins_property_path(p), :class => 'btn btn-small btn-info'

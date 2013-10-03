@@ -55,11 +55,11 @@
               = p.zip
             %td= p.monthly_cost
             %td
-              -# if p.girls
+              - if p.girls
                 = p.girls.where(:active => true).count
-              -# else 
+              - else 
                 0
-              =# '/'
+              = '/'
               = p.beds
             %td
               = link_to 'Edit', edit_admins_property_path(p), :class => 'btn btn-small btn-info'

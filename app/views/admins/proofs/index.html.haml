@@ -1,0 +1,16 @@
+%table.data-tbl-boxy.table.table-striped.table-well.responsive
+  %thead
+    %tr
+      %th=t(:girl_name)
+      %th=t(:date_perform)
+      %th=t(:date_paid)
+      %th=t(:amount_paid)
+      %th
+  %tbody
+    - proofs.each do |p|
+      %tr
+        %td
+          = p.girl.full_name if p.girl
+        %td= p.date_perform
+        %td= p.date_paid
+        %td= p.amount_paid

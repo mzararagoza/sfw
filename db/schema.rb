@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131003021125) do
+ActiveRecord::Schema.define(:version => 20131003053936) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :default => "",   :null => false
@@ -216,17 +216,21 @@ ActiveRecord::Schema.define(:version => 20131003021125) do
   end
 
   create_table "proofs", :force => true do |t|
-    t.integer "girl_id"
-    t.string  "date_perform"
-    t.string  "drug_test_results_on_site"
-    t.string  "drug_test_results_lab"
-    t.string  "insurance_billed_amount"
-    t.string  "insurance_billed_date"
-    t.string  "amount_paid"
-    t.string  "date_paid"
-    t.string  "insurance_company"
-    t.string  "exam_pdf"
-    t.decimal "amount_paid2"
+    t.integer  "girl_id"
+    t.string   "date_perform"
+    t.string   "drug_test_results_on_site"
+    t.string   "drug_test_results_lab"
+    t.string   "insurance_billed_amount"
+    t.string   "insurance_billed_date"
+    t.string   "amount_paid"
+    t.string   "date_paid"
+    t.string   "insurance_company"
+    t.string   "exam_pdf"
+    t.decimal  "amount_paid2"
+    t.date     "insurance_billed_date2"
+    t.date     "date_paid2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "properties", :force => true do |t|

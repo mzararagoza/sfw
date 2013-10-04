@@ -1,16 +1,68 @@
+= link_to 'Jan 2013 ', admins_proofs_path(:month => '1'), :class => 'btn btn-info'
+= link_to 'Feb 2013 ', admins_proofs_path(:month => '2'), :class => 'btn btn-info'
+= link_to 'Mar 2013 ', admins_proofs_path(:month => '3'), :class => 'btn btn-info'
+= link_to 'Apr 2013 ', admins_proofs_path(:month => '4'), :class => 'btn btn-info'
+= link_to 'May 2013 ', admins_proofs_path(:month => '5'), :class => 'btn btn-info'
+= link_to 'June 2013 ', admins_proofs_path(:month => '6'), :class => 'btn btn-info'
+= link_to 'July 2013 ', admins_proofs_path(:month => '7'), :class => 'btn btn-info'
+= link_to 'Aug 2013 ', admins_proofs_path(:month => '8'), :class => 'btn btn-info'
+= link_to 'Sept 2013 ', admins_proofs_path(:month => '9'), :class => 'btn btn-info'
+= link_to 'Oct 2013 ', admins_proofs_path(:month => '10'), :class => 'btn btn-info'
+= link_to 'Nov 2013 ', admins_proofs_path(:month => '11'), :class => 'btn btn-info'
+=# link_to 'Dec 2013 ', admins_proofs_path(:month => '12'), :class => 'btn btn-info'
+
 %table.data-tbl-boxy.table.table-striped.table-well.responsive
   %thead
     %tr
+      %th=t(:id)
       %th=t(:girl_name)
       %th=t(:date_perform)
       %th=t(:date_paid)
       %th=t(:amount_paid)
       %th
   %tbody
-    - proofs.each do |p|
+    %tr
+      %td{:colspan => 4}
+        %h1= "#{params[:month]}-01-2013 / 02-#{params[:month].to_i + 1}-2013"
+    - sum = 0
+    - Proof.where("date_paid2 > '2013-#{params[:month]}-01' AND date_paid2 < '2013-#{params[:month].to_i + 1}-01'").where("amount_paid2 < 1000").order('id').each do |p|
       %tr
+        %td= p.id
         %td
           = p.girl.full_name if p.girl
-        %td= p.date_perform2
+        %td= p.date_perform
         %td= p.date_paid2
-        %td= p.amount_paid2
+        - sum = sum + p.amount_paid2
+        %td= number_to_currency(p.amount_paid2)
+    %tr
+      %td{:colspan => 2}
+        Sum =
+        %strong= number_to_currency(sum)
+      %td{:colspan => 2}
+        10% =
+        %strong= number_to_currency(sum * 0.10)
+        - to_pay = sum * 0.10 
+    - sum2 = 0
+    - Proof.where("date_paid2 > '2013-#{params[:month]}-01' AND date_paid2 < '2013-#{params[:month].to_i + 1}-01'").where("amount_paid2 >= 1000").order('id').each do |p|
+      %tr
+        %td= p.id
+        %td
+          = p.girl.full_name if p.girl
+        %td= p.date_perform
+        %td= p.date_paid2
+        - sum2 = sum2 + p.amount_paid2
+        %td= number_to_currency(p.amount_paid2)
+    %tr
+      %td{:colspan => 2}
+        Sum =
+        %strong= number_to_currency(sum2)
+      %td{:colspan => 2}
+        - to_pay = to_pay + (Proof.where("date_paid2 > '2013-01-01' AND date_paid2 < '2013-02-01'").where("amount_paid2 >= 1000").count * 200)
+        %strong= number_to_currency(Proof.where("date_paid2 > '2013-01-01' AND date_paid2 < '2013-02-01'").where("amount_paid2 >= 1000").count * 200)
+    %tr
+      %td{:colspan => 2}
+        Total =
+        %strong= number_to_currency(sum2 + sum)
+      %td{:colspan => 2}
+        %strong= number_to_currency(to_pay)
+

@@ -23,7 +23,10 @@
   %tbody
     %tr
       %td{:colspan => 4}
-        %h1= "#{params[:month]}-01-2013 / 02-#{params[:month].to_i + 1}-2013"
+        -if params[:month] == 12 
+          %h1= "12-01-2013 / 01-01-2014"
+        -else
+          %h1= "#{params[:month]}-01-2013 / #{params[:month].to_i + 1}-01-2013"
     - sum = 0
     - Proof.where("date_paid2 > '2013-#{params[:month]}-01' AND date_paid2 < '2013-#{params[:month].to_i + 1}-01'").where("amount_paid2 < 1000").order('id').each do |p|
       %tr

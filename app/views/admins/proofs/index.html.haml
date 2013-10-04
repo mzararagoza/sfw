@@ -10,7 +10,7 @@
 = link_to 'Oct 2013 ', admins_proofs_path(:month => '10'), :class => 'btn btn-info'
 = link_to 'Nov 2013 ', admins_proofs_path(:month => '11'), :class => 'btn btn-info'
 =# link_to 'Dec 2013 ', admins_proofs_path(:month => '12'), :class => 'btn btn-info'
-
+- params[:month] = 1 unless params[:month]
 %table.data-tbl-boxy.table.table-striped.table-well.responsive
   %thead
     %tr

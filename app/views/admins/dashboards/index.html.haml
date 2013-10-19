@@ -114,7 +114,8 @@
                 - girls.where(:active => true).each do |g|
                   %tr
                     %td= link_to g.full_name.titleize, admins_girl_path(g)
-                    %td= g.payments.order("id DESC").first.payment_date  if g.payments != []
+                    %td= g.payments.order("id desc").first.payment_date  if g.payments != []
+                    %td= g.arrival_date
                     %td
                       - if g.property
                         = g.property.name.titleize

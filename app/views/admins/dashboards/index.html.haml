@@ -116,7 +116,10 @@
                     %td= link_to g.full_name.titleize, admins_girl_path(g)
                     %td= g.payments.order("id DESC").first.payment_date  if g.payments != []
                     %td
-                      = g.property.name.titleize if g.property
+                      - if g.property
+                        = g.property.name.titleize
+                      - else
+                        NOT IN A HOUSE
                     %td
                       - if g.photo?
                         Yes
@@ -143,7 +146,7 @@
                       - else
                         No
                     %td
-                      - if .photo?
+                      - if g.photo?
                         Yes
                       - else
                         No

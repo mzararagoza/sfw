@@ -104,12 +104,49 @@
                   %th= t(:name)
                   %th= t(:last_payment_date)
                   %th= t(:arrival_date)
+                  %th= t(:proprty)
+                  %th= t(:photo)
+                  %th= t(:license_front)
+                  %th= t(:license_back)
+                  %th= t(:insurance_card_front)
+                  %th= t(:insurance_card_back)
               %tbody
                 - girls.where(:active => true).each do |g|
                   %tr
                     %td= link_to g.full_name.titleize, admins_girl_path(g)
                     %td= g.payments.order("id DESC").first.payment_date  if g.payments != []
-                    %td= g.arrival_date
+                    %td
+                      = g.property.name.titleize if g.property
+                    %td
+                      - if g.photo?
+                        Yes
+                      - else
+                        No
+                    %td
+                      - if g.license_front?
+                        Yes
+                      - else
+                        No
+                    %td
+                      - if g.license_back?
+                        Yes
+                      - else
+                        No
+                    %td
+                      - if g,insurance_card_front?
+                        Yes
+                      - else
+                        No
+                    %td
+                      - if g.insurance_card_back?
+                        Yes
+                      - else
+                        No
+                    %td
+                      - if .photo?
+                        Yes
+                      - else
+                        No
 .mws-panel.grid_4
   .mws-panel-header
     %span

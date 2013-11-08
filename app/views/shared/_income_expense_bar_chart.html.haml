@@ -41,6 +41,44 @@
                 }]
             });
         });
+  - date1 = Date.new(2013, 1, 1)
+  - date2 = Date.new(2013, 2, 1)
+  - date3 = Date.new(2013, 3, 1)
+  - date4 = Date.new(2013, 4, 1)
+  - date5 = Date.new(2013, 5, 1)
+  - date6 = Date.new(2013, 6, 1)
+  - date7 = Date.new(2013, 7, 1)
+  - date8 = Date.new(2013, 8, 1)
+  - date9 = Date.new(2013, 9, 1)
+  - date10 = Date.new(2013, 10, 1)
+  - date11 = Date.new(2013, 11, 1)
+  - date12 = Date.new(2013, 12, 1)
+
+  - payment1 = Payment.where("payment_date BETWEEN ? AND ?", date1.beginning_of_month, date1.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment2 = Payment.where("payment_date BETWEEN ? AND ?", date2.beginning_of_month, date2.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment3 = Payment.where("payment_date BETWEEN ? AND ?", date3.beginning_of_month, date3.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment4 = Payment.where("payment_date BETWEEN ? AND ?", date4.beginning_of_month, date4.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment5 = Payment.where("payment_date BETWEEN ? AND ?", date5.beginning_of_month, date5.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment6 = Payment.where("payment_date BETWEEN ? AND ?", date6.beginning_of_month, date6.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment7 = Payment.where("payment_date BETWEEN ? AND ?", date7.beginning_of_month, date7.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment8 = Payment.where("payment_date BETWEEN ? AND ?", date8.beginning_of_month, date8.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment9 = Payment.where("payment_date BETWEEN ? AND ?", date9.beginning_of_month, date9.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment10 = Payment.where("payment_date BETWEEN ? AND ?", date10.beginning_of_month, date10.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment11 = Payment.where("payment_date BETWEEN ? AND ?", date11.beginning_of_month, date11.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - payment12 = Payment.where("payment_date BETWEEN ? AND ?", date12.beginning_of_month, date12.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+
+  - expense1 = Expense.where("payment_date BETWEEN ? AND ?", date1.beginning_of_month, date1.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense2 = Expense.where("payment_date BETWEEN ? AND ?", date2.beginning_of_month, date2.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense3 = Expense.where("payment_date BETWEEN ? AND ?", date3.beginning_of_month, date3.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense4 = Expense.where("payment_date BETWEEN ? AND ?", date4.beginning_of_month, date4.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense5 = Expense.where("payment_date BETWEEN ? AND ?", date5.beginning_of_month, date5.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense6 = Expense.where("payment_date BETWEEN ? AND ?", date6.beginning_of_month, date6.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense7 = Expense.where("payment_date BETWEEN ? AND ?", date7.beginning_of_month, date7.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense8 = Expense.where("payment_date BETWEEN ? AND ?", date8.beginning_of_month, date8.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense9 = Expense.where("payment_date BETWEEN ? AND ?", date9.beginning_of_month, date9.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense10 = Expense.where("payment_date BETWEEN ? AND ?", date10.beginning_of_month, date10.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense11 = Expense.where("payment_date BETWEEN ? AND ?", date11.beginning_of_month, date11.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
+  - expense12 = Expense.where("payment_date BETWEEN ? AND ?", date12.beginning_of_month, date12.end_of_month).where(:payment_type => 'receive_funds').sum('amount')
 
   :javascript
     $(function () {
@@ -92,14 +130,17 @@
                 },
                 series: [{
                   name: 'Income',
-                    data: [3573, 5326, 6712.13, 5200, 6900, 7240, 8360, 10137,9760,0,0,0]
+                    //data: [3573, 5326, 6712.13, 5200, 6900, 7240, 8360, 10137,9760,0,0,0]
+                    data: [ #{payment1}, #{payment2}, #{payment3}, #{payment4}, #{payment5}, #{payment6}, #{payment7}, #{payment8}, #{payment9}, #{payment10}, #{payment11}, #{payment12} ]
                 }, {
                     name: 'Expense',
-                    data: [1235, 3525, 3869, 5530.5, 3670.78, 1372, 3600.37, 4526.54, 3514.93, 0, 0, 0 ]
+                    //data: [1235, 3525, 3869, 5530.5, 3670.78, 1372, 3600.37, 4526.54, 3514.93, 0, 0, 0 ]
+                    data: [ #{expense1}, #{expense2}, #{expense3}, #{expense4}, #{expense5}, #{expense6}, #{expense7}, #{expense8}, #{expense9}, #{expense10}, #{expense11}, #{expense12} ]
 
                 }, {
                     name: 'Profit',
-                    data: [3573-1235, 5326-3525, 6712.13-3869, 5200-5530.5, 6900-3670.78, 7240-1372,8360-3600.37,10137-4526.54, 9760-3514.93,0,0,0 ]
+                    //data: [3573-1235, 5326-3525, 6712.13-3869, 5200-5530.5, 6900-3670.78, 7240-1372,8360-3600.37,10137-4526.54, 9760-3514.93,0,0,0 ]
+                    data: [ #{payment1} - #{expense1} , #{payment2} - #{expense2}, #{payment3} - #{expense3}, #{payment4} - #{expense4}, #{payment5} - #{expense5}, #{payment6} - #{expense6}, #{payment7} - #{expense7}, #{payment8} - #{expense8}, #{payment9} - #{expense9}, #{payment10} - #{expense10}, #{payment11} - #{expense11}, #{payment12} - #{expense12} ]
 
                 }]
             });

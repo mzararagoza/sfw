@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 
+gem 'rails_12factor'
 gem 'aws-s3'
 gem 'airbrake'
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -21,7 +22,7 @@ gem 'spectator-validates_email', :require => 'validates_email'
 gem 'validates_timeliness', '~> 3.0.2'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
-gem "tzinfo" # Timezone mannager 
+gem "tzinfo" # Timezone mannager
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'hirb' # display like db rows should look -- In sc do 'Hirb.enable'-

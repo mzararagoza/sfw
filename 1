@@ -1,0 +1,184 @@
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
+[[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
+
+#opexport PS1="\u:~$ "
+vim() {
+  (unset GEM_PATH GEM_HOME; command vim "$@")
+}
+alias git_reset_all='git reset --hard HEAD'
+alias find_large_files='find . -type f -size +10000k -exec ls -lh {} \;'
+alias push_github="gp"
+alias db_up="up"
+alias bashrc="vim ~/.bashrc.local"
+alias up="rake db:migrate db:test:prepare"
+alias cucumber='bundle exec cucumber'
+alias bottle="git add . && git stash"
+alias poop="git stash pop"
+#alias remove_all_gems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
+alias remove_all_gems='for i in `gem list --no-versions`; do gem uninstall -aIx $i; done'
+alias gaa="git add ."
+alias gm="git merge"
+alias vin="vim"
+alias sss="foreman start"
+alias convert_html2haml="find . -name '*html' | xargs ruby -e 'ARGV.each { |i| puts \"html2haml -r #{i} #{i.sub(/html$/,\"html.haml\")}\"}'"
+alias convert_html2haml_do="find . -name '*html' | xargs ruby -e 'ARGV.each { |i| puts \"html2haml -r #{i} #{i.sub(/html$/,\"html.haml\")}\"}' | bash"
+#find . -name '*html' | xargs ruby -e 'ARGV.each { |i| puts "html2haml -r #{i} #{i.sub(/html$/,"html.haml")}"}'
+#find . -name '*html' | xargs ruby -e 'ARGV.each { |i| puts "html2haml -r #{i} #{i.sub(/html$/,"html.haml")}"}' | bash
+
+wals(){
+ gp staging master -f
+ heroku run rake db:migrate --app wallabycare-staging
+ heroku restart --app wallabycare-staging
+ heroku open --app wallabycare-staging
+}
+walp(){
+ gp prod master -f
+ heroku run rake db:migrate --app wallabycare-prod
+ heroku restart --app wallabycare-prod
+ heroku open --app wallabycare-prod
+}
+wal_all(){
+  wals; # STAGING
+  walp; # PRODUCTION
+}
+
+#----------------sobrietyforwomen-------------------------------------------------------------------
+sobs(){
+ gp staging master -f
+ heroku run rake db:migrate --app sobrietyforwomen-staging
+ heroku restart --app sobrietyforwomen-staging
+ heroku open --app sobrietyforwomen-staging
+}
+sobadin(){
+ gp admin master -f
+ heroku run rake db:migrate --app sobrietyforwomen-admin
+ heroku restart --app sobrietyforwomen-admin
+ heroku open --app sobrietyforwomen-admin
+}
+sobapi(){
+ gp api master -f
+ heroku restart --app sobrietyforwomen-api
+ heroku open --app sobrietyforwomen-api
+}
+sobp(){
+ gp prod master -f
+ heroku run rake db:migrate --app sobrietyforwomen-prod
+ heroku restart --app sobrietyforwomen-prod
+ heroku open --app sobrietyforwomen-prod
+}
+sob_all(){
+  sobs; # STAGING
+  sobadin; #ADMIN
+  sobapi; # API
+  sobp; # PRODUCTION
+}
+sob_ap(){
+  sobadin; #ADMIN
+  sobp; # PRODUCTION
+}
+#----------------LEASE TO OWN REFRIGIRATION-------------------------------------------------------------------
+ltws(){
+ gp staging master -f
+ heroku run rake db:migrate --app ltwrefrigeration-staging
+ heroku restart --app ltwrefrigeration-staging
+ heroku open --app ltwrefrigeration-staging
+}
+ltwp(){
+ gp prod master -f
+ heroku run rake db:migrate --app ltwrefrigeration-prod
+ heroku restart --app ltwrefrigeration-prod
+ heroku open --app ltwrefrigeration-prod
+}
+ltw_all(){
+  ltws; # STAGING
+  ltwp; # PRODUCTION
+}
+#----------------LEASE TO OWN Dish Machine-------------------------------------------------------------------
+ltwds(){
+ gp staging master -f
+ heroku run rake db:migrate --app leasetoowndishwasher-staging
+ heroku restart --app leasetoowndishwasher-staging
+ heroku open --app leasetoowndishwasher-staging
+}
+ltwdp(){
+ gp prod master -f
+ heroku run rake db:migrate --app leasetoowndishwasher-prod
+ heroku restart --app leasetoowndishwasher-prod
+ heroku open --app leasetoowndishwasher-prod
+}
+ltwd_all(){
+  ltwds; # STAGING
+  ltwdp; # PRODUCTION
+}
+
+#------------------------------------ parklandhorsemans ---------------------------------------
+
+pars(){
+ gp staging master -f
+ heroku run rake db:migrate --app parklandhorsemans-staging
+ heroku restart --app parklandhorsemans-staging
+ heroku open --app parklandhorsemans-staging
+}
+parp(){
+ gp prod master -f
+ heroku run rake db:migrate --app parklandhorsemans-prod
+ heroku restart --app parklandhorsemans-prod
+ heroku open --app parklandhorsemans-prod
+}
+par_all(){
+  pars; # STAGING
+  parp; # PRODUCTION
+}
+
+#------------------------------------gotruckergo  ---------------------------------------
+
+gos(){
+ gp staging master -f
+ heroku run rake db:migrate --app gotruckergo-stgaging
+ heroku restart --app gotruckergo-stgaging
+ heroku open --app gotruckergo-stgaging
+}
+gop(){
+ gp prod master -f
+ heroku run rake db:migrate --app gotruckergo-prod
+ heroku restart --app gotruckergo-prod
+ heroku open --app gotruckergo-prod
+}
+go_all(){
+  gos; # STAGING
+  gop; # PRODUCTION
+}
+
+#------------------------------------gotrucker  ---------------------------------------
+gop2(){
+ gp prod master -f
+ heroku run rake db:migrate --app gotrucker
+ heroku restart --app gotrucker
+ heroku open --app gotrucker
+}
+
+
+
+
+
+
+
+function ListAllCommands
+{
+    COMMANDS=`echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 \
+        -executable -type f -printf '%P\n'`
+    ALIASES=`alias | cut -d '=' -f 1`
+    echo "$COMMANDS"$'\n'"$ALIASES" | sort -u
+}
+
+
+
+
+cat <<INPUTRC >~/.inputrc
+set completion-ignore-case On
+TAB: menu-complete
+INPUTRC
+
+#bettervim="/Applications/MacVim.app/Contents/MacOS/MacVim"
+#[ -f "$bettervim" ] && alias vim="$bettervim"
+#[ -f "$HOME$bettervim" ] && alias vim="$HOME$bettervim"
